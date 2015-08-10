@@ -10,5 +10,16 @@ import Foundation
 
 class LoginVerification
 {
-    
+    static func login(withUsername username:String, andPassword password:String) -> Bool
+    {
+        NSThread.sleepForTimeInterval(1.0)
+        
+        if username == "Kyle" && password == "123"
+        {
+            return true
+        } else
+        {
+            return false
+        }
+    }
 }

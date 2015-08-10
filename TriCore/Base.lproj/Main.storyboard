@@ -59,6 +59,11 @@
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VQv-G6-U9e"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RdO-iO-67i">
+                                <rect key="frame" x="33" y="292" width="254" height="45.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Fz-wv-4Bs">
                                 <rect key="frame" x="33" y="346" width="254" height="45.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -83,11 +88,9 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RdO-iO-67i">
-                                <rect key="frame" x="33" y="292.5" width="254" height="45.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Xu7-JR-niW">
+                                <rect key="frame" x="142" y="221" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -99,6 +102,8 @@
                             <constraint firstItem="Ywb-Ic-dEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ukn-ab-AZg"/>
                             <constraint firstItem="4Fz-wv-4Bs" firstAttribute="top" secondItem="RdO-iO-67i" secondAttribute="bottom" constant="8" id="UpG-pb-b6w"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7fz-ec-Nr5" secondAttribute="bottom" constant="20" id="YOE-UO-Vtu"/>
+                            <constraint firstItem="Xu7-JR-niW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yd8-ag-r7A"/>
+                            <constraint firstItem="Xu7-JR-niW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="avM-Zg-VAW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7fz-ec-Nr5" secondAttribute="trailing" constant="17" id="dAo-bR-CRi"/>
                             <constraint firstItem="RdO-iO-67i" firstAttribute="width" secondItem="7fz-ec-Nr5" secondAttribute="width" id="eUo-oB-Y5E"/>
                             <constraint firstItem="4Fz-wv-4Bs" firstAttribute="width" secondItem="7fz-ec-Nr5" secondAttribute="width" id="fmM-5r-ZGi"/>
@@ -115,6 +120,7 @@
                     <navigationItem key="navigationItem" title="Welcome" id="LIr-AA-8Z8"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="indicator" destination="Xu7-JR-niW" id="X9b-MV-lIi"/>
                         <outlet property="loginButton" destination="7fz-ec-Nr5" id="mj1-Gv-gED"/>
                         <outlet property="passwordField" destination="4Fz-wv-4Bs" id="ODA-Am-Y9a"/>
                         <outlet property="tricoreName" destination="fNO-0D-uj8" id="c4v-1k-PFC"/>
