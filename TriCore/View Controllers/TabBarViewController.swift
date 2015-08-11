@@ -12,7 +12,9 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let sendButton = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Plain, target: self, action: "sendMail")
+        
+        self.navigationItem.rightBarButtonItem = sendButton
         // Do any additional setup after loading the view.
     }
 

@@ -20,6 +20,10 @@ class TimesheetsViewController: UIViewController
         self.navigationController!.view.addSubview(blackness)
         
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        
+        let sendButton = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Plain, target: self, action: "sendMail")
+        
+        self.navigationItem.rightBarButtonItem = sendButton
     }
     
     override func viewDidAppear(animated: Bool)
@@ -31,9 +35,7 @@ class TimesheetsViewController: UIViewController
                 }) { (Bool) -> Void in
                     self.blackness.removeFromSuperview()
             }
-            print("OK")
         }
-        
     }
 
 }

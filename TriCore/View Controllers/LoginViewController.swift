@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -102,6 +103,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                     self.removeIndicator()
                     self.shakeTextFields()
+                    self.vibratePhone()
                 })
             }
         }
@@ -151,6 +153,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 direction = CGFloat(direction * -1)
                 self.shake(view: view, inDirection: direction, andShakesDone: shakes)
         }
+    }
+    
+    func vibratePhone()
+    {
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     // MARK: Navigation
