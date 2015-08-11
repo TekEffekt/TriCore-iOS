@@ -27,8 +27,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         
         self.tricoreName.font = self.tricoreName.font.fontWithSize(self.view.frame.width/5.5)
         
@@ -97,6 +95,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             {
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                     self.removeIndicator()
+                    self.fadeOutScreen()
                 })
             } else
             {
@@ -151,6 +150,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 shakes++
                 direction = CGFloat(direction * -1)
                 self.shake(view: view, inDirection: direction, andShakesDone: shakes)
+        }
+    }
+    
+    // MARK: Navigation
+    
+    func fadeOutScreen()
+    {
+        let frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height + self.navigationController!.navigationBar.frame.height)
+        let blackness:UIView = UIView(frame: frame)
+        blackness.backgroundColor = UIColor.blackColor()
+        blackness.alpha = 0.0
+        
+        //self.view.addSubview(blackness)
+        self.navigationController!.view.addSubview(blackness)
+        
+        UIView.animateWithDuration(1.5, animations: { () -> Void in
+            blackness.alpha = 1.0
+            }) { (Bool) -> Void in
+                self.performSegueWithIdentifier("showTabController", sender: self)
         }
     }
     

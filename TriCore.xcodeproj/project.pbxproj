@@ -15,6 +15,9 @@
 		B61F72C91B76BF8600A34736 /* TriCoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F72C81B76BF8600A34736 /* TriCoreUITests.swift */; };
 		B61F72D71B76C65C00A34736 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F72D61B76C65C00A34736 /* LoginViewController.swift */; };
 		B61F72DB1B76F48A00A34736 /* LoginVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F72DA1B76F48A00A34736 /* LoginVerification.swift */; };
+		B64E28B91B79994E0052B3C1 /* TimesheetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28B81B79994E0052B3C1 /* TimesheetsViewController.swift */; };
+		B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28BA1B7999660052B3C1 /* ProfileViewController.swift */; };
+		B64E28BD1B79AE8A0052B3C1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		B61F72CA1B76BF8600A34736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B61F72D61B76C65C00A34736 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
 		B61F72DA1B76F48A00A34736 /* LoginVerification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVerification.swift; path = Model/LoginVerification.swift; sourceTree = "<group>"; };
+		B64E28B81B79994E0052B3C1 /* TimesheetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetsViewController.swift; path = "View Controllers/TimesheetsViewController.swift"; sourceTree = "<group>"; };
+		B64E28BA1B7999660052B3C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "View Controllers/ProfileViewController.swift"; sourceTree = "<group>"; };
+		B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = "View Controllers/TabBarViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +137,10 @@
 		B61F72D81B76C66A00A34736 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */,
 				B61F72D61B76C65C00A34736 /* LoginViewController.swift */,
+				B64E28B81B79994E0052B3C1 /* TimesheetsViewController.swift */,
+				B64E28BA1B7999660052B3C1 /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -276,7 +285,10 @@
 			files = (
 				B61F72DB1B76F48A00A34736 /* LoginVerification.swift in Sources */,
 				B61F72D71B76C65C00A34736 /* LoginViewController.swift in Sources */,
+				B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */,
 				B61F72A91B76BF8500A34736 /* AppDelegate.swift in Sources */,
+				B64E28BD1B79AE8A0052B3C1 /* TabBarViewController.swift in Sources */,
+				B64E28B91B79994E0052B3C1 /* TimesheetsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

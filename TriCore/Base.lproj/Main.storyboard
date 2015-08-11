@@ -125,11 +125,95 @@
                         <outlet property="passwordField" destination="4Fz-wv-4Bs" id="ODA-Am-Y9a"/>
                         <outlet property="tricoreName" destination="fNO-0D-uj8" id="c4v-1k-PFC"/>
                         <outlet property="usernameField" destination="RdO-iO-67i" id="AnE-hL-Qhm"/>
+                        <segue destination="3a0-ax-pf2" kind="showDetail" identifier="showTabController" id="2wy-pz-3Yi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1322" y="337"/>
+            <point key="canvasLocation" x="1366" y="337"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="PEf-5P-cgH">
+            <objects>
+                <viewController title="Me" id="uKb-g5-1nz" customClass="ProfileViewController" customModule="TriCore" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gPt-Bh-ph3"/>
+                        <viewControllerLayoutGuide type="bottom" id="1c2-rJ-u0S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oI2-g5-PL8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" image="Me Icon" id="hLp-e4-T5m"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUr-yK-oSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2685" y="665"/>
+        </scene>
+        <!--Time Sheets-->
+        <scene sceneID="mmj-bW-65X">
+            <objects>
+                <viewController title="Time Sheets" id="MeQ-bD-MIg" customClass="TimesheetsViewController" customModule="TriCore" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6eH-ak-JgJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="eIw-Dz-S19"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kTa-WB-exE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Time Sheets" image="Timesheet Icon" selectedImage="Timesheet Icon" id="xSt-dw-HFC"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MRa-Dw-RPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2685" y="25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RQ9-2B-BGw">
+            <objects>
+                <navigationController id="3a0-ax-pf2" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GzG-dk-gcK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.3803921569" green="0.66274509800000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="K7V-Vh-bnq" kind="relationship" relationship="rootViewController" id="qDu-m2-AeI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vma-wR-gor" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1798" y="337"/>
+        </scene>
+        <!--Time Sheets-->
+        <scene sceneID="iHf-Q5-Sv5">
+            <objects>
+                <tabBarController id="K7V-Vh-bnq" customClass="TabBarViewController" customModule="TriCore" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Time Sheets" id="ijv-hN-Ox5"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Zi9-ed-uc9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MeQ-bD-MIg" kind="relationship" relationship="viewControllers" id="DpN-kI-aZ3"/>
+                        <segue destination="uKb-g5-1nz" kind="relationship" relationship="viewControllers" id="NJm-Gw-UJB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ZY-it-6jN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2207" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wiO-gd-YN6">
@@ -157,6 +241,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Me Icon" width="50" height="50"/>
+        <image name="Timesheet Icon" width="50" height="50"/>
         <image name="TriCore Logo" width="305" height="295"/>
     </resources>
 </document>
