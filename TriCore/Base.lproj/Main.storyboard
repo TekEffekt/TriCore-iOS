@@ -155,7 +155,7 @@
         <!--Time Sheets-->
         <scene sceneID="mmj-bW-65X">
             <objects>
-                <viewController title="Time Sheets" id="MeQ-bD-MIg" customClass="TimesheetsViewController" customModule="TriCore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MeQ-bD-MIg" customClass="TimesheetsViewController" customModule="TriCore" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6eH-ak-JgJ"/>
                         <viewControllerLayoutGuide type="bottom" id="eIw-Dz-S19"/>
@@ -194,11 +194,11 @@
             </objects>
             <point key="canvasLocation" x="1798" y="337"/>
         </scene>
-        <!--Time Sheets-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="iHf-Q5-Sv5">
             <objects>
                 <tabBarController id="K7V-Vh-bnq" customClass="TabBarViewController" customModule="TriCore" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Time Sheets" id="ijv-hN-Ox5"/>
+                    <navigationItem key="navigationItem" id="ijv-hN-Ox5"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Zi9-ed-uc9">
