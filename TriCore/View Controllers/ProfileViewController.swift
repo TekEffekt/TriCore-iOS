@@ -26,6 +26,8 @@ class ProfileViewController: UIViewController
     @IBOutlet var titleLabels: [UILabel]!
     
     @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var employeeTitle: UILabel!
+    @IBOutlet weak var employeeNameTitle: UILabel!
     
     // MARK: Initialization
     override func viewWillAppear(animated: Bool)
@@ -45,7 +47,7 @@ class ProfileViewController: UIViewController
     {
         for label in self.timeLabels
         {
-            label.font = label.font.fontWithSize(self.view.frame.width/5)
+            label.font = label.font.fontWithSize(self.view.frame.width/6.5)
             label.sizeToFit()
         }
     }
@@ -58,7 +60,9 @@ class ProfileViewController: UIViewController
             label.sizeToFit()
         }
         
-        self.hourLabel.font = self.hourLabel.font.fontWithSize(self.view.frame.width/10)
+        self.hourLabel.font = self.hourLabel.font.fontWithSize(self.view.frame.height/20)
+        self.employeeTitle.font = self.employeeTitle.font.fontWithSize(self.view.frame.width/17)
+        self.employeeNameTitle.font = self.employeeNameTitle.font.fontWithSize(self.view.frame.width/13)
     }
     
     // Login
