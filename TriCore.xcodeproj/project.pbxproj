@@ -18,6 +18,8 @@
 		B64E28B91B79994E0052B3C1 /* TimesheetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28B81B79994E0052B3C1 /* TimesheetsViewController.swift */; };
 		B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28BA1B7999660052B3C1 /* ProfileViewController.swift */; };
 		B64E28BD1B79AE8A0052B3C1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */; };
+		B6A0EE831B7B0D4C00FE787F /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */; };
+		B6A0EE851B7B2E2100FE787F /* GetProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B64E28B81B79994E0052B3C1 /* TimesheetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetsViewController.swift; path = "View Controllers/TimesheetsViewController.swift"; sourceTree = "<group>"; };
 		B64E28BA1B7999660052B3C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "View Controllers/ProfileViewController.swift"; sourceTree = "<group>"; };
 		B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = "View Controllers/TabBarViewController.swift"; sourceTree = "<group>"; };
+		B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTableViewCell.swift; path = Views/ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetProjectList.swift; path = Model/GetProjectList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				B61F72A81B76BF8500A34736 /* AppDelegate.swift */,
 				B61F72AC1B76BF8500A34736 /* Main.storyboard */,
 				B61F72AF1B76BF8500A34736 /* Assets.xcassets */,
+				B6A0EE811B7B0D0200FE787F /* Views */,
 				B61F72D91B76E21100A34736 /* Model */,
 				B61F72D81B76C66A00A34736 /* View Controllers */,
 				B61F72B11B76BF8500A34736 /* LaunchScreen.storyboard */,
@@ -148,9 +153,18 @@
 		B61F72D91B76E21100A34736 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */,
 				B61F72DA1B76F48A00A34736 /* LoginVerification.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		B6A0EE811B7B0D0200FE787F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61F72DB1B76F48A00A34736 /* LoginVerification.swift in Sources */,
+				B6A0EE831B7B0D4C00FE787F /* ProjectTableViewCell.swift in Sources */,
+				B6A0EE851B7B2E2100FE787F /* GetProjectList.swift in Sources */,
 				B61F72D71B76C65C00A34736 /* LoginViewController.swift in Sources */,
 				B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */,
 				B61F72A91B76BF8500A34736 /* AppDelegate.swift in Sources */,
