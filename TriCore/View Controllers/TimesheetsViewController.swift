@@ -34,6 +34,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.projectsTable.delegate = self
         self.projectsTable.dataSource = self
         self.searchBox.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -78,7 +80,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         timesheetDateLabel.textAlignment = NSTextAlignment.Center
         timesheetDateLabel.textColor = UIColor.whiteColor()
         timesheetDateLabel.font = timesheetDateLabel.font.fontWithSize(self.view.frame.width/16)
-//        timesheetDateLabel.backgroundColor = UIColor.redColor()
         timesheetDateLabel.center = self.tabBarController!.navigationController!.navigationBar.center
         print(self.view.frame.width/17)
         
@@ -111,6 +112,22 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         print("Hit!")
     }
     
+    func setupTextField(withContainer container:UIView) -> JVFloatLabeledTextField
+    {
+        let textField = JVFloatLabeledTextField(frame: container.frame)
+        textField.attributedPlaceholder = NSAttributedString(string: "Fri", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor().colorWithAlphaComponent(0.8)])
+        textField.floatingLabelTextColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.9)
+        textField.font = UIFont.boldSystemFontOfSize(22)
+        textField.floatingLabelFont = UIFont.systemFontOfSize(13)
+        textField.center = container.center
+        textField.backgroundColor = UIColor.yellowColor().colorWithAlphaComponent(0.2)
+        textField.textAlignment = NSTextAlignment.Center
+        textField.keyboardType = UIKeyboardType.NumberPad
+        textField.delegate = self
+        
+        return textField
+    }
+    
     // MARK: TableView Datasource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -121,7 +138,13 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         let text = projectList[indexPath.section][indexPath.row]
         cell.projectTitleAndNumber.text = text.componentsSeparatedByString(";")[0]
-        cell.opportunityName.text = text.componentsSeparatedByString(";")[1]
+        
+        for container in cell.textFieldContainerCollection
+        {
+            let textField = setupTextField(withContainer: container)
+            cell.addSubview(textField)
+            container.backgroundColor = UIColor.clearColor()
+        }
         
         return cell
     }
@@ -138,10 +161,28 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        let projectName = self.projectList[section][0] 
+        let projectName = self.projectList[section][0]
         let projectFirstLetter = projectName[projectName.startIndex]
         
         return String(projectFirstLetter)
+    }
+    
+    // MARK: TextField Methods
+    func textFieldPressed(sender:NSNotification)
+    {
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let newLength = textField.text!.utf16.count + string.utf16.count - range.length
+        return newLength < 2
     }
     
 }

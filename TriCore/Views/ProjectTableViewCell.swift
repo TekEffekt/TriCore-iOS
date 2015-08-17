@@ -10,11 +10,16 @@ import UIKit
 
 class ProjectTableViewCell: UITableViewCell {
     @IBOutlet weak var projectTitleAndNumber: UILabel!
-    @IBOutlet weak var opportunityName: UILabel!
+    @IBOutlet weak var taskCodeName: UILabel!
+    @IBOutlet weak var sprintCategoryName: UILabel!
 
+    @IBOutlet var textFieldContainerCollection: [UIView]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
