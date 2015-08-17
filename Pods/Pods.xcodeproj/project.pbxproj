@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		069D530E8CAB8BD7D5E1063C88B41751 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3B8C4E8C9A36F28BC88B9802214DF0 /* Foundation.framework */; };
+		2394AAC87327D0359B292F81A0CDD0ED /* Pods-TriCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5106EC9F83C0523D8882935B35145149 /* Pods-TriCore-dummy.m */; };
+		445D4A2E6B0F4A1A7E497EBAB10BC127 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D8A8443CDC323B0A2A95B5BCD2DB97 /* NSString+TextDirectionality.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5503FA5367E7F2828D5EA8C0E9691794 /* JVFloatLabeledTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCDB5B3A387C346A17FCBBDD9EA87FC /* JVFloatLabeledTextField-dummy.m */; };
+		58119855FEDA3ECEB48A5C79E1123B51 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F45010CE7D763C82402D02A9BCA6D6D2 /* JVFloatLabeledTextView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		766BF4FB5A5FD0C5F71E5AE7FBA11269 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0A29F3F8E3ED5CFFD77F830008AC30 /* JVFloatLabeledTextField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7FAE6777BB383BDF3614698858281BF7 /* JVFloatLabeledTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = C7B509FF019C0D28E689A68A4818877A /* JVFloatLabeledTextField.h */; };
+		97F0325F1BBCB28B930F4097BD10F1EB /* JVFloatLabeledTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = B56045AAA3609BBD2B622929DFCA4A81 /* JVFloatLabeledTextView.h */; };
+		ACF142AFA73EF27EF2CA0A4A56934591 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3B8C4E8C9A36F28BC88B9802214DF0 /* Foundation.framework */; };
+		DB20DC1BE03B6E5B56C6B844DF7815C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58356AF49F7F74569D545243B0440483 /* UIKit.framework */; };
+		DC05728588388460830D492B1207144A /* NSString+TextDirectionality.h in Headers */ = {isa = PBXBuildFile; fileRef = 7270CE148FA8F05542EC49023D53CEB9 /* NSString+TextDirectionality.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2DCC11944CBAB2D937F951E93CC1A085 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41233D87D9809A5E9DC7518DE430FAE6;
+			remoteInfo = JVFloatLabeledTextField;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F3B8C4E8C9A36F28BC88B9802214DF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1A9C3F80FC06E5B46C11BE673B239F91 /* libPods-TriCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriCore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D0A29F3F8E3ED5CFFD77F830008AC30 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextField.m; sourceTree = "<group>"; };
+		2DCDB5B3A387C346A17FCBBDD9EA87FC /* JVFloatLabeledTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JVFloatLabeledTextField-dummy.m"; sourceTree = "<group>"; };
+		3242F939AE67B467B3DC1BA147D38BD9 /* Pods-TriCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriCore.debug.xcconfig"; sourceTree = "<group>"; };
+		35897679464DF9044D4902F8934E1E03 /* JVFloatLabeledTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JVFloatLabeledTextField-prefix.pch"; sourceTree = "<group>"; };
+		5106EC9F83C0523D8882935B35145149 /* Pods-TriCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TriCore-dummy.m"; sourceTree = "<group>"; };
+		58356AF49F7F74569D545243B0440483 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		6EDA993C61D4225BCD4984EFE2727621 /* JVFloatLabeledTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JVFloatLabeledTextField.xcconfig; sourceTree = "<group>"; };
+		7270CE148FA8F05542EC49023D53CEB9 /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+TextDirectionality.h"; path = "JVFloatLabeledTextField/JVFloatLabeledTextField/NSString+TextDirectionality.h"; sourceTree = "<group>"; };
+		7D8C11ADA7A5E4777B74432BB06A64FD /* JVFloatLabeledTextField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JVFloatLabeledTextField-Private.xcconfig"; sourceTree = "<group>"; };
+		B56045AAA3609BBD2B622929DFCA4A81 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextView.h; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextView.h; sourceTree = "<group>"; };
+		B5D8A8443CDC323B0A2A95B5BCD2DB97 /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+TextDirectionality.m"; path = "JVFloatLabeledTextField/JVFloatLabeledTextField/NSString+TextDirectionality.m"; sourceTree = "<group>"; };
+		B89C41380C7C9E5DFF3E959D07190215 /* Pods-TriCore-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TriCore-resources.sh"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C7B509FF019C0D28E689A68A4818877A /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextField.h; sourceTree = "<group>"; };
+		E0C1D4766E86A795B40D38A3695068F3 /* Pods-TriCore-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TriCore-acknowledgements.plist"; sourceTree = "<group>"; };
+		E4191AF1F0BC245F51AE68462E5482E7 /* Pods-TriCore-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TriCore-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E589B074BE81C3F026F7C406221B2037 /* libJVFloatLabeledTextField.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJVFloatLabeledTextField.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F17D23FEBD123E5274C09D8B328C3D7D /* Pods-TriCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriCore.release.xcconfig"; sourceTree = "<group>"; };
+		F45010CE7D763C82402D02A9BCA6D6D2 /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextView.m; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28ABF5ED97BA20F7753971977EE009F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACF142AFA73EF27EF2CA0A4A56934591 /* Foundation.framework in Frameworks */,
+				DB20DC1BE03B6E5B56C6B844DF7815C5 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA39A2B2F6796AEEAD7427320965F697 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				069D530E8CAB8BD7D5E1063C88B41751 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A53B996E02E859B56CA3223452FE206 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C8B1A26909855242275984A2D962FBB /* Pods-TriCore */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		0FE9DBD298F4ECB849B784767A2CC7F9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6EDA993C61D4225BCD4984EFE2727621 /* JVFloatLabeledTextField.xcconfig */,
+				7D8C11ADA7A5E4777B74432BB06A64FD /* JVFloatLabeledTextField-Private.xcconfig */,
+				2DCDB5B3A387C346A17FCBBDD9EA87FC /* JVFloatLabeledTextField-dummy.m */,
+				35897679464DF9044D4902F8934E1E03 /* JVFloatLabeledTextField-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JVFloatLabeledTextField";
+			sourceTree = "<group>";
+		};
+		2C8B1A26909855242275984A2D962FBB /* Pods-TriCore */ = {
+			isa = PBXGroup;
+			children = (
+				E4191AF1F0BC245F51AE68462E5482E7 /* Pods-TriCore-acknowledgements.markdown */,
+				E0C1D4766E86A795B40D38A3695068F3 /* Pods-TriCore-acknowledgements.plist */,
+				5106EC9F83C0523D8882935B35145149 /* Pods-TriCore-dummy.m */,
+				B89C41380C7C9E5DFF3E959D07190215 /* Pods-TriCore-resources.sh */,
+				3242F939AE67B467B3DC1BA147D38BD9 /* Pods-TriCore.debug.xcconfig */,
+				F17D23FEBD123E5274C09D8B328C3D7D /* Pods-TriCore.release.xcconfig */,
+			);
+			name = "Pods-TriCore";
+			path = "Target Support Files/Pods-TriCore";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0FB9306D21AF23A056944AE037CBFFF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				9FFF112B167A55FC1908E1DD44603498 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				0A53B996E02E859B56CA3223452FE206 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		87AF1912C6DD99C425B5756249483B75 /* JVFloatLabeledTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C7B509FF019C0D28E689A68A4818877A /* JVFloatLabeledTextField.h */,
+				2D0A29F3F8E3ED5CFFD77F830008AC30 /* JVFloatLabeledTextField.m */,
+				B56045AAA3609BBD2B622929DFCA4A81 /* JVFloatLabeledTextView.h */,
+				F45010CE7D763C82402D02A9BCA6D6D2 /* JVFloatLabeledTextView.m */,
+				7270CE148FA8F05542EC49023D53CEB9 /* NSString+TextDirectionality.h */,
+				B5D8A8443CDC323B0A2A95B5BCD2DB97 /* NSString+TextDirectionality.m */,
+				0FE9DBD298F4ECB849B784767A2CC7F9 /* Support Files */,
+			);
+			path = JVFloatLabeledTextField;
+			sourceTree = "<group>";
+		};
+		9FFF112B167A55FC1908E1DD44603498 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87AF1912C6DD99C425B5756249483B75 /* JVFloatLabeledTextField */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E589B074BE81C3F026F7C406221B2037 /* libJVFloatLabeledTextField.a */,
+				1A9C3F80FC06E5B46C11BE673B239F91 /* libPods-TriCore.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0FB9306D21AF23A056944AE037CBFFF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0F3B8C4E8C9A36F28BC88B9802214DF0 /* Foundation.framework */,
+				58356AF49F7F74569D545243B0440483 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AA34E32C69E0B98B643401DA32198791 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FAE6777BB383BDF3614698858281BF7 /* JVFloatLabeledTextField.h in Headers */,
+				97F0325F1BBCB28B930F4097BD10F1EB /* JVFloatLabeledTextView.h in Headers */,
+				DC05728588388460830D492B1207144A /* NSString+TextDirectionality.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		41233D87D9809A5E9DC7518DE430FAE6 /* JVFloatLabeledTextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80BD3ED70681CFC6B9915E74E881CF89 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField" */;
+			buildPhases = (
+				2D3EACFBA64CB841E23FBCA0A54A90F8 /* Sources */,
+				28ABF5ED97BA20F7753971977EE009F8 /* Frameworks */,
+				AA34E32C69E0B98B643401DA32198791 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JVFloatLabeledTextField;
+			productName = JVFloatLabeledTextField;
+			productReference = E589B074BE81C3F026F7C406221B2037 /* libJVFloatLabeledTextField.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF345EEEEACFD86A2C2D82A326D2E389 /* Pods-TriCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E43AF18D7E89962D65A8DCCEA3AECCEF /* Build configuration list for PBXNativeTarget "Pods-TriCore" */;
+			buildPhases = (
+				E225E97B3981B4555D804A7AE988C0DD /* Sources */,
+				EA39A2B2F6796AEEAD7427320965F697 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				357B7E383F5B6FF97D1C7E4C4E016115 /* PBXTargetDependency */,
+			);
+			name = "Pods-TriCore";
+			productName = "Pods-TriCore";
+			productReference = 1A9C3F80FC06E5B46C11BE673B239F91 /* libPods-TriCore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41233D87D9809A5E9DC7518DE430FAE6 /* JVFloatLabeledTextField */,
+				CF345EEEEACFD86A2C2D82A326D2E389 /* Pods-TriCore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D3EACFBA64CB841E23FBCA0A54A90F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5503FA5367E7F2828D5EA8C0E9691794 /* JVFloatLabeledTextField-dummy.m in Sources */,
+				766BF4FB5A5FD0C5F71E5AE7FBA11269 /* JVFloatLabeledTextField.m in Sources */,
+				58119855FEDA3ECEB48A5C79E1123B51 /* JVFloatLabeledTextView.m in Sources */,
+				445D4A2E6B0F4A1A7E497EBAB10BC127 /* NSString+TextDirectionality.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E225E97B3981B4555D804A7AE988C0DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2394AAC87327D0359B292F81A0CDD0ED /* Pods-TriCore-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		357B7E383F5B6FF97D1C7E4C4E016115 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JVFloatLabeledTextField;
+			target = 41233D87D9809A5E9DC7518DE430FAE6 /* JVFloatLabeledTextField */;
+			targetProxy = 2DCC11944CBAB2D937F951E93CC1A085 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		052A17875CB827423D627183396CEB60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27E56CBBF3223D116266E022D0F86A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F17D23FEBD123E5274C09D8B328C3D7D /* Pods-TriCore.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		64C8A705276DF0B53A8A8B83C2E115A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D8C11ADA7A5E4777B74432BB06A64FD /* JVFloatLabeledTextField-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JVFloatLabeledTextField/JVFloatLabeledTextField-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		90E767A75198AB1A80DBFB78140C3A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3242F939AE67B467B3DC1BA147D38BD9 /* Pods-TriCore.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9FCBCB4B9F881CEAEBC2A12F57ABA3AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D8C11ADA7A5E4777B74432BB06A64FD /* JVFloatLabeledTextField-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JVFloatLabeledTextField/JVFloatLabeledTextField-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */,
+				052A17875CB827423D627183396CEB60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80BD3ED70681CFC6B9915E74E881CF89 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FCBCB4B9F881CEAEBC2A12F57ABA3AA /* Debug */,
+				64C8A705276DF0B53A8A8B83C2E115A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E43AF18D7E89962D65A8DCCEA3AECCEF /* Build configuration list for PBXNativeTarget "Pods-TriCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90E767A75198AB1A80DBFB78140C3A9E /* Debug */,
+				27E56CBBF3223D116266E022D0F86A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
