@@ -10,5 +10,5 @@ import Foundation
 
 class Constants
 {
-    
+    static let weekNameStrings = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
 }
