@@ -25,7 +25,10 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: Initialization
     override func viewDidLoad()
     {
+
         setupTimeSheetChangerViews()
+        
+        print("setup problem")
         
         self.blackness.frame = CGRectMake(0, 0, self.view.frame.width,
             self.navigationController!.view.frame.height + self.view.frame.height)
