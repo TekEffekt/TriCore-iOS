@@ -15,6 +15,8 @@ class ProjectTableViewCell: UITableViewCell {
 
     @IBOutlet var textFieldContainerCollection: [UIView]!
     
+    var textFields:[JVFloatLabeledTextField]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

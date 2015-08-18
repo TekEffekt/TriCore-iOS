@@ -20,6 +20,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     var rightArrow:UIButton?
     
     var currentTextField:UITextField?
+    var currentCell:ProjectTableViewCell?
     
     // MARK: Initialization
     override func viewDidLoad()
@@ -95,7 +96,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 - 5,
             40, 40))
         
-        var arrowImage = UIImage(named:"Arrow")
+        var arrowImage = UIImage(named:"Right Arrow")
         arrowImage = arrowImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         
         self.leftArrow!.setBackgroundImage(arrowImage, forState: UIControlState.Normal)
@@ -107,12 +108,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
 
         self.navigationController!.view.addSubview(self.leftArrow!)
         self.navigationController!.view.addSubview(self.rightArrow!)
-    }
-    
-    func doStuff()
-    {
-        print("Hit!")
-        self.currentTextField!.becomeFirstResponder()
     }
     
     func setupTextField(withContainer container:UIView, andIndex index:Int) -> JVFloatLabeledTextField
@@ -131,10 +126,10 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         textField.returnKeyType = UIReturnKeyType.Done
         addButtonsTo(textField)
         
-        textField.layer.cornerRadius = 6.0;
-        textField.layer.masksToBounds = true;
+        textField.layer.cornerRadius = 6.0
+        textField.layer.masksToBounds = true
         textField.layer.borderColor = UIColor.blackColor().CGColor
-        textField.layer.borderWidth = 1.0;
+        textField.layer.borderWidth = 1.0
         
         return textField
     }
@@ -150,12 +145,15 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         let text = projectList[indexPath.section][indexPath.row]
         cell.projectTitleAndNumber.text = text.componentsSeparatedByString(";")[0]
         
+        cell.textFields = []
+        
         if cell.subviews.count < 8
         {
             for container in cell.textFieldContainerCollection
             {
                 let index =  cell.textFieldContainerCollection.indexOf(container)
                 let textField = setupTextField(withContainer: container, andIndex: index!)
+                cell.textFields!.append(textField)
                 cell.addSubview(textField)
                 container.backgroundColor = UIColor.clearColor()
             }
@@ -190,24 +188,23 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     func textFieldDidBeginEditing(textField: UITextField) {
         self.currentTextField = textField
+        self.currentCell = textField.superview as? ProjectTableViewCell
     }
     
     private func addButtonsTo(textField: UITextField) {
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "didTapDone:")
         
-        var arrowImage = UIImage(named:"Arrow")
-        arrowImage = arrowImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        var rightArrowImage = UIImage(named:"Right Arrow")
+        rightArrowImage = rightArrowImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         
-        var leftArrowImage = UIImage(named:"leftArrow")
+        var leftArrowImage = UIImage(named:"Left Arrow")
         leftArrowImage = leftArrowImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         
         let leftArrowButton = UIBarButtonItem(image: leftArrowImage,
-            style: UIBarButtonItemStyle.Bordered, target: self, action: "didTapDone:")
-        let rightArrowButton = UIBarButtonItem(image: arrowImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "didTapDone:")
-        
-        leftArrowButton.enabled = false
-        
+            style: UIBarButtonItemStyle.Bordered, target: self, action: "hitLeftButton")
+        let rightArrowButton = UIBarButtonItem(image: rightArrowImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "hitRightButton")
+                
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.tintColor = self.view.tintColor
         keyboardToolbar.sizeToFit()
@@ -240,4 +237,45 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         return newLength <= 2
     }
     
+    func hitRightButton()
+    {
+        hitArrowButtonRight(yes: true)
+    }
+    
+    func hitLeftButton()
+    {
+        hitArrowButtonRight(yes: false)
+    }
+    
+    func hitArrowButtonRight(yes bool:Bool)
+    {
+        var currentTextFieldIndex:Int = -1
+        
+        for textField in self.currentCell!.textFields!
+        {
+            if self.currentTextField == textField
+            {
+                currentTextFieldIndex = self.currentCell!.textFields!.indexOf(textField)!
+            }
+        }
+        
+        if bool == true
+        {
+            currentTextFieldIndex += 1
+        } else
+        {
+            currentTextFieldIndex -= 1
+        }
+        
+        if currentTextFieldIndex > 6
+        {
+            currentTextFieldIndex = 0
+        } else if currentTextFieldIndex < 0
+        {
+            currentTextFieldIndex = 6
+        }
+        
+        self.currentTextField = self.currentCell!.textFields![currentTextFieldIndex]
+        self.currentTextField!.becomeFirstResponder()
+    }
 }
