@@ -55,9 +55,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldPressed(sender:NSNotification)
-    {
-        print("\(sender.userInfo)")
-        
+    {        
         let userInfo = sender.userInfo
         
         if let userInfo = userInfo

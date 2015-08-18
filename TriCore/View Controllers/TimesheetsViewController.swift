@@ -22,13 +22,12 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     var currentTextField:UITextField?
     var currentCell:ProjectTableViewCell?
     
+    var hours:[[[Int?]]] = []
+    
     // MARK: Initialization
     override func viewDidLoad()
     {
-
         setupTimeSheetChangerViews()
-        
-        print("setup problem")
         
         self.blackness.frame = CGRectMake(0, 0, self.view.frame.width,
             self.navigationController!.view.frame.height + self.view.frame.height)
@@ -42,6 +41,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.searchBox.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
+        
+        setupHoursArray()
     }
     
     override func viewWillAppear(animated: Bool)
@@ -62,6 +63,22 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     {
         self.leftArrow!.hidden = true
         self.rightArrow!.hidden = true
+    }
+    
+    func setupHoursArray()
+    {
+        for section in 0..<projectList.count
+        {
+            self.hours.append([[Int?]]())
+            for row in 0..<projectList[section].count
+            {
+                self.hours[section].append([Int?]())
+                for i in 1...7
+                {
+                    self.hours[section][row].append(nil)
+                }
+            }
+        }
     }
     
     override func viewDidAppear(animated: Bool)
@@ -87,7 +104,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         timesheetDateLabel.textColor = UIColor.whiteColor()
         timesheetDateLabel.font = timesheetDateLabel.font.fontWithSize(self.view.frame.width/16)
         timesheetDateLabel.center = self.tabBarController!.navigationController!.navigationBar.center
-        print(self.view.frame.width/17)
         
         self.navigationController!.view.addSubview(timesheetDateLabel)
         
@@ -129,6 +145,10 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         {
             textField.delegate = self
         }
+    
+        cell.indexPath = indexPath
+        
+        cell.setupWithHours(hours: self.hours[indexPath.section][indexPath.row])
         
         return cell
     }
@@ -157,11 +177,10 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(textField: UITextField)
+    {
         self.currentTextField = textField
         self.currentCell = textField.superview as? ProjectTableViewCell
-        
-        print("Ok...")
     }
     
     func didTapDone(sender: AnyObject?) {
@@ -180,13 +199,38 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         if newLength == 0
         {
-            textField.font = UIFont.systemFontOfSize(20)
+            textField.font = UIFont.systemFontOfSize(15)
         } else if newLength > 0
         {
             textField.font = UIFont.boldSystemFontOfSize(22)
         }
         
-        return newLength <= 2
+        if newLength <= 2
+        {
+            self.logNewHours(withText: textField.text! + string)
+            return true
+        } else
+        {
+            return false
+        }
+    }
+    
+    func logNewHours(withText text:String)
+    {
+        let intValue = Int(text)
+        
+        var currentTextFieldIndex:Int = -1
+        
+        for textField in self.currentCell!.textFields!
+        {
+            if self.currentTextField == textField
+            {
+                currentTextFieldIndex = self.currentCell!.textFields!.indexOf(textField)!
+            }
+        }
+        
+        self.hours[self.currentCell!.indexPath!.section][self.currentCell!.indexPath!.row][currentTextFieldIndex] = intValue!
+        print(intValue)
     }
     
     func hitRightButton()

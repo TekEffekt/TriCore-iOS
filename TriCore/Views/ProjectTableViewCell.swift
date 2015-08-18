@@ -18,6 +18,8 @@ class ProjectTableViewCell: UITableViewCell {
     var textFields:[JVFloatLabeledTextField]?
     var controller:TimesheetsViewController?
     
+    var indexPath:NSIndexPath?
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -36,6 +38,24 @@ class ProjectTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupWithHours(hours hours:[Int?])
+    {
+        for i in 0..<hours.count
+        {
+            let hour = hours[i]
+            if let hour = hour
+            {
+                let text = String(hour)
+                self.textFields![i].text = text
+                self.textFields![i].font = UIFont.boldSystemFontOfSize(22)
+            } else
+            {
+                self.textFields![i].text = ""
+                self.textFields![i].font = UIFont.systemFontOfSize(15)
+            }
+        }
+    }
+    
     override func drawRect(rect: CGRect)
     {
         super.drawRect(rect)
@@ -48,7 +68,7 @@ class ProjectTableViewCell: UITableViewCell {
             self.addSubview(textField)
             container.backgroundColor = UIColor.clearColor()
         }
-        print("Draw rect")
+        print("draw!")
     }
     
     func setupTextField(withContainer container:UIView, andIndex index:Int) -> JVFloatLabeledTextField
