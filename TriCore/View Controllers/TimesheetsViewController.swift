@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimesheetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate
+class TimesheetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MBProgressHUDDelegate
 {
     // MARK: Properties
     let blackness:UIView = UIView()
@@ -49,8 +49,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewWillAppear(animated: Bool)
     {
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "doStuff")
-        let plusButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "doStuff")
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
+        let plusButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addRowToTimesheet")
         
         self.tabBarController!.navigationItem.leftBarButtonItem = publishButton
         self.tabBarController!.navigationItem.rightBarButtonItem = plusButton
@@ -333,4 +333,39 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.currentTextField = self.currentCell!.textFields![currentTextFieldIndex]
         self.currentTextField!.becomeFirstResponder()
     }
+    
+    // MARK: Timesheet Handling
+    
+    func publishTimesheet()
+    {
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.labelText = "Publishing"
+        hud.delegate = self
+        
+        let queue = NSOperationQueue()
+        
+        queue.addOperationWithBlock { () -> Void in
+            let result = TimesheetPublisher.publishTimesheet(withHours: self.hours)
+
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
+            })
+        }
+    }
+    
+    func addRowToTimesheet()
+    {
+        
+    }
+    
+    func givePublishedAnimation()
+    {
+        
+    }
+    
+    // MARK: HUD Delegate
+    func hudWasHidden(hud: MBProgressHUD!) {
+        print("HUH")
+    }
+    
 }

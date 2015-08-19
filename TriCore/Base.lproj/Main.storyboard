@@ -138,7 +138,6 @@
                     <navigationItem key="navigationItem" title="Welcome" id="LIr-AA-8Z8"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="indicator" destination="Xu7-JR-niW" id="X9b-MV-lIi"/>
                         <outlet property="loginButton" destination="7fz-ec-Nr5" id="mj1-Gv-gED"/>
                         <outlet property="passwordField" destination="4Fz-wv-4Bs" id="ODA-Am-Y9a"/>
                         <outlet property="tricoreName" destination="fNO-0D-uj8" id="c4v-1k-PFC"/>

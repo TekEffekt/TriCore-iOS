@@ -7,68 +7,97 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		059A863A30049ADF4E53CD7136027036 /* JVFloatLabeledTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 376C7BF7405D19D795AC3AD35454225C /* JVFloatLabeledTextField-dummy.m */; };
-		069D530E8CAB8BD7D5E1063C88B41751 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4F2138F5054D76BE76AD1CBF999A0B /* Foundation.framework */; };
-		2394AAC87327D0359B292F81A0CDD0ED /* Pods-TriCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5106EC9F83C0523D8882935B35145149 /* Pods-TriCore-dummy.m */; };
-		31E0DBCED77FB2F4D7DDAFC7E9391713 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FC39F855DA6CC3E8CFA7C1E7C69A58 /* JVFloatLabeledTextField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6833A71A703A06C1E42443D8214EB9B7 /* JVFloatLabeledTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = EE26F84C63E67BB657009A4B4B5B63D9 /* JVFloatLabeledTextView.h */; };
-		69192746E6421031EE0DCD4608B4850F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4F2138F5054D76BE76AD1CBF999A0B /* Foundation.framework */; };
-		7EFAD75856A51886B5EBF6D006315A2E /* JVFloatLabeledTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 62C618E31C50B018DA57D08D146E46D3 /* JVFloatLabeledTextField.h */; };
-		B47EE44B45241A0AA6FE883586C7D547 /* NSString+TextDirectionality.h in Headers */ = {isa = PBXBuildFile; fileRef = 847209711951AAE64683D3E4C4AEBBC6 /* NSString+TextDirectionality.h */; };
-		C65B9343C306AA763C5698FB760C3DDC /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C1AA1B8C197A335798DB6ECB96EEBC /* JVFloatLabeledTextView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EBC172CAC56A1AE816EF792A4220D327 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 8576BDDBB2146DBCECF24995CCE4B8E6 /* NSString+TextDirectionality.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FDB5C55C31016E27AB40B3A3AD9C9955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCB84FF70C56B5751213A1281120939 /* UIKit.framework */; };
+		029A4363C133A55297425C0EA4BD102F /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52915B2053F552CADD1D4621B53B0A /* NSString+TextDirectionality.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		08C73EE5F6742EC654B115C8E7803F9F /* JVFloatLabeledTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = FD54C8D6DC7CB288D08D0EA9373A9D5B /* JVFloatLabeledTextView.h */; };
+		0F8D1FB338077BF132435A4FD291402A /* NSString+TextDirectionality.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D84BC90D1173FE67512495726C936A9 /* NSString+TextDirectionality.h */; };
+		200229931CDD5C25579F2E9FFA3CE1F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36200BABDEE15F33EEF8119A421BD2FC /* UIKit.framework */; };
+		2897E8E03B184ED2B0D13FDBC892CEAE /* Pods-TriCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E722D34CD81999B24588942C49398 /* Pods-TriCore-dummy.m */; };
+		2FA831A789811EBFCC12154EA6BA9C17 /* JVFloatLabeledTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3183065E90C64F20D31875F16F125F68 /* JVFloatLabeledTextField-dummy.m */; };
+		35FEBBED1CEEE2D2AA3C6E74C4B0CFDF /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 036DF212D435BE52A7D7ACF3669A8630 /* MBProgressHUD.h */; };
+		3BD8A8D3FAF6C3F3B64EB08E63F364BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEB46785DCE37EEBBF06588A660E625 /* Foundation.framework */; };
+		4E6DE46885303898750E2AFD2DA2EC44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEB46785DCE37EEBBF06588A660E625 /* Foundation.framework */; };
+		6160FA878A637D23ED52C6EB3A419D1E /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 994CE072DA19C295A1021309BC1BBDBA /* JVFloatLabeledTextView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		617A0483130BB86D16C53DE31449DEFF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BEACAA0EA881E6583C8B7720450C79B /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6851BB2D3C6EFD20BDFC0B1756EF950B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2043A060A529103D2843B879B8ACA9 /* CoreGraphics.framework */; };
+		69438DAED8FBF8D0101B81D953EC7ACD /* JVFloatLabeledTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 51293299560568A7BB317DE631D7A062 /* JVFloatLabeledTextField.h */; };
+		A99F06516532DEA26BC47936DB6886E8 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA6AD3B0D284E9894ECF41B342A8720 /* MBProgressHUD-dummy.m */; };
+		C3B0F36E3F1C25EF1D44C3DE32D0E1A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEB46785DCE37EEBBF06588A660E625 /* Foundation.framework */; };
+		F54B2395009131CCABF68E40AC684054 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C92DEA18DA983B4B44F3EABAD4A760 /* JVFloatLabeledTextField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C6CBB904AF37A1A3B68122D90EF23078 /* PBXContainerItemProxy */ = {
+		5547D8DDBC7ACD6B83B5A5538AD061DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B7FE5BE7C4683021EB014E7596A2FF3B;
+			remoteGlobalIDString = 52B1475079A61342CEFCA47F515DD2B3;
+			remoteInfo = MBProgressHUD;
+		};
+		5F5143DDF725DC84E188F331CA43D2DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00CD093743573428048630DE23C4F3C6;
 			remoteInfo = JVFloatLabeledTextField;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A9C3F80FC06E5B46C11BE673B239F91 /* libPods-TriCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriCore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		20C1AA1B8C197A335798DB6ECB96EEBC /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextView.m; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextView.m; sourceTree = "<group>"; };
-		3242F939AE67B467B3DC1BA147D38BD9 /* Pods-TriCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriCore.debug.xcconfig"; sourceTree = "<group>"; };
-		35897679464DF9044D4902F8934E1E03 /* JVFloatLabeledTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JVFloatLabeledTextField-prefix.pch"; sourceTree = "<group>"; };
-		376C7BF7405D19D795AC3AD35454225C /* JVFloatLabeledTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JVFloatLabeledTextField-dummy.m"; sourceTree = "<group>"; };
-		5106EC9F83C0523D8882935B35145149 /* Pods-TriCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TriCore-dummy.m"; sourceTree = "<group>"; };
-		62C618E31C50B018DA57D08D146E46D3 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextField.h; sourceTree = "<group>"; };
-		63FC39F855DA6CC3E8CFA7C1E7C69A58 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextField.m; sourceTree = "<group>"; };
-		6EDA993C61D4225BCD4984EFE2727621 /* JVFloatLabeledTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JVFloatLabeledTextField.xcconfig; sourceTree = "<group>"; };
-		6FCB84FF70C56B5751213A1281120939 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		7E98AC2FF9DA865E86B42C57554604D3 /* JVFloatLabeledTextField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JVFloatLabeledTextField-Private.xcconfig"; sourceTree = "<group>"; };
-		847209711951AAE64683D3E4C4AEBBC6 /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+TextDirectionality.h"; path = "JVFloatLabeledTextField/JVFloatLabeledTextField/NSString+TextDirectionality.h"; sourceTree = "<group>"; };
-		8576BDDBB2146DBCECF24995CCE4B8E6 /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+TextDirectionality.m"; path = "JVFloatLabeledTextField/JVFloatLabeledTextField/NSString+TextDirectionality.m"; sourceTree = "<group>"; };
+		036DF212D435BE52A7D7ACF3669A8630 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		0BEACAA0EA881E6583C8B7720450C79B /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		12FC4FD221899A2C42D99585DA1EC692 /* JVFloatLabeledTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JVFloatLabeledTextField-prefix.pch"; sourceTree = "<group>"; };
+		1AEBCCFD7C67A627FF3EC52FC4FC2619 /* libJVFloatLabeledTextField.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJVFloatLabeledTextField.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D52915B2053F552CADD1D4621B53B0A /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+TextDirectionality.m"; path = "JVFloatLabeledTextField/JVFloatLabeledTextField/NSString+TextDirectionality.m"; sourceTree = "<group>"; };
+		3183065E90C64F20D31875F16F125F68 /* JVFloatLabeledTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JVFloatLabeledTextField-dummy.m"; sourceTree = "<group>"; };
+		32E535007AD8E3190E1CE77712C9202E /* Pods-TriCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriCore.debug.xcconfig"; sourceTree = "<group>"; };
+		36200BABDEE15F33EEF8119A421BD2FC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3D2043A060A529103D2843B879B8ACA9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		51293299560568A7BB317DE631D7A062 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextField.h; sourceTree = "<group>"; };
+		6578208EB6268EB1C103CE2A4F8A7330 /* JVFloatLabeledTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JVFloatLabeledTextField.xcconfig; sourceTree = "<group>"; };
+		833E722D34CD81999B24588942C49398 /* Pods-TriCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TriCore-dummy.m"; sourceTree = "<group>"; };
+		89539AC0C945186A2D15D11E6D6BAC31 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
+		8D84BC90D1173FE67512495726C936A9 /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+TextDirectionality.h"; path = "JVFloatLabeledTextField/JVFloatLabeledTextField/NSString+TextDirectionality.h"; sourceTree = "<group>"; };
+		994CE072DA19C295A1021309BC1BBDBA /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextView.m; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextView.m; sourceTree = "<group>"; };
+		9AEB46785DCE37EEBBF06588A660E625 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9E2E4D3C1833646C2FD6201CFEB576BA /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89C41380C7C9E5DFF3E959D07190215 /* Pods-TriCore-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TriCore-resources.sh"; sourceTree = "<group>"; };
+		B9C92DEA18DA983B4B44F3EABAD4A760 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextField.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C39DE25E821875FECEB6AC1484092437 /* Pods-TriCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriCore.release.xcconfig"; sourceTree = "<group>"; };
+		DEC290336C146D95E58840C791C01EA4 /* JVFloatLabeledTextField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JVFloatLabeledTextField-Private.xcconfig"; sourceTree = "<group>"; };
 		E0C1D4766E86A795B40D38A3695068F3 /* Pods-TriCore-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TriCore-acknowledgements.plist"; sourceTree = "<group>"; };
+		E2B233AEAC30A975FE3267D99320D773 /* libPods-TriCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriCore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4191AF1F0BC245F51AE68462E5482E7 /* Pods-TriCore-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TriCore-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E682973C102C8DEB0B7E57A009154EF5 /* libJVFloatLabeledTextField.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJVFloatLabeledTextField.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE26F84C63E67BB657009A4B4B5B63D9 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextView.h; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextView.h; sourceTree = "<group>"; };
-		F17D23FEBD123E5274C09D8B328C3D7D /* Pods-TriCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriCore.release.xcconfig"; sourceTree = "<group>"; };
-		FC4F2138F5054D76BE76AD1CBF999A0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EBA6AD3B0D284E9894ECF41B342A8720 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		ECFBF68CF5EB20BF456C17619C12B1FF /* MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
+		F70337131E60917E7B7862603001152A /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		FD54C8D6DC7CB288D08D0EA9373A9D5B /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextView.h; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3E5418AA6574B720D73A44D440E3DB5A /* Frameworks */ = {
+		08325722D87CD064E15D25E7CEC652A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69192746E6421031EE0DCD4608B4850F /* Foundation.framework in Frameworks */,
-				FDB5C55C31016E27AB40B3A3AD9C9955 /* UIKit.framework in Frameworks */,
+				3BD8A8D3FAF6C3F3B64EB08E63F364BD /* Foundation.framework in Frameworks */,
+				200229931CDD5C25579F2E9FFA3CE1F0 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA39A2B2F6796AEEAD7427320965F697 /* Frameworks */ = {
+		1507F77622C71D6E89667101C482AE8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				069D530E8CAB8BD7D5E1063C88B41751 /* Foundation.framework in Frameworks */,
+				6851BB2D3C6EFD20BDFC0B1756EF950B /* CoreGraphics.framework in Frameworks */,
+				4E6DE46885303898750E2AFD2DA2EC44 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B80C2F863451E6695DBBBC243613F20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3B0F36E3F1C25EF1D44C3DE32D0E1A7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,16 +112,26 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		0FE9DBD298F4ECB849B784767A2CC7F9 /* Support Files */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6EDA993C61D4225BCD4984EFE2727621 /* JVFloatLabeledTextField.xcconfig */,
-				7E98AC2FF9DA865E86B42C57554604D3 /* JVFloatLabeledTextField-Private.xcconfig */,
-				376C7BF7405D19D795AC3AD35454225C /* JVFloatLabeledTextField-dummy.m */,
-				35897679464DF9044D4902F8934E1E03 /* JVFloatLabeledTextField-prefix.pch */,
+				39CF33B2E976FD3E12A7D9F562B97919 /* iOS */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/JVFloatLabeledTextField";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C91AE3CFB435A94954900B9A8B0654C /* JVFloatLabeledTextField */ = {
+			isa = PBXGroup;
+			children = (
+				51293299560568A7BB317DE631D7A062 /* JVFloatLabeledTextField.h */,
+				B9C92DEA18DA983B4B44F3EABAD4A760 /* JVFloatLabeledTextField.m */,
+				FD54C8D6DC7CB288D08D0EA9373A9D5B /* JVFloatLabeledTextView.h */,
+				994CE072DA19C295A1021309BC1BBDBA /* JVFloatLabeledTextView.m */,
+				8D84BC90D1173FE67512495726C936A9 /* NSString+TextDirectionality.h */,
+				1D52915B2053F552CADD1D4621B53B0A /* NSString+TextDirectionality.m */,
+				6AA232684A9CAD2A64DFA603FA62B569 /* Support Files */,
+			);
+			path = JVFloatLabeledTextField;
 			sourceTree = "<group>";
 		};
 		2C8B1A26909855242275984A2D962FBB /* Pods-TriCore */ = {
@@ -100,97 +139,120 @@
 			children = (
 				E4191AF1F0BC245F51AE68462E5482E7 /* Pods-TriCore-acknowledgements.markdown */,
 				E0C1D4766E86A795B40D38A3695068F3 /* Pods-TriCore-acknowledgements.plist */,
-				5106EC9F83C0523D8882935B35145149 /* Pods-TriCore-dummy.m */,
+				833E722D34CD81999B24588942C49398 /* Pods-TriCore-dummy.m */,
 				B89C41380C7C9E5DFF3E959D07190215 /* Pods-TriCore-resources.sh */,
-				3242F939AE67B467B3DC1BA147D38BD9 /* Pods-TriCore.debug.xcconfig */,
-				F17D23FEBD123E5274C09D8B328C3D7D /* Pods-TriCore.release.xcconfig */,
+				32E535007AD8E3190E1CE77712C9202E /* Pods-TriCore.debug.xcconfig */,
+				C39DE25E821875FECEB6AC1484092437 /* Pods-TriCore.release.xcconfig */,
 			);
 			name = "Pods-TriCore";
 			path = "Target Support Files/Pods-TriCore";
 			sourceTree = "<group>";
 		};
-		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+		39CF33B2E976FD3E12A7D9F562B97919 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D0FB9306D21AF23A056944AE037CBFFF /* iOS */,
+				3D2043A060A529103D2843B879B8ACA9 /* CoreGraphics.framework */,
+				9AEB46785DCE37EEBBF06588A660E625 /* Foundation.framework */,
+				36200BABDEE15F33EEF8119A421BD2FC /* UIKit.framework */,
 			);
-			name = Frameworks;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		473D8998E04CC3ABC982FBADD13A91C1 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				036DF212D435BE52A7D7ACF3669A8630 /* MBProgressHUD.h */,
+				0BEACAA0EA881E6583C8B7720450C79B /* MBProgressHUD.m */,
+				5ADDFB173ABFF208BA83E31867BDC6EE /* Support Files */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		5ADDFB173ABFF208BA83E31867BDC6EE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				89539AC0C945186A2D15D11E6D6BAC31 /* MBProgressHUD.xcconfig */,
+				ECFBF68CF5EB20BF456C17619C12B1FF /* MBProgressHUD-Private.xcconfig */,
+				EBA6AD3B0D284E9894ECF41B342A8720 /* MBProgressHUD-dummy.m */,
+				F70337131E60917E7B7862603001152A /* MBProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MBProgressHUD";
+			sourceTree = "<group>";
+		};
+		6AA232684A9CAD2A64DFA603FA62B569 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6578208EB6268EB1C103CE2A4F8A7330 /* JVFloatLabeledTextField.xcconfig */,
+				DEC290336C146D95E58840C791C01EA4 /* JVFloatLabeledTextField-Private.xcconfig */,
+				3183065E90C64F20D31875F16F125F68 /* JVFloatLabeledTextField-dummy.m */,
+				12FC4FD221899A2C42D99585DA1EC692 /* JVFloatLabeledTextField-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JVFloatLabeledTextField";
+			sourceTree = "<group>";
+		};
+		72AF41D48D5973878FEBFD8E6B5F6FD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C91AE3CFB435A94954900B9A8B0654C /* JVFloatLabeledTextField */,
+				473D8998E04CC3ABC982FBADD13A91C1 /* MBProgressHUD */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				9FFF112B167A55FC1908E1DD44603498 /* Pods */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				72AF41D48D5973878FEBFD8E6B5F6FD0 /* Pods */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				0A53B996E02E859B56CA3223452FE206 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		87AF1912C6DD99C425B5756249483B75 /* JVFloatLabeledTextField */ = {
-			isa = PBXGroup;
-			children = (
-				62C618E31C50B018DA57D08D146E46D3 /* JVFloatLabeledTextField.h */,
-				63FC39F855DA6CC3E8CFA7C1E7C69A58 /* JVFloatLabeledTextField.m */,
-				EE26F84C63E67BB657009A4B4B5B63D9 /* JVFloatLabeledTextView.h */,
-				20C1AA1B8C197A335798DB6ECB96EEBC /* JVFloatLabeledTextView.m */,
-				847209711951AAE64683D3E4C4AEBBC6 /* NSString+TextDirectionality.h */,
-				8576BDDBB2146DBCECF24995CCE4B8E6 /* NSString+TextDirectionality.m */,
-				0FE9DBD298F4ECB849B784767A2CC7F9 /* Support Files */,
-			);
-			path = JVFloatLabeledTextField;
-			sourceTree = "<group>";
-		};
-		9FFF112B167A55FC1908E1DD44603498 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				87AF1912C6DD99C425B5756249483B75 /* JVFloatLabeledTextField */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E682973C102C8DEB0B7E57A009154EF5 /* libJVFloatLabeledTextField.a */,
-				1A9C3F80FC06E5B46C11BE673B239F91 /* libPods-TriCore.a */,
+				1AEBCCFD7C67A627FF3EC52FC4FC2619 /* libJVFloatLabeledTextField.a */,
+				9E2E4D3C1833646C2FD6201CFEB576BA /* libMBProgressHUD.a */,
+				E2B233AEAC30A975FE3267D99320D773 /* libPods-TriCore.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D0FB9306D21AF23A056944AE037CBFFF /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				FC4F2138F5054D76BE76AD1CBF999A0B /* Foundation.framework */,
-				6FCB84FF70C56B5751213A1281120939 /* UIKit.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6C28A7C3136D656B5AD1E62473395942 /* Headers */ = {
+		85948E74B33A58A28C5E7777C0AF29C8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EFAD75856A51886B5EBF6D006315A2E /* JVFloatLabeledTextField.h in Headers */,
-				6833A71A703A06C1E42443D8214EB9B7 /* JVFloatLabeledTextView.h in Headers */,
-				B47EE44B45241A0AA6FE883586C7D547 /* NSString+TextDirectionality.h in Headers */,
+				35FEBBED1CEEE2D2AA3C6E74C4B0CFDF /* MBProgressHUD.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB6F6EC4C7243A16343C2E968D189CAF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69438DAED8FBF8D0101B81D953EC7ACD /* JVFloatLabeledTextField.h in Headers */,
+				08C73EE5F6742EC654B115C8E7803F9F /* JVFloatLabeledTextView.h in Headers */,
+				0F8D1FB338077BF132435A4FD291402A /* NSString+TextDirectionality.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B7FE5BE7C4683021EB014E7596A2FF3B /* JVFloatLabeledTextField */ = {
+		00CD093743573428048630DE23C4F3C6 /* JVFloatLabeledTextField */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 915E35E1675D778B957E9811D9E32FDB /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField" */;
+			buildConfigurationList = C0EE04BEAE3D85B5687663895C0A5D00 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField" */;
 			buildPhases = (
-				0FADB65119276EB2A2C330C46325D66F /* Sources */,
-				3E5418AA6574B720D73A44D440E3DB5A /* Frameworks */,
-				6C28A7C3136D656B5AD1E62473395942 /* Headers */,
+				5A7C41168E302342C5ED4DD2C63521EE /* Sources */,
+				08325722D87CD064E15D25E7CEC652A4 /* Frameworks */,
+				BB6F6EC4C7243A16343C2E968D189CAF /* Headers */,
 			);
 			buildRules = (
 			);
@@ -198,24 +260,42 @@
 			);
 			name = JVFloatLabeledTextField;
 			productName = JVFloatLabeledTextField;
-			productReference = E682973C102C8DEB0B7E57A009154EF5 /* libJVFloatLabeledTextField.a */;
+			productReference = 1AEBCCFD7C67A627FF3EC52FC4FC2619 /* libJVFloatLabeledTextField.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		CF345EEEEACFD86A2C2D82A326D2E389 /* Pods-TriCore */ = {
+		52B1475079A61342CEFCA47F515DD2B3 /* MBProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E43AF18D7E89962D65A8DCCEA3AECCEF /* Build configuration list for PBXNativeTarget "Pods-TriCore" */;
+			buildConfigurationList = 9B8EB822EEE9AE6E35EDF69EAC627F90 /* Build configuration list for PBXNativeTarget "MBProgressHUD" */;
 			buildPhases = (
-				E225E97B3981B4555D804A7AE988C0DD /* Sources */,
-				EA39A2B2F6796AEEAD7427320965F697 /* Frameworks */,
+				4B9953A97F0001558BCC143BDAF74659 /* Sources */,
+				1507F77622C71D6E89667101C482AE8A /* Frameworks */,
+				85948E74B33A58A28C5E7777C0AF29C8 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CA2CBCA0A2435097AAE6906D6C30032C /* PBXTargetDependency */,
+			);
+			name = MBProgressHUD;
+			productName = MBProgressHUD;
+			productReference = 9E2E4D3C1833646C2FD6201CFEB576BA /* libMBProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CC3AD7F3EBDCAF6BF9385BA702469452 /* Pods-TriCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F357A090F3F88F1CF0626988D465335 /* Build configuration list for PBXNativeTarget "Pods-TriCore" */;
+			buildPhases = (
+				D867589B49B25654BEE8A9E5535E9447 /* Sources */,
+				3B80C2F863451E6695DBBBC243613F20 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C67DF92C266C4055F77A9E48FE8983C6 /* PBXTargetDependency */,
+				4464EDE04826495A693CF36628020E96 /* PBXTargetDependency */,
 			);
 			name = "Pods-TriCore";
 			productName = "Pods-TriCore";
-			productReference = 1A9C3F80FC06E5B46C11BE673B239F91 /* libPods-TriCore.a */;
+			productReference = E2B233AEAC30A975FE3267D99320D773 /* libPods-TriCore.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -239,40 +319,56 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B7FE5BE7C4683021EB014E7596A2FF3B /* JVFloatLabeledTextField */,
-				CF345EEEEACFD86A2C2D82A326D2E389 /* Pods-TriCore */,
+				00CD093743573428048630DE23C4F3C6 /* JVFloatLabeledTextField */,
+				52B1475079A61342CEFCA47F515DD2B3 /* MBProgressHUD */,
+				CC3AD7F3EBDCAF6BF9385BA702469452 /* Pods-TriCore */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0FADB65119276EB2A2C330C46325D66F /* Sources */ = {
+		4B9953A97F0001558BCC143BDAF74659 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				059A863A30049ADF4E53CD7136027036 /* JVFloatLabeledTextField-dummy.m in Sources */,
-				31E0DBCED77FB2F4D7DDAFC7E9391713 /* JVFloatLabeledTextField.m in Sources */,
-				C65B9343C306AA763C5698FB760C3DDC /* JVFloatLabeledTextView.m in Sources */,
-				EBC172CAC56A1AE816EF792A4220D327 /* NSString+TextDirectionality.m in Sources */,
+				A99F06516532DEA26BC47936DB6886E8 /* MBProgressHUD-dummy.m in Sources */,
+				617A0483130BB86D16C53DE31449DEFF /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E225E97B3981B4555D804A7AE988C0DD /* Sources */ = {
+		5A7C41168E302342C5ED4DD2C63521EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2394AAC87327D0359B292F81A0CDD0ED /* Pods-TriCore-dummy.m in Sources */,
+				2FA831A789811EBFCC12154EA6BA9C17 /* JVFloatLabeledTextField-dummy.m in Sources */,
+				F54B2395009131CCABF68E40AC684054 /* JVFloatLabeledTextField.m in Sources */,
+				6160FA878A637D23ED52C6EB3A419D1E /* JVFloatLabeledTextView.m in Sources */,
+				029A4363C133A55297425C0EA4BD102F /* NSString+TextDirectionality.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D867589B49B25654BEE8A9E5535E9447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2897E8E03B184ED2B0D13FDBC892CEAE /* Pods-TriCore-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CA2CBCA0A2435097AAE6906D6C30032C /* PBXTargetDependency */ = {
+		4464EDE04826495A693CF36628020E96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBProgressHUD;
+			target = 52B1475079A61342CEFCA47F515DD2B3 /* MBProgressHUD */;
+			targetProxy = 5547D8DDBC7ACD6B83B5A5538AD061DC /* PBXContainerItemProxy */;
+		};
+		C67DF92C266C4055F77A9E48FE8983C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JVFloatLabeledTextField;
-			target = B7FE5BE7C4683021EB014E7596A2FF3B /* JVFloatLabeledTextField */;
-			targetProxy = C6CBB904AF37A1A3B68122D90EF23078 /* PBXContainerItemProxy */;
+			target = 00CD093743573428048630DE23C4F3C6 /* JVFloatLabeledTextField */;
+			targetProxy = 5F5143DDF725DC84E188F331CA43D2DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -311,25 +407,9 @@
 			};
 			name = Release;
 		};
-		27E56CBBF3223D116266E022D0F86A6D /* Release */ = {
+		18D3A35C5CDA6949A4775631FB9393E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F17D23FEBD123E5274C09D8B328C3D7D /* Pods-TriCore.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		3D8F1ABC44A532AD1F93C72D6421CDEC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E98AC2FF9DA865E86B42C57554604D3 /* JVFloatLabeledTextField-Private.xcconfig */;
+			baseConfigurationReference = DEC290336C146D95E58840C791C01EA4 /* JVFloatLabeledTextField-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/JVFloatLabeledTextField/JVFloatLabeledTextField-prefix.pch";
@@ -343,28 +423,12 @@
 			};
 			name = Debug;
 		};
-		90E767A75198AB1A80DBFB78140C3A9E /* Debug */ = {
+		37B600B39AFEFA9918C41D3D0EFC89D1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3242F939AE67B467B3DC1BA147D38BD9 /* Pods-TriCore.debug.xcconfig */;
+			baseConfigurationReference = ECFBF68CF5EB20BF456C17619C12B1FF /* MBProgressHUD-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		94BEFF74CF1DDA876D518DA120558380 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E98AC2FF9DA865E86B42C57554604D3 /* JVFloatLabeledTextField-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JVFloatLabeledTextField/JVFloatLabeledTextField-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -374,6 +438,22 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
+		};
+		85C48FFB912F2458BA920DBFDFE7F424 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECFBF68CF5EB20BF456C17619C12B1FF /* MBProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
 		};
 		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -414,6 +494,54 @@
 			};
 			name = Debug;
 		};
+		B3DAF8A56A0908756B2882AF94745934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32E535007AD8E3190E1CE77712C9202E /* Pods-TriCore.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BB93945C53B0B893B728BB1E97A24B11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEC290336C146D95E58840C791C01EA4 /* JVFloatLabeledTextField-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JVFloatLabeledTextField/JVFloatLabeledTextField-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BEAA6D486C96E23971C79D131FEA34A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C39DE25E821875FECEB6AC1484092437 /* Pods-TriCore.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -426,20 +554,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		915E35E1675D778B957E9811D9E32FDB /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField" */ = {
+		7F357A090F3F88F1CF0626988D465335 /* Build configuration list for PBXNativeTarget "Pods-TriCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3D8F1ABC44A532AD1F93C72D6421CDEC /* Debug */,
-				94BEFF74CF1DDA876D518DA120558380 /* Release */,
+				B3DAF8A56A0908756B2882AF94745934 /* Debug */,
+				BEAA6D486C96E23971C79D131FEA34A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E43AF18D7E89962D65A8DCCEA3AECCEF /* Build configuration list for PBXNativeTarget "Pods-TriCore" */ = {
+		9B8EB822EEE9AE6E35EDF69EAC627F90 /* Build configuration list for PBXNativeTarget "MBProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				90E767A75198AB1A80DBFB78140C3A9E /* Debug */,
-				27E56CBBF3223D116266E022D0F86A6D /* Release */,
+				85C48FFB912F2458BA920DBFDFE7F424 /* Debug */,
+				37B600B39AFEFA9918C41D3D0EFC89D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0EE04BEAE3D85B5687663895C0A5D00 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D3A35C5CDA6949A4775631FB9393E3 /* Debug */,
+				BB93945C53B0B893B728BB1E97A24B11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

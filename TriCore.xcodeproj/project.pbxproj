@@ -22,6 +22,7 @@
 		B64E28BD1B79AE8A0052B3C1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */; };
 		B6A0EE831B7B0D4C00FE787F /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */; };
 		B6A0EE851B7B2E2100FE787F /* GetProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */; };
+		B6CD22991B843EBA002B0102 /* TimesheetPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = "View Controllers/TabBarViewController.swift"; sourceTree = "<group>"; };
 		B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTableViewCell.swift; path = Views/ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetProjectList.swift; path = Model/GetProjectList.swift; sourceTree = "<group>"; };
+		B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetPublisher.swift; path = Model/TimesheetPublisher.swift; sourceTree = "<group>"; };
 		E6BD49AD79CDD84A6A3145E9 /* Pods-TriCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriCore/Pods-TriCore.release.xcconfig"; sourceTree = "<group>"; };
 		F807D3D5B948EC5712AA0391 /* Pods-TriCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriCore/Pods-TriCore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 				B6234D1B1B816713007AD90B /* Constants.swift */,
 				B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */,
 				B61F72DA1B76F48A00A34736 /* LoginVerification.swift */,
+				B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */,
 				B61F72A91B76BF8500A34736 /* AppDelegate.swift in Sources */,
 				B64E28BD1B79AE8A0052B3C1 /* TabBarViewController.swift in Sources */,
+				B6CD22991B843EBA002B0102 /* TimesheetPublisher.swift in Sources */,
 				B64E28B91B79994E0052B3C1 /* TimesheetsViewController.swift in Sources */,
 				B6234D1C1B816713007AD90B /* Constants.swift in Sources */,
 			);

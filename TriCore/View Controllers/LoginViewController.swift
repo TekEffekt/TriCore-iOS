@@ -16,7 +16,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     var keyboardHeight:CGFloat = 0
     
@@ -124,23 +123,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func startAndSetupIndicator()
     {
-        self.view.insertSubview(self.indicatorBackground!, belowSubview: self.indicator)
-        self.indicator.hidden = false
-        self.indicator.startAnimating()
-        
-        UIView.animateWithDuration(0.1) { () -> Void in
-            self.indicator.alpha = 1.0
-            self.indicatorBackground!.alpha = 0.9
-        }
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud!.labelText = "Logging In"
     }
     
     func removeIndicator()
     {
-        self.indicatorBackground!.removeFromSuperview()
-        self.indicator.stopAnimating()
-        self.indicator.alpha = 0.0
-        self.indicator.hidden = true
-        self.indicatorBackground!.alpha = 0.0
+        MBProgressHUD.hideHUDForView(self.view, animated: false)
     }
     
     func shakeTextFields()
@@ -191,5 +180,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.performSegueWithIdentifier("showTabController", sender: self)
         }
     }
+    
+    // MARK: HUD Delegate
+    
     
 }

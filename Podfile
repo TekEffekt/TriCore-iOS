@@ -3,6 +3,7 @@
 
 target 'TriCore' do
 pod 'JVFloatLabeledTextField'
+pod 'MBProgressHUD', '~> 0.9.1'
 end
 
 target 'TriCoreTests' do
