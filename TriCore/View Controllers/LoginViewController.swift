@@ -18,11 +18,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-    var keyboardShowing:Bool = false
     var keyboardHeight:CGFloat = 0
-    var originalCenter:CGPoint?
     
     var indicatorBackground:UIView?
+    var keyBoardShowing:Bool = false
 
     // MARK: Initialization
     override func viewDidLoad()
@@ -35,7 +34,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.passwordField.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
-        self.originalCenter = self.view.center
         
         self.indicatorBackground = UIView(frame: self.view.frame)
         self.indicatorBackground!.backgroundColor = UIColor.blackColor()
@@ -48,9 +46,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.usernameField.resignFirstResponder()
         self.passwordField.resignFirstResponder()
         
-        self.keyboardShowing = false
-        self.view.center = self.originalCenter!
-        
         attemptLogin(withUsername: self.usernameField.text!, andPassword: self.passwordField.text!)
     }
     
@@ -61,24 +56,38 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let userInfo = userInfo
         {
             self.keyboardHeight = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.height
-            
-            if(!self.keyboardShowing)
-            {
-                self.view.center = CGPointMake(self.view.center.x, self.view.center.y - keyboardHeight)
-                self.keyboardShowing = true
-            }
-            
         }
+        
+        if !self.keyBoardShowing
+        {
+            self.animateTextField(withTextField: self.usernameField, andUp: true)
+        }
+        
+        self.keyBoardShowing = true
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-        self.view.center = self.originalCenter!
-        self.keyboardShowing = false
-        
         textField.resignFirstResponder()
-        
+        self.keyBoardShowing = false
+        self.animateTextField(withTextField: textField, andUp: false)
+
         return true
+    }
+    
+    func animateTextField(withTextField textField:UITextField, andUp up:Bool)
+    {
+        let movementDistance:CGFloat = self.keyboardHeight * -1
+        let movementDuration = 0.3
+        
+        print(movementDistance)
+        
+        let movement:CGFloat = up ? movementDistance: -movementDistance
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration)
+        self.view.frame = CGRectOffset(self.view.frame, 0, movement)
+        UIView.commitAnimations()
     }
     
     // MARK: Login
@@ -104,6 +113,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.vibratePhone()
                 })
             }
+        }
+        
+        if keyBoardShowing
+        {
+            self.animateTextField(withTextField: self.usernameField, andUp: false)
+            self.keyBoardShowing = false
         }
     }
     

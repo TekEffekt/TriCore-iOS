@@ -21,6 +21,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     var currentTextField:UITextField?
     var currentCell:ProjectTableViewCell?
+    var keyboardHeight:CGFloat?
+    var distanceMoved:CGFloat?
     
     var hours:[[[Int?]]] = []
     
@@ -174,7 +176,32 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: TextField Methods
     func textFieldPressed(sender:NSNotification)
     {
+        let userInfo = sender.userInfo
         
+        if let userInfo = userInfo
+        {
+            let keyboardRect = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue
+            self.keyboardHeight = self.view.frame.height - keyboardRect.height
+            
+            let rectOfCellInTableView = self.projectsTable.rectForRowAtIndexPath(self.currentCell!.indexPath!)
+            let rectOfCellInSuperview = self.projectsTable.convertRect(rectOfCellInTableView, toView: self.projectsTable.superview)
+            
+            if rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height > self.keyboardHeight
+            {
+                if self.distanceMoved > 0
+                {
+                    self.animateTextField(distance: self.distanceMoved!, andUp: false)
+                    let rectOfCellInTableView = self.projectsTable.rectForRowAtIndexPath(self.currentCell!.indexPath!)
+                    let rectOfCellInSuperview = self.projectsTable.convertRect(rectOfCellInTableView, toView: self.projectsTable.superview)
+                    self.distanceMoved = (rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height) - self.keyboardHeight!
+                    self.animateTextField(distance: self.distanceMoved!, andUp: true)
+                } else
+                {
+                    self.distanceMoved = (rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height) - self.keyboardHeight!
+                    self.animateTextField(distance: self.distanceMoved!, andUp: true)
+                }
+            }
+        }
     }
     
     func textFieldDidBeginEditing(textField: UITextField)
@@ -183,13 +210,46 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.currentCell = textField.superview as? ProjectTableViewCell
     }
     
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+//        self.animateTextField(withTextField: textField, andUp: false)
+    }
+    
+    func animateTextField(distance distance:CGFloat, andUp up:Bool)
+    {
+        let movementDistance:CGFloat = distance * -1
+        let movementDuration = 0.3
+        
+        let movement:CGFloat = up ? movementDistance: -movementDistance
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration)
+        self.view.frame = CGRectOffset(self.view.frame, 0, movement)
+        UIView.commitAnimations()
+    }
+    
     func didTapDone(sender: AnyObject?) {
         self.currentTextField!.resignFirstResponder()
+        
+        if let _ = self.distanceMoved
+        {
+            self.animateTextField(distance: self.distanceMoved!, andUp: false)
+        }
+        
+        self.distanceMoved = nil
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
+        
+        if let _ = self.distanceMoved
+        {
+            self.animateTextField(distance: self.distanceMoved!, andUp: false)
+        }
+        
+        self.distanceMoved = nil
         
         return true
     }
@@ -230,7 +290,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         self.hours[self.currentCell!.indexPath!.section][self.currentCell!.indexPath!.row][currentTextFieldIndex] = intValue!
-        print(intValue)
     }
     
     func hitRightButton()
