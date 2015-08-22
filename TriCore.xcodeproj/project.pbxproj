@@ -24,6 +24,8 @@
 		B6A0EE851B7B2E2100FE787F /* GetProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */; };
 		B6CD22991B843EBA002B0102 /* TimesheetPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */; };
 		B6FE67F01B846A9F002E647B /* PublishedOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE67EF1B846A9F002E647B /* PublishedOverlay.swift */; };
+		B6FE67F41B892A1A002E647B /* AddRowFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE67F31B892A1A002E647B /* AddRowFormController.swift */; };
+		B6FE67F61B892A9C002E647B /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE67F51B892A9C002E647B /* PopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetProjectList.swift; path = Model/GetProjectList.swift; sourceTree = "<group>"; };
 		B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetPublisher.swift; path = Model/TimesheetPublisher.swift; sourceTree = "<group>"; };
 		B6FE67EF1B846A9F002E647B /* PublishedOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishedOverlay.swift; path = Views/PublishedOverlay.swift; sourceTree = "<group>"; };
+		B6FE67F31B892A1A002E647B /* AddRowFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRowFormController.swift; path = "View Controllers/AddRowFormController.swift"; sourceTree = "<group>"; };
+		B6FE67F51B892A9C002E647B /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopupViewController.swift; path = "View Controllers/PopupViewController.swift"; sourceTree = "<group>"; };
 		E6BD49AD79CDD84A6A3145E9 /* Pods-TriCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriCore/Pods-TriCore.release.xcconfig"; sourceTree = "<group>"; };
 		F807D3D5B948EC5712AA0391 /* Pods-TriCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriCore/Pods-TriCore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +169,8 @@
 		B61F72D81B76C66A00A34736 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B6FE67F51B892A9C002E647B /* PopupViewController.swift */,
+				B6FE67F31B892A1A002E647B /* AddRowFormController.swift */,
 				B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */,
 				B61F72D61B76C65C00A34736 /* LoginViewController.swift */,
 				B64E28B81B79994E0052B3C1 /* TimesheetsViewController.swift */,
@@ -374,11 +380,13 @@
 				B6FE67F01B846A9F002E647B /* PublishedOverlay.swift in Sources */,
 				B61F72D71B76C65C00A34736 /* LoginViewController.swift in Sources */,
 				B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */,
+				B6FE67F41B892A1A002E647B /* AddRowFormController.swift in Sources */,
 				B61F72A91B76BF8500A34736 /* AppDelegate.swift in Sources */,
 				B64E28BD1B79AE8A0052B3C1 /* TabBarViewController.swift in Sources */,
 				B6CD22991B843EBA002B0102 /* TimesheetPublisher.swift in Sources */,
 				B64E28B91B79994E0052B3C1 /* TimesheetsViewController.swift in Sources */,
 				B6234D1C1B816713007AD90B /* Constants.swift in Sources */,
+				B6FE67F61B892A9C002E647B /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

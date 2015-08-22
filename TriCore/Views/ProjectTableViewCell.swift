@@ -47,11 +47,11 @@ class ProjectTableViewCell: UITableViewCell {
             {
                 let text = String(hour)
                 self.textFields![i].text = text
-                self.textFields![i].font = UIFont.boldSystemFontOfSize(22)
+                self.textFields![i].font = UIFont.boldSystemFontOfSize(20)
             } else
             {
                 self.textFields![i].text = ""
-                self.textFields![i].font = UIFont.systemFontOfSize(15)
+                self.textFields![i].font = UIFont.systemFontOfSize(18)
             }
         }
     }
@@ -68,7 +68,6 @@ class ProjectTableViewCell: UITableViewCell {
             self.addSubview(textField)
             container.backgroundColor = UIColor.clearColor()
         }
-        print("draw!")
     }
     
     func setupTextField(withContainer container:UIView, andIndex index:Int) -> UITextField
@@ -77,7 +76,7 @@ class ProjectTableViewCell: UITableViewCell {
         textField.frame = container.frame
         textField.attributedPlaceholder = NSAttributedString(string: "-",
             attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor().colorWithAlphaComponent(0.8)])
-        textField.font = UIFont.systemFontOfSize(15)
+        textField.font = UIFont.boldSystemFontOfSize(20)
         textField.center = container.center
         textField.backgroundColor = UIColor.whiteColor()
         textField.textAlignment = NSTextAlignment.Center

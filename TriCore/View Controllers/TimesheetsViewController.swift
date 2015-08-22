@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TimesheetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MBProgressHUDDelegate
+class TimesheetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UISearchBarDelegate
 {
     // MARK: Properties
+    @IBOutlet weak var searchBar: UISearchBar!
     let blackness:UIView = UIView()
-    @IBOutlet weak var searchBox: UITextField!
     @IBOutlet weak var projectsTable: UITableView!
     let projectList = GetProjectList.getProjectList()
     
@@ -40,7 +40,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         self.projectsTable.delegate = self
         self.projectsTable.dataSource = self
-        self.searchBox.delegate = self
+        self.searchBar.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
         
@@ -51,7 +51,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     override func viewWillAppear(animated: Bool)
     {
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
-        let plusButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addRowToTimesheet")
+        let plusButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "showAddRowForm")
         
         self.tabBarController!.navigationItem.leftBarButtonItem = publishButton
         self.tabBarController!.navigationItem.rightBarButtonItem = plusButton
@@ -260,10 +260,10 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         if newLength == 0
         {
-            textField.font = UIFont.systemFontOfSize(15)
+            textField.font = UIFont.systemFontOfSize(18)
         } else if newLength > 0
         {
-            textField.font = UIFont.boldSystemFontOfSize(22)
+            textField.font = UIFont.boldSystemFontOfSize(20)
         }
         
         if newLength <= 2
@@ -340,7 +340,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     func publishTimesheet()
     {
         let overlay:PublishedOverlay = PublishedOverlay()
-        overlay.frame = CGRectMake(self.view.frame.origin.x, self.searchBox.frame.origin.y-8, self.view.frame.width, self.searchBox.frame.height + self.projectsTable.frame.height + 16)
+        overlay.frame = CGRectMake(self.view.frame.origin.x, self.searchBar.frame.origin.y-8, self.view.frame.width, self.searchBar.frame.height + self.projectsTable.frame.height + 16)
         
         self.view.addSubview(overlay)
         
@@ -374,6 +374,13 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         PublishedOverlay.showCompleted()
         
         self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
+    }
+    
+    // MARK: Navigation
+    
+    func showAddRowForm()
+    {
+        self.performSegueWithIdentifier("showAddRowForm", sender: self)
     }
     
 }
