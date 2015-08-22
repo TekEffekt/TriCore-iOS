@@ -19,20 +19,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TAOverlay.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00CD093743573428048630DE23C4F3C6</key>
+		<key>1512126BD78F6B7D346D1E0DAEECB9DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52B1475079A61342CEFCA47F515DD2B3</key>
+		<key>704019C203012A1D839721E541732250</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC3AD7F3EBDCAF6BF9385BA702469452</key>
+		<key>D27152F9B46666C70DCB3AF19C13231C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3CE1C9E0807F807957657E81D7F22BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

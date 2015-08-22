@@ -15,7 +15,7 @@ class ProjectTableViewCell: UITableViewCell {
 
     @IBOutlet var textFieldContainerCollection: [UIView]!
     
-    var textFields:[JVFloatLabeledTextField]?
+    var textFields:[UITextField]?
     var controller:TimesheetsViewController?
     
     var indexPath:NSIndexPath?
@@ -28,7 +28,7 @@ class ProjectTableViewCell: UITableViewCell {
         
         for i in 1...7
         {
-            textFields!.append( JVFloatLabeledTextField())
+            textFields!.append( UITextField())
         }
     }
 
@@ -71,17 +71,15 @@ class ProjectTableViewCell: UITableViewCell {
         print("draw!")
     }
     
-    func setupTextField(withContainer container:UIView, andIndex index:Int) -> JVFloatLabeledTextField
+    func setupTextField(withContainer container:UIView, andIndex index:Int) -> UITextField
     {
         let textField = textFields![index]
         textField.frame = container.frame
-        textField.attributedPlaceholder = NSAttributedString(string: Constants.weekNameStrings[index],
+        textField.attributedPlaceholder = NSAttributedString(string: "-",
             attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor().colorWithAlphaComponent(0.8)])
-        textField.floatingLabelTextColor = UIColor.darkGrayColor()
         textField.font = UIFont.systemFontOfSize(15)
-        textField.floatingLabelFont = UIFont.systemFontOfSize(13)
         textField.center = container.center
-        textField.backgroundColor = UIColor(red:0.97, green:0.59, blue:0.11, alpha:1.0).colorWithAlphaComponent(0.2)
+        textField.backgroundColor = UIColor.whiteColor()
         textField.textAlignment = NSTextAlignment.Center
         textField.keyboardType = UIKeyboardType.NumberPad
         textField.returnKeyType = UIReturnKeyType.Done
@@ -90,7 +88,7 @@ class ProjectTableViewCell: UITableViewCell {
         textField.layer.cornerRadius = 6.0
         textField.layer.masksToBounds = true
         textField.layer.borderColor = UIColor.blackColor().CGColor
-        textField.layer.borderWidth = 1.0
+        textField.layer.borderWidth = 1.5
         
         return textField
     }

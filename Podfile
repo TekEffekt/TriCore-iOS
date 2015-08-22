@@ -4,6 +4,7 @@
 target 'TriCore' do
 pod 'JVFloatLabeledTextField'
 pod 'MBProgressHUD', '~> 0.9.1'
+pod 'TAOverlay'
 end
 
 target 'TriCoreTests' do

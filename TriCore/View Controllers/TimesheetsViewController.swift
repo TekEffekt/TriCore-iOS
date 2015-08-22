@@ -44,6 +44,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
         
+        
         setupHoursArray()
     }
     
@@ -140,7 +141,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         let cell:ProjectTableViewCell = self.projectsTable.dequeueReusableCellWithIdentifier(cellId) as! ProjectTableViewCell
         
         let text = projectList[indexPath.section][indexPath.row]
-        cell.projectTitleAndNumber.text = text.componentsSeparatedByString(";")[0]
+        cell.projectTitleAndNumber.text = text
         cell.controller = self
         
         for textField in cell.textFields!
@@ -338,9 +339,12 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     func publishTimesheet()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        hud.labelText = "Publishing"
-        hud.delegate = self
+        let overlay:PublishedOverlay = PublishedOverlay()
+        overlay.frame = CGRectMake(self.view.frame.origin.x, self.searchBox.frame.origin.y-8, self.view.frame.width, self.searchBox.frame.height + self.projectsTable.frame.height + 16)
+        
+        self.view.addSubview(overlay)
+        
+        PublishedOverlay.showPublishing()
         
         let queue = NSOperationQueue()
         
@@ -348,9 +352,16 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             let result = TimesheetPublisher.publishTimesheet(withHours: self.hours)
 
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
+//                TAOverlay.hideOverlay()
+                self.givePublishedAnimation()
             })
         }
+    }
+    
+    func unPublishTimesheet()
+    {
+        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
+        self.view.subviews.last!.removeFromSuperview()
     }
     
     func addRowToTimesheet()
@@ -360,12 +371,9 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     func givePublishedAnimation()
     {
+        PublishedOverlay.showCompleted()
         
-    }
-    
-    // MARK: HUD Delegate
-    func hudWasHidden(hud: MBProgressHUD!) {
-        print("HUH")
+        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
     }
     
 }
