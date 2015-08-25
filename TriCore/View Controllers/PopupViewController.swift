@@ -14,7 +14,11 @@ class PopupViewController: UITableViewController, UISearchResultsUpdating
     var searchController:UISearchController = UISearchController()
     var filteredItems:[String] = [String]()
     var organizedItems = [AnyObject]()
-    var unorganizedItems:[String] = Constants.projectNames
+    var unorganizedItems:[String] = [String]()
+    
+    var masterViewController:AddRowTableViewController?
+    
+    var contentType:String?
     
     // MARK: Initialization
     override func viewDidLoad()
@@ -27,39 +31,63 @@ class PopupViewController: UITableViewController, UISearchResultsUpdating
         self.tableView.tableHeaderView = self.searchController.searchBar
         self.definesPresentationContext = true
         
-        self.organizedItems = Constants.organizedProjectNames
-        self.unorganizedItems = Constants.projectNames
-        print("Loading")
+        self.navigationController!.navigationBarHidden = true
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        self.tableView.tableHeaderView = self.searchController.searchBar
     }
     
     //  MARK: Search Results Methods
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
-        print("Updating Search Results")
         self.filteredItems.removeAll(keepCapacity: false)
         let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
         let array = (self.unorganizedItems as NSArray).filteredArrayUsingPredicate(searchPredicate)
         self.filteredItems = array as! [String]
-        print(self.filteredItems)
         
-        print("Hitting reload data")
         self.tableView.reloadData()
-        print("Reloaded Data")
     }
     
     // MARK: Tableview Datasource
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let cell = self.tableView.cellForRowAtIndexPath(indexPath)
+        
+        self.masterViewController!.choseItem(ofType: self.contentType!, withItemName: cell!.textLabel!.text!)
+        
+        // A second controller is overlane if searching
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if contentType! == "Project Names"
+        {
+            return 57
+        } else
+        {
+            return 44
+        }
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        print("Grabbing Cell")
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
         if self.searchController.active
         {
-            print(self.filteredItems)
             cell.textLabel!.text = self.filteredItems[indexPath.row]
         } else
         {
             cell.textLabel!.text = ((self.organizedItems[indexPath.section] as! [AnyObject])[1] as! [AnyObject])[indexPath.row] as? String
+        }
+        
+        if self.contentType! == "Project Names"
+        {
+            cell.textLabel!.numberOfLines = 2
+            cell.textLabel!.font = cell.textLabel!.font.fontWithSize(14.5)
         }
                 
         return cell
@@ -67,7 +95,6 @@ class PopupViewController: UITableViewController, UISearchResultsUpdating
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        print("Number of sections")
         if self.searchController.active
         {
             return 1
@@ -79,7 +106,6 @@ class PopupViewController: UITableViewController, UISearchResultsUpdating
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print("Number of rows")
         if self.searchController.active
         {
             return self.filteredItems.count
@@ -91,7 +117,6 @@ class PopupViewController: UITableViewController, UISearchResultsUpdating
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        print("Title for header")
         if self.searchController.active
         {
             return nil
