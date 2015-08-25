@@ -915,7 +915,6 @@
                                                     <connections>
                                                         <action selector="createButtonPressed:" destination="XDv-6W-cFf" eventType="touchUpInside" id="KKt-f6-5Pl"/>
                                                         <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQM-NO-ySW"/>
-                                                        <segue destination="Bgc-Np-BoD" kind="show" id="5Yr-Ag-1vK"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

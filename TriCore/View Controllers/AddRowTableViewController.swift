@@ -21,6 +21,6 @@ class AddRowTableViewController: UITableViewController
         let formsheetController = MZFormSheetPresentationController(contentViewController: controller)
         formsheetController.contentViewSize = CGSizeMake(300, 450)
         
-        self.presentViewController(controller, animated: true, completion: nil)
+        self.presentViewController(formsheetController, animated: true, completion: nil)
      }
 }
