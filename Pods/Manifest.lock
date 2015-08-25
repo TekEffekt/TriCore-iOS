@@ -1,0 +1,19 @@
+PODS:
+  - JGMethodSwizzler (2.0.1)
+  - MZAppearance (1.1.5)
+  - MZFormSheetPresentationController (1.1.2):
+    - JGMethodSwizzler
+    - MZAppearance
+  - TAOverlay (2.0.1)
+
+DEPENDENCIES:
+  - MZFormSheetPresentationController (~> 1.1)
+  - TAOverlay
+
+SPEC CHECKSUMS:
+  JGMethodSwizzler: e0ea5c1c6c55304ec4ef3f54e441400c6735c899
+  MZAppearance: 6e9dc64e42074c0a19812a327f590746c3283bab
+  MZFormSheetPresentationController: 2e848d89c0741aef554d0ae6b138be5dc25a479f
+  TAOverlay: 940e37fdb45fbc9acfc73bf1089668367e3b1be6
+
+COCOAPODS: 0.38.2
