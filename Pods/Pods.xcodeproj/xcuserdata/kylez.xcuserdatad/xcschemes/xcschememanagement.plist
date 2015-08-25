@@ -4,12 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>JVFloatLabeledTextField.xcscheme</key>
+		<key>JGMethodSwizzler.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MBProgressHUD.xcscheme</key>
+		<key>MZAppearance.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MZFormSheetPresentationController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>11163BFC976A56A6F6C2684A369C6BA9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1512126BD78F6B7D346D1E0DAEECB9DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>704019C203012A1D839721E541732250</key>
+		<key>17ABC679B0122FF9EED25977BD599ACB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D27152F9B46666C70DCB3AF19C13231C</key>
+		<key>AF412436F061998ED7B072AC71CCDFB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3CE1C9E0807F807957657E81D7F22BC</key>
+		<key>E734E4916747628D91415234E98D3CED</key>
 		<dict>
 			<key>primary</key>
 			<true/>

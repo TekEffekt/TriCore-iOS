@@ -2,9 +2,8 @@
 # platform :ios, '6.0'
 
 target 'TriCore' do
-pod 'JVFloatLabeledTextField'
-pod 'MBProgressHUD', '~> 0.9.1'
 pod 'TAOverlay'
+pod 'MZFormSheetPresentationController', '~> 1.1'
 end
 
 target 'TriCoreTests' do

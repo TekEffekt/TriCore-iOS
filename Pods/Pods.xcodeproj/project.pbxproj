@@ -1,730 +1,2316 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		0069BB5FB7361BA538187E429972DFAE /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B44D24AE0CC318B61C0623689F1AE2CF /* JVFloatLabeledTextField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		07FC0124CD73765CC339D4FB9147A0EE /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D8D5A509557C34246C35ED2C3D6DA8 /* MBProgressHUD-dummy.m */; };
-		0951050C752B5726BABD5EFE1CDC3843 /* JVFloatLabeledTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C9A46F54567C396811620E3D657B6F /* JVFloatLabeledTextField-dummy.m */; };
-		0FA085B675B200AE9C596D898C1B3004 /* NSString+TextDirectionality.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7AD0D3D3B1BD502CD75B0C88DB953B /* NSString+TextDirectionality.h */; };
-		18B097F0A01D6C3217803F4D25BEA8D7 /* TAOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 025E41A8F7F527EC5A4E1E97C6182EEB /* TAOverlay.m */; };
-		2D2802644E975E0F4464808FE37C4076 /* TAOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 22076EB5908907E337026DFC77E4DB7C /* TAOverlay.h */; };
-		2E6FBC9D338DAD566793EECFEDE71B1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757A47FD76EA9AF60133FF7ED8CB63B2 /* UIKit.framework */; };
-		34B001A12286A912DB2A5CF8E9E0534A /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE0DBBABDD70915941C279E72022593 /* JVFloatLabeledTextView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		36061A4EA8CA2F4FEB3571D594FE7E72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1269DA1BF0621B53756322DF9AA8B6BA /* CoreGraphics.framework */; };
-		3A6DD156CCA2A5F2B2670B89F2802BD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
-		3D4FAF1D3472BA55985150FBF92BB208 /* JVFloatLabeledTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 904921972CD0DE7A96C4FF36E7536CD6 /* JVFloatLabeledTextView.h */; };
-		4DE54D902412CE8D3367F8C34E366643 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = B8A60019276E6CEC91E56E40AA310E16 /* MBProgressHUD.h */; };
-		611700A25D4C72E755C75AFD5FCAF95F /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6690D2C7454BE0F5E214C671C96431 /* NSString+TextDirectionality.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		69D57CD68DB9DB70D63DEE5CF9144BD2 /* Pods-TriCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0660E8FEA66D91C7F6E8080E8F89A7 /* Pods-TriCore-dummy.m */; };
-		6B48B22BAAFA2E8C6846E7F5A4033CFA /* TAOverlay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 860556C6A6F9E0C2588541B6F6DF90F0 /* TAOverlay-dummy.m */; };
-		77A4AD5F4ED686492ADAFF84A866892C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
-		89FDB6A1F466B3CB3E2E276B6764455E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
-		9C7B296D86F869E65530504A246A05FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
-		E19517CC1545FD73B6CAC68887F28A23 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB37B722D43C0CD41A82A56F5D26F2F /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F3DD9AEA8A25C940ACC6C06A73759CA9 /* JVFloatLabeledTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = A08083BB23408187121D421C48058C59 /* JVFloatLabeledTextField.h */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2577A8D33D841679FB1F12BF30868BA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1512126BD78F6B7D346D1E0DAEECB9DC;
-			remoteInfo = TAOverlay;
-		};
-		F257746EE51DA8EAE00C64A60809B08B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 704019C203012A1D839721E541732250;
-			remoteInfo = JVFloatLabeledTextField;
-		};
-		F85952906CCEED171AFFFB4E7A35187A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D27152F9B46666C70DCB3AF19C13231C;
-			remoteInfo = MBProgressHUD;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		025E41A8F7F527EC5A4E1E97C6182EEB /* TAOverlay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TAOverlay.m; path = TAOverlay/TAOverlay.m; sourceTree = "<group>"; };
-		02D8D5A509557C34246C35ED2C3D6DA8 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		0518E407EE3B1A212E7A3080423B5A0B /* libPods-TriCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriCore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A60E1919611B9D4168B60D7C2F1A1DB /* TAOverlay-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "TAOverlay-Private.xcconfig"; sourceTree = "<group>"; };
-		1269DA1BF0621B53756322DF9AA8B6BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		22076EB5908907E337026DFC77E4DB7C /* TAOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TAOverlay.h; path = TAOverlay/TAOverlay.h; sourceTree = "<group>"; };
-		23C8672B4817C99532539B92A9985ACA /* JVFloatLabeledTextField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JVFloatLabeledTextField-Private.xcconfig"; sourceTree = "<group>"; };
-		3151458A4B6EC1E73F0C427E0DBB34A6 /* MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
-		458949FA937D9E1A8D3A32A86C615171 /* TAOverlay-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TAOverlay-prefix.pch"; sourceTree = "<group>"; };
-		51C21C7D43A724FEB5C166E536B6BB80 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		6F0660E8FEA66D91C7F6E8080E8F89A7 /* Pods-TriCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TriCore-dummy.m"; sourceTree = "<group>"; };
-		757A47FD76EA9AF60133FF7ED8CB63B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		76A7BEF5CE6E8BE91A8D915FD706FF36 /* TAOverlay.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TAOverlay.xcconfig; sourceTree = "<group>"; };
-		7798C917156996E3253B11D5BEF71947 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7A904B5323F1BC687117494E36123197 /* libTAOverlay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTAOverlay.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EE0DBBABDD70915941C279E72022593 /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextView.m; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextView.m; sourceTree = "<group>"; };
-		860556C6A6F9E0C2588541B6F6DF90F0 /* TAOverlay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TAOverlay-dummy.m"; sourceTree = "<group>"; };
-		8A2B7304AA6131F46AD9349F0E67CF6E /* TAOverlay.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TAOverlay.bundle; path = TAOverlay/TAOverlay.bundle; sourceTree = "<group>"; };
-		904921972CD0DE7A96C4FF36E7536CD6 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextView.h; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextView.h; sourceTree = "<group>"; };
-		9F6690D2C7454BE0F5E214C671C96431 /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+TextDirectionality.m"; path = "JVFloatLabeledTextField/JVFloatLabeledTextField/NSString+TextDirectionality.m"; sourceTree = "<group>"; };
-		A08083BB23408187121D421C48058C59 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextField.h; sourceTree = "<group>"; };
-		B44D24AE0CC318B61C0623689F1AE2CF /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextField.m; sourceTree = "<group>"; };
-		B89C41380C7C9E5DFF3E959D07190215 /* Pods-TriCore-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TriCore-resources.sh"; sourceTree = "<group>"; };
-		B8A60019276E6CEC91E56E40AA310E16 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BD09A961F8D58909029EC2A9709491CE /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
-		C8C9A46F54567C396811620E3D657B6F /* JVFloatLabeledTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JVFloatLabeledTextField-dummy.m"; sourceTree = "<group>"; };
-		D88528AD914102F50F65CD8B78687A03 /* Pods-TriCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriCore.release.xcconfig"; sourceTree = "<group>"; };
-		DBB37B722D43C0CD41A82A56F5D26F2F /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		DD7AD0D3D3B1BD502CD75B0C88DB953B /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+TextDirectionality.h"; path = "JVFloatLabeledTextField/JVFloatLabeledTextField/NSString+TextDirectionality.h"; sourceTree = "<group>"; };
-		E0C1D4766E86A795B40D38A3695068F3 /* Pods-TriCore-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TriCore-acknowledgements.plist"; sourceTree = "<group>"; };
-		E23782EF3BBCEDA04FCCA5360FE5BA18 /* Pods-TriCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriCore.debug.xcconfig"; sourceTree = "<group>"; };
-		E4191AF1F0BC245F51AE68462E5482E7 /* Pods-TriCore-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TriCore-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E4FA87628E329D8EFBAED0C03EEC7E22 /* JVFloatLabeledTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JVFloatLabeledTextField-prefix.pch"; sourceTree = "<group>"; };
-		EA85DC7759AF1E4C3C27CB970F91C8A2 /* JVFloatLabeledTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JVFloatLabeledTextField.xcconfig; sourceTree = "<group>"; };
-		EF62ECD486C899D97F9BFD858AB497E1 /* libJVFloatLabeledTextField.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJVFloatLabeledTextField.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F65ED6BFB1A0CC845F7EACF9CBEE4E5A /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		0145130A5E4EFC49B4B02216D3465655 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				36061A4EA8CA2F4FEB3571D594FE7E72 /* CoreGraphics.framework in Frameworks */,
-				9C7B296D86F869E65530504A246A05FC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BD49CF2F5870DC4C1E87DB877B4FA31C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				77A4AD5F4ED686492ADAFF84A866892C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF1ECF2CD3E26400854958F381897F96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A6DD156CCA2A5F2B2670B89F2802BD7 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F88D13E2D4A31092DCD0D289858CB723 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				89FDB6A1F466B3CB3E2E276B6764455E /* Foundation.framework in Frameworks */,
-				2E6FBC9D338DAD566793EECFEDE71B1E /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		0A53B996E02E859B56CA3223452FE206 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2C8B1A26909855242275984A2D962FBB /* Pods-TriCore */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				39CF33B2E976FD3E12A7D9F562B97919 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1725A872BA4F606E00DEEE3DB1E89E4B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				76A7BEF5CE6E8BE91A8D915FD706FF36 /* TAOverlay.xcconfig */,
-				0A60E1919611B9D4168B60D7C2F1A1DB /* TAOverlay-Private.xcconfig */,
-				860556C6A6F9E0C2588541B6F6DF90F0 /* TAOverlay-dummy.m */,
-				458949FA937D9E1A8D3A32A86C615171 /* TAOverlay-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TAOverlay";
-			sourceTree = "<group>";
-		};
-		2C8B1A26909855242275984A2D962FBB /* Pods-TriCore */ = {
-			isa = PBXGroup;
-			children = (
-				E4191AF1F0BC245F51AE68462E5482E7 /* Pods-TriCore-acknowledgements.markdown */,
-				E0C1D4766E86A795B40D38A3695068F3 /* Pods-TriCore-acknowledgements.plist */,
-				6F0660E8FEA66D91C7F6E8080E8F89A7 /* Pods-TriCore-dummy.m */,
-				B89C41380C7C9E5DFF3E959D07190215 /* Pods-TriCore-resources.sh */,
-				E23782EF3BBCEDA04FCCA5360FE5BA18 /* Pods-TriCore.debug.xcconfig */,
-				D88528AD914102F50F65CD8B78687A03 /* Pods-TriCore.release.xcconfig */,
-			);
-			name = "Pods-TriCore";
-			path = "Target Support Files/Pods-TriCore";
-			sourceTree = "<group>";
-		};
-		39CF33B2E976FD3E12A7D9F562B97919 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				1269DA1BF0621B53756322DF9AA8B6BA /* CoreGraphics.framework */,
-				7798C917156996E3253B11D5BEF71947 /* Foundation.framework */,
-				757A47FD76EA9AF60133FF7ED8CB63B2 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		69F6D5A531AE61BFB5BCE52FB2226FB8 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8A2B7304AA6131F46AD9349F0E67CF6E /* TAOverlay.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		742ECDE01B0789619F74B38166F0DFEE /* JVFloatLabeledTextField */ = {
-			isa = PBXGroup;
-			children = (
-				A08083BB23408187121D421C48058C59 /* JVFloatLabeledTextField.h */,
-				B44D24AE0CC318B61C0623689F1AE2CF /* JVFloatLabeledTextField.m */,
-				904921972CD0DE7A96C4FF36E7536CD6 /* JVFloatLabeledTextView.h */,
-				7EE0DBBABDD70915941C279E72022593 /* JVFloatLabeledTextView.m */,
-				DD7AD0D3D3B1BD502CD75B0C88DB953B /* NSString+TextDirectionality.h */,
-				9F6690D2C7454BE0F5E214C671C96431 /* NSString+TextDirectionality.m */,
-				E1202F33B1738226EC239453D55FD623 /* Support Files */,
-			);
-			path = JVFloatLabeledTextField;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				94FD9A49D53F8665587CA46E41313613 /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
-				0A53B996E02E859B56CA3223452FE206 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		818DB83C0726F47F6583D7E416297BD5 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				B8A60019276E6CEC91E56E40AA310E16 /* MBProgressHUD.h */,
-				DBB37B722D43C0CD41A82A56F5D26F2F /* MBProgressHUD.m */,
-				914BA39F1FA1CB9F1ED2340E742BF13D /* Support Files */,
-			);
-			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		914BA39F1FA1CB9F1ED2340E742BF13D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BD09A961F8D58909029EC2A9709491CE /* MBProgressHUD.xcconfig */,
-				3151458A4B6EC1E73F0C427E0DBB34A6 /* MBProgressHUD-Private.xcconfig */,
-				02D8D5A509557C34246C35ED2C3D6DA8 /* MBProgressHUD-dummy.m */,
-				51C21C7D43A724FEB5C166E536B6BB80 /* MBProgressHUD-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MBProgressHUD";
-			sourceTree = "<group>";
-		};
-		94FD9A49D53F8665587CA46E41313613 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				742ECDE01B0789619F74B38166F0DFEE /* JVFloatLabeledTextField */,
-				818DB83C0726F47F6583D7E416297BD5 /* MBProgressHUD */,
-				E5A99BEBCBE2D9DC198678A98E74D8B9 /* TAOverlay */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EF62ECD486C899D97F9BFD858AB497E1 /* libJVFloatLabeledTextField.a */,
-				F65ED6BFB1A0CC845F7EACF9CBEE4E5A /* libMBProgressHUD.a */,
-				0518E407EE3B1A212E7A3080423B5A0B /* libPods-TriCore.a */,
-				7A904B5323F1BC687117494E36123197 /* libTAOverlay.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E1202F33B1738226EC239453D55FD623 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EA85DC7759AF1E4C3C27CB970F91C8A2 /* JVFloatLabeledTextField.xcconfig */,
-				23C8672B4817C99532539B92A9985ACA /* JVFloatLabeledTextField-Private.xcconfig */,
-				C8C9A46F54567C396811620E3D657B6F /* JVFloatLabeledTextField-dummy.m */,
-				E4FA87628E329D8EFBAED0C03EEC7E22 /* JVFloatLabeledTextField-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/JVFloatLabeledTextField";
-			sourceTree = "<group>";
-		};
-		E5A99BEBCBE2D9DC198678A98E74D8B9 /* TAOverlay */ = {
-			isa = PBXGroup;
-			children = (
-				22076EB5908907E337026DFC77E4DB7C /* TAOverlay.h */,
-				025E41A8F7F527EC5A4E1E97C6182EEB /* TAOverlay.m */,
-				69F6D5A531AE61BFB5BCE52FB2226FB8 /* Resources */,
-				1725A872BA4F606E00DEEE3DB1E89E4B /* Support Files */,
-			);
-			path = TAOverlay;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		8273B7BEEF8BBCC4BC3893C45FCEA981 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4DE54D902412CE8D3367F8C34E366643 /* MBProgressHUD.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88EFCEE62800F0598B9BA4735F479691 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3DD9AEA8A25C940ACC6C06A73759CA9 /* JVFloatLabeledTextField.h in Headers */,
-				3D4FAF1D3472BA55985150FBF92BB208 /* JVFloatLabeledTextView.h in Headers */,
-				0FA085B675B200AE9C596D898C1B3004 /* NSString+TextDirectionality.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7403DA54286F2689EE24D50824197D7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D2802644E975E0F4464808FE37C4076 /* TAOverlay.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		1512126BD78F6B7D346D1E0DAEECB9DC /* TAOverlay */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5E47E6284E9D431778AFD42858CDB9F4 /* Build configuration list for PBXNativeTarget "TAOverlay" */;
-			buildPhases = (
-				D172D83F702281EE42E11FE0D9B15CE0 /* Sources */,
-				BD49CF2F5870DC4C1E87DB877B4FA31C /* Frameworks */,
-				E7403DA54286F2689EE24D50824197D7 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TAOverlay;
-			productName = TAOverlay;
-			productReference = 7A904B5323F1BC687117494E36123197 /* libTAOverlay.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		704019C203012A1D839721E541732250 /* JVFloatLabeledTextField */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EF0790911A854B8688D72B429BFE7396 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField" */;
-			buildPhases = (
-				AA93F3194F542FCC23AE7D7D8EB86E69 /* Sources */,
-				F88D13E2D4A31092DCD0D289858CB723 /* Frameworks */,
-				88EFCEE62800F0598B9BA4735F479691 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = JVFloatLabeledTextField;
-			productName = JVFloatLabeledTextField;
-			productReference = EF62ECD486C899D97F9BFD858AB497E1 /* libJVFloatLabeledTextField.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		D27152F9B46666C70DCB3AF19C13231C /* MBProgressHUD */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DDAF367BBA1967273F06055B9E3DD3B8 /* Build configuration list for PBXNativeTarget "MBProgressHUD" */;
-			buildPhases = (
-				436529469513B7007311B7B8CB975FC3 /* Sources */,
-				0145130A5E4EFC49B4B02216D3465655 /* Frameworks */,
-				8273B7BEEF8BBCC4BC3893C45FCEA981 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MBProgressHUD;
-			productName = MBProgressHUD;
-			productReference = F65ED6BFB1A0CC845F7EACF9CBEE4E5A /* libMBProgressHUD.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E3CE1C9E0807F807957657E81D7F22BC /* Pods-TriCore */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 72818ABF3E646DB0A0C0141EADD5C09A /* Build configuration list for PBXNativeTarget "Pods-TriCore" */;
-			buildPhases = (
-				797ACB15120D62D209A9125F7AF7F725 /* Sources */,
-				DF1ECF2CD3E26400854958F381897F96 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A53803F34F92AE8515DF1E7E923E76C9 /* PBXTargetDependency */,
-				0220E3A0FE923A5FAA42FF92F3D3975D /* PBXTargetDependency */,
-				99DBA628B68A32C4459CDD8994171D6C /* PBXTargetDependency */,
-			);
-			name = "Pods-TriCore";
-			productName = "Pods-TriCore";
-			productReference = 0518E407EE3B1A212E7A3080423B5A0B /* libPods-TriCore.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				704019C203012A1D839721E541732250 /* JVFloatLabeledTextField */,
-				D27152F9B46666C70DCB3AF19C13231C /* MBProgressHUD */,
-				E3CE1C9E0807F807957657E81D7F22BC /* Pods-TriCore */,
-				1512126BD78F6B7D346D1E0DAEECB9DC /* TAOverlay */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		436529469513B7007311B7B8CB975FC3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07FC0124CD73765CC339D4FB9147A0EE /* MBProgressHUD-dummy.m in Sources */,
-				E19517CC1545FD73B6CAC68887F28A23 /* MBProgressHUD.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		797ACB15120D62D209A9125F7AF7F725 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				69D57CD68DB9DB70D63DEE5CF9144BD2 /* Pods-TriCore-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA93F3194F542FCC23AE7D7D8EB86E69 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0951050C752B5726BABD5EFE1CDC3843 /* JVFloatLabeledTextField-dummy.m in Sources */,
-				0069BB5FB7361BA538187E429972DFAE /* JVFloatLabeledTextField.m in Sources */,
-				34B001A12286A912DB2A5CF8E9E0534A /* JVFloatLabeledTextView.m in Sources */,
-				611700A25D4C72E755C75AFD5FCAF95F /* NSString+TextDirectionality.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D172D83F702281EE42E11FE0D9B15CE0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6B48B22BAAFA2E8C6846E7F5A4033CFA /* TAOverlay-dummy.m in Sources */,
-				18B097F0A01D6C3217803F4D25BEA8D7 /* TAOverlay.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0220E3A0FE923A5FAA42FF92F3D3975D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MBProgressHUD;
-			target = D27152F9B46666C70DCB3AF19C13231C /* MBProgressHUD */;
-			targetProxy = F85952906CCEED171AFFFB4E7A35187A /* PBXContainerItemProxy */;
-		};
-		99DBA628B68A32C4459CDD8994171D6C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TAOverlay;
-			target = 1512126BD78F6B7D346D1E0DAEECB9DC /* TAOverlay */;
-			targetProxy = 2577A8D33D841679FB1F12BF30868BA0 /* PBXContainerItemProxy */;
-		};
-		A53803F34F92AE8515DF1E7E923E76C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JVFloatLabeledTextField;
-			target = 704019C203012A1D839721E541732250 /* JVFloatLabeledTextField */;
-			targetProxy = F257746EE51DA8EAE00C64A60809B08B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		052A17875CB827423D627183396CEB60 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		2F3FE306A82D6D2DB723EB0C816654A2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3151458A4B6EC1E73F0C427E0DBB34A6 /* MBProgressHUD-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		3C9EC839C807777D905ED30657C89760 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23C8672B4817C99532539B92A9985ACA /* JVFloatLabeledTextField-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JVFloatLabeledTextField/JVFloatLabeledTextField-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		44A627048984ED61B4EEB3EFDEA3620F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23C8672B4817C99532539B92A9985ACA /* JVFloatLabeledTextField-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JVFloatLabeledTextField/JVFloatLabeledTextField-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		4D10A5EF0CC1984F827DF72C1621A887 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E23782EF3BBCEDA04FCCA5360FE5BA18 /* Pods-TriCore.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		5071AB9FBEB3AA842764A10A97F573DB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3151458A4B6EC1E73F0C427E0DBB34A6 /* MBProgressHUD-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		659CFA1B7C2B3B2349AC777C292FEB5A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D88528AD914102F50F65CD8B78687A03 /* Pods-TriCore.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		8C61F3EEA39C29789B5A6CCCC029C4E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A60E1919611B9D4168B60D7C2F1A1DB /* TAOverlay-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TAOverlay/TAOverlay-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		97B645EDE54A389B20C6C5F59D6CF5D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A60E1919611B9D4168B60D7C2F1A1DB /* TAOverlay-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TAOverlay/TAOverlay-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */,
-				052A17875CB827423D627183396CEB60 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5E47E6284E9D431778AFD42858CDB9F4 /* Build configuration list for PBXNativeTarget "TAOverlay" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				97B645EDE54A389B20C6C5F59D6CF5D0 /* Debug */,
-				8C61F3EEA39C29789B5A6CCCC029C4E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		72818ABF3E646DB0A0C0141EADD5C09A /* Build configuration list for PBXNativeTarget "Pods-TriCore" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4D10A5EF0CC1984F827DF72C1621A887 /* Debug */,
-				659CFA1B7C2B3B2349AC777C292FEB5A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DDAF367BBA1967273F06055B9E3DD3B8 /* Build configuration list for PBXNativeTarget "MBProgressHUD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5071AB9FBEB3AA842764A10A97F573DB /* Debug */,
-				2F3FE306A82D6D2DB723EB0C816654A2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EF0790911A854B8688D72B429BFE7396 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				44A627048984ED61B4EEB3EFDEA3620F /* Debug */,
-				3C9EC839C807777D905ED30657C89760 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>00AD346135C707F93F3F45E2E6C03EAB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BCF433427205C855ECB7E611D7CBF8FB</string>
+				<string>2FCBFBFF378C1922F0E9275C2DAB239E</string>
+				<string>B34EE241780934D1C1E13250EDCBE7DE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JGMethodSwizzler</string>
+			<key>path</key>
+			<string>JGMethodSwizzler</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>00E03165C5296F934F1C586C38F6BEEC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>00FC04B06EEF8A155D545C321FDCC389</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7798C917156996E3253B11D5BEF71947</string>
+				<string>AEBB0A96624E010E4940BBED6115CA5B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>02210C3DD09FFD263701485250727E2B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0434050FE3ADA27C29BF35A1A762C189</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>025E41A8F7F527EC5A4E1E97C6182EEB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>TAOverlay.m</string>
+			<key>path</key>
+			<string>TAOverlay/TAOverlay.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>032166754574403E8685439E1ECA911E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EF6F32F8F419A3EEAF586DD9A147A9E3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0434050FE3ADA27C29BF35A1A762C189</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7798C917156996E3253B11D5BEF71947</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>057740844ACC45B986545FF3F850FFD5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>TAOverlay</string>
+			<key>target</key>
+			<string>1512126BD78F6B7D346D1E0DAEECB9DC</string>
+			<key>targetProxy</key>
+			<string>39591D3B2EE396910CF5A524713C0DD7</string>
+		</dict>
+		<key>05851EBB0455F70A81B896D75741E0F9</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JGMethodSwizzler</string>
+			<key>target</key>
+			<string>E734E4916747628D91415234E98D3CED</string>
+			<key>targetProxy</key>
+			<string>3C60CDCDA6BE232B8038F7EDFE66687B</string>
+		</dict>
+		<key>05A68B72ABABB96B0B1F43C3B3B63166</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-TriCore.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0A53B996E02E859B56CA3223452FE206</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>2C8B1A26909855242275984A2D962FBB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0CB361EB6D818BB2EFA644D91DE6DDB7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-TriCore.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>11163BFC976A56A6F6C2684A369C6BA9</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>22D26A0FF5B1B12CF1F26853B24FFBEA</string>
+			<key>buildPhases</key>
+			<array>
+				<string>9FF7EE23307C0711FE8F1EFBE5E3B8FC</string>
+				<string>811519C8394B4773B223601255F85F51</string>
+				<string>445025CA86D1F838CA9F0CE7AF1FD816</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>05851EBB0455F70A81B896D75741E0F9</string>
+				<string>7387E53752804F856C492E6DEB7B7345</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationController</string>
+			<key>productName</key>
+			<string>MZFormSheetPresentationController</string>
+			<key>productReference</key>
+			<string>6DE111B9651C840F0C6352D22325D18C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>12F54F6524E4A21DFC3FAC490F1F9583</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSInvocation+Copy.m</string>
+			<key>path</key>
+			<string>MZAppearance/NSInvocation+Copy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>13D5FC71801B275F9B07BB17E55D7906</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MZAppearance-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1512126BD78F6B7D346D1E0DAEECB9DC</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>5E47E6284E9D431778AFD42858CDB9F4</string>
+			<key>buildPhases</key>
+			<array>
+				<string>D172D83F702281EE42E11FE0D9B15CE0</string>
+				<string>BD49CF2F5870DC4C1E87DB877B4FA31C</string>
+				<string>E7403DA54286F2689EE24D50824197D7</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>TAOverlay</string>
+			<key>productName</key>
+			<string>TAOverlay</string>
+			<key>productReference</key>
+			<string>7A904B5323F1BC687117494E36123197</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>16245D6016EF9A3E1A2841E2B7C1B434</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BC0C441DDFAE60FCA7CEC909535817FD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>16A7D74B2E9ABFA47FC9485A72DC6A1F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3579992797340BE5782C9BA5FB564705</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>17ABC679B0122FF9EED25977BD599ACB</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>E42BE69296F82801D1585971FD05E6DB</string>
+			<key>buildPhases</key>
+			<array>
+				<string>2797164D9C58DB1A76180BE0A1627FA1</string>
+				<string>A803D7109FCBED221D9924CB71E211D8</string>
+				<string>859A3CEC3150625CE2E904184527A722</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>MZAppearance</string>
+			<key>productName</key>
+			<string>MZAppearance</string>
+			<key>productReference</key>
+			<string>3FA1A5E41C6E6CA350E6666F3D2265E9</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>18B097F0A01D6C3217803F4D25BEA8D7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>025E41A8F7F527EC5A4E1E97C6182EEB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>19668BE8B38EDE0A95665A739810179E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C1B4A39E02200F900A39F58F5D025395</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1E5D6F8431AAFA2954E3840EA0C43A9F</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>17ABC679B0122FF9EED25977BD599ACB</string>
+			<key>remoteInfo</key>
+			<string>MZAppearance</string>
+		</dict>
+		<key>1EC37092C7546562DD8F082DC3BCF19D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7798C917156996E3253B11D5BEF71947</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>20C06D5AA9D35373A00BB08F971E7567</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E2104EFAEE196D1FD6D44C6B2540B534</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MZAppearance/MZAppearance-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>216D4CA2C830CD1F2B4F9BEEB236FAF1</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8CE64DC7237348C7CFB496D57550AE81</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/JGMethodSwizzler/JGMethodSwizzler-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>22076EB5908907E337026DFC77E4DB7C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>TAOverlay.h</string>
+			<key>path</key>
+			<string>TAOverlay/TAOverlay.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>22D26A0FF5B1B12CF1F26853B24FFBEA</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>CDCF231B68B1745633CE55EFFA32C5E5</string>
+				<string>8B2F53C3800F37B89998C09FD4AFF2C2</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>245D421598AE949EA56954F53736DBE8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>22076EB5908907E337026DFC77E4DB7C</string>
+				<string>025E41A8F7F527EC5A4E1E97C6182EEB</string>
+				<string>5B452780F5528C2CDCDBA0DE09558B1D</string>
+				<string>86CE7694ED9036B64D9A003FC1AFC943</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>TAOverlay</string>
+			<key>path</key>
+			<string>TAOverlay</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>249DACFDA03586B31C51386C4C3CCEDE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationControllerAnimator.m</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZFormSheetPresentationControllerAnimator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>24AB823FAC8F9B4C56C8BA8B5001D3F8</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>EA135FB8BACC97E38DCB13B7543212E6</string>
+				<string>216D4CA2C830CD1F2B4F9BEEB236FAF1</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2797164D9C58DB1A76180BE0A1627FA1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E21D9EBF4A4FCCFE63375D20839E0010</string>
+				<string>68A497766452FF48FCE6AE678163C78F</string>
+				<string>CF3FC1966AA72FBECAFB870FC2673B36</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>27AB6B0D37A2042965FF4267A402955D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AEBB0A96624E010E4940BBED6115CA5B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2BA8EEFF42244BDD322F71F9D4122BF5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ADE66C7181FDB84B83427886AA87168C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2C8B1A26909855242275984A2D962FBB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E4191AF1F0BC245F51AE68462E5482E7</string>
+				<string>E0C1D4766E86A795B40D38A3695068F3</string>
+				<string>E3AD8AACD960F7DF1DEE3160E4ED893E</string>
+				<string>B89C41380C7C9E5DFF3E959D07190215</string>
+				<string>05A68B72ABABB96B0B1F43C3B3B63166</string>
+				<string>0CB361EB6D818BB2EFA644D91DE6DDB7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-TriCore</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-TriCore</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D2802644E975E0F4464808FE37C4076</key>
+		<dict>
+			<key>fileRef</key>
+			<string>22076EB5908907E337026DFC77E4DB7C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A70CDAD61F90AC503C7D04CC22DA2923</string>
+				<string>FB45FFD90572718D82AB9092B750F0CA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2E281F0AEA0DBDA56F9FF133F8359DD1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>249DACFDA03586B31C51386C4C3CCEDE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2FCBFBFF378C1922F0E9275C2DAB239E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JGMethodSwizzler.m</string>
+			<key>path</key>
+			<string>JGMethodSwizzler/JGMethodSwizzler.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>301457879D6F0C855FA935CF6747D980</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7798C917156996E3253B11D5BEF71947</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30A5DCD2DFD8A07FD1020CF149E80F6B</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libJGMethodSwizzler.a</string>
+			<key>path</key>
+			<string>libJGMethodSwizzler.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3579992797340BE5782C9BA5FB564705</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MZTransition.m</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZTransition.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>36AF9F80E8207C70568FC7AAFC48391C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AEBB0A96624E010E4940BBED6115CA5B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>375DCFE0C333B6D87D5CC799DB99D2C9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DDA2B9A233A9B75FBC40F7CD208E0654</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>39591D3B2EE396910CF5A524713C0DD7</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>1512126BD78F6B7D346D1E0DAEECB9DC</string>
+			<key>remoteInfo</key>
+			<string>TAOverlay</string>
+		</dict>
+		<key>3C60CDCDA6BE232B8038F7EDFE66687B</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>E734E4916747628D91415234E98D3CED</string>
+			<key>remoteInfo</key>
+			<string>JGMethodSwizzler</string>
+		</dict>
+		<key>3F70CF74723B6086B7184CF477D4464B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA59812598D4B7DD5EF24CD19DDD5B64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FA1A5E41C6E6CA350E6666F3D2265E9</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libMZAppearance.a</string>
+			<key>path</key>
+			<string>libMZAppearance.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>428E72B74C8C9C4B49F1095301D0F95D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5BAE511534152121A3153F16E5DF7160</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>433CD3331B6C3787F473C941B61FC68F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>00FC04B06EEF8A155D545C321FDCC389</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>439E97B5269023418221ABC071164576</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DC01B229C8E63169A960D26C68724BC9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>445025CA86D1F838CA9F0CE7AF1FD816</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>439E97B5269023418221ABC071164576</string>
+				<string>DD3B2C983E6CDD21FD7F0090CEDEB233</string>
+				<string>428E72B74C8C9C4B49F1095301D0F95D</string>
+				<string>5F69963835F7DC1417779222DA7B0AB4</string>
+				<string>E22C9251C290A46E2457733DFB4B81D7</string>
+				<string>16245D6016EF9A3E1A2841E2B7C1B434</string>
+				<string>032166754574403E8685439E1ECA911E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4726AC036D17CD6C5910090D5FD58829</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationController Swift Example-Bridging-Header.h</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZFormSheetPresentationController Swift Example-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>494ADF351246ADC4E2C248C2A3D87B55</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>TAOverlay-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4A63C98015ADBF1E1486D234687328F4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JGMethodSwizzler-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4B245F27E8492035D4DDB9725848968F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>00E03165C5296F934F1C586C38F6BEEC</string>
+				<string>EE90CC5F7EEB457B6629986C2EAA1160</string>
+				<string>ADE66C7181FDB84B83427886AA87168C</string>
+				<string>B020D258CF80FC3E7AF10C29B88EB64F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/MZFormSheetPresentationController</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4FDDAA803334289FBF1E75A5C85BDA00</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>JGMethodSwizzler.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52474524F196CF6EB114742CFAC60EE5</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E2104EFAEE196D1FD6D44C6B2540B534</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MZAppearance/MZAppearance-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>532278F27139F2F4F5CA772EA1C7EEC9</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-TriCore.a</string>
+			<key>path</key>
+			<string>libPods-TriCore.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>579E7CC890E6EA03D8523F621589C6E9</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationController</string>
+			<key>target</key>
+			<string>11163BFC976A56A6F6C2684A369C6BA9</string>
+			<key>targetProxy</key>
+			<string>6B0B505C22670F95A6E7C1FFF8993B37</string>
+		</dict>
+		<key>5A5C2F2537F9888BB89BFFFC2E1CDE72</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>MZAppearance</string>
+			<key>target</key>
+			<string>17ABC679B0122FF9EED25977BD599ACB</string>
+			<key>targetProxy</key>
+			<string>1E5D6F8431AAFA2954E3840EA0C43A9F</string>
+		</dict>
+		<key>5B452780F5528C2CDCDBA0DE09558B1D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E270474546B93CE67E538C0380239D97</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5BAE511534152121A3153F16E5DF7160</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationController.h</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZFormSheetPresentationController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E47E6284E9D431778AFD42858CDB9F4</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>E339B06B684C53B6621599F70B67A3E6</string>
+				<string>EF7829548BC2C1DEE118E243176396AD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>5F69963835F7DC1417779222DA7B0AB4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>62683920B9956EDDF76339C0F7F7BB39</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6178336B4656C15D7C2B30A45EFDE7C6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>1EC37092C7546562DD8F082DC3BCF19D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>62683920B9956EDDF76339C0F7F7BB39</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationControllerAnimator.h</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZFormSheetPresentationControllerAnimator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>68A497766452FF48FCE6AE678163C78F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>94A8556D607D5B51DF85AB0BD589E73D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>6A4F53938E16EA79ECA3DA51A55E46DF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MZAppearance-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6B0B505C22670F95A6E7C1FFF8993B37</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>11163BFC976A56A6F6C2684A369C6BA9</string>
+			<key>remoteInfo</key>
+			<string>MZFormSheetPresentationController</string>
+		</dict>
+		<key>6B48B22BAAFA2E8C6846E7F5A4033CFA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>860556C6A6F9E0C2588541B6F6DF90F0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6BABD77454832F1DE67E89238833CD98</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>E734E4916747628D91415234E98D3CED</string>
+			<key>remoteInfo</key>
+			<string>JGMethodSwizzler</string>
+		</dict>
+		<key>6DE111B9651C840F0C6352D22325D18C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libMZFormSheetPresentationController.a</string>
+			<key>path</key>
+			<string>libMZFormSheetPresentationController.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>7387E53752804F856C492E6DEB7B7345</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>MZAppearance</string>
+			<key>target</key>
+			<string>17ABC679B0122FF9EED25977BD599ACB</string>
+			<key>targetProxy</key>
+			<string>D7E940629639DB21E2C252E1004A871C</string>
+		</dict>
+		<key>75D65BFEB5EB05A78D14DE44982108DE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationControllerSegue.h</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZFormSheetPresentationControllerSegue.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7798C917156996E3253B11D5BEF71947</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>77A4AD5F4ED686492ADAFF84A866892C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7798C917156996E3253B11D5BEF71947</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>78A91E67946CCE4D477869642CEF4595</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MZBlurEffectAdapter.m</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZBlurEffectAdapter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7A904B5323F1BC687117494E36123197</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libTAOverlay.a</string>
+			<key>path</key>
+			<string>libTAOverlay.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>433CD3331B6C3787F473C941B61FC68F</string>
+				<string>D8A111F87D62853255957762CDE8B086</string>
+				<string>CCA510CFBEA2D207524CDA0D73C3B561</string>
+				<string>0A53B996E02E859B56CA3223452FE206</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7F2096EC68E32E480E83ED7C786D5676</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BCF433427205C855ECB7E611D7CBF8FB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>811519C8394B4773B223601255F85F51</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>301457879D6F0C855FA935CF6747D980</string>
+				<string>36AF9F80E8207C70568FC7AAFC48391C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>859A3CEC3150625CE2E904184527A722</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9577258AF2A078800F7E2907763F953D</string>
+				<string>3F70CF74723B6086B7184CF477D4464B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>860556C6A6F9E0C2588541B6F6DF90F0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TAOverlay-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>86180DBF328A5BDC6D21ADF60EE22F51</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9D2124E55C7C1403904079C4267BE6E8</string>
+				<string>E2104EFAEE196D1FD6D44C6B2540B534</string>
+				<string>6A4F53938E16EA79ECA3DA51A55E46DF</string>
+				<string>13D5FC71801B275F9B07BB17E55D7906</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/MZAppearance</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>86CE7694ED9036B64D9A003FC1AFC943</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D8C4CC538E040F77EF39E2CDA22B52FE</string>
+				<string>494ADF351246ADC4E2C248C2A3D87B55</string>
+				<string>860556C6A6F9E0C2588541B6F6DF90F0</string>
+				<string>BEEFEC9A9B50612D4A3A7ADEC19BF08F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/TAOverlay</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8B2F53C3800F37B89998C09FD4AFF2C2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>EE90CC5F7EEB457B6629986C2EAA1160</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MZFormSheetPresentationController/MZFormSheetPresentationController-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>8CE64DC7237348C7CFB496D57550AE81</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>JGMethodSwizzler-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>94A8556D607D5B51DF85AB0BD589E73D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MZAppearance.m</string>
+			<key>path</key>
+			<string>MZAppearance/MZAppearance.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9577258AF2A078800F7E2907763F953D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E17FEB2369E40189A4E37D4251C0F465</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>95851F9BA8407C19B18A9F6FD80E2883</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2FCBFBFF378C1922F0E9275C2DAB239E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc</string>
+			</dict>
+		</dict>
+		<key>9980B6333C54DCF2568003376663DCB5</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C013AC0137B06499E5B26B79C178D20C</string>
+				<string>9EB2A573D7E431ECE454BBD7C30296BD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>9D2124E55C7C1403904079C4267BE6E8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>MZAppearance.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9EB2A573D7E431ECE454BBD7C30296BD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>0CB361EB6D818BB2EFA644D91DE6DDB7</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>9FF7EE23307C0711FE8F1EFBE5E3B8FC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>A3B76142C3A081A27A9C39D5F0429B4D</string>
+				<string>2BA8EEFF42244BDD322F71F9D4122BF5</string>
+				<string>19668BE8B38EDE0A95665A739810179E</string>
+				<string>2E281F0AEA0DBDA56F9FF133F8359DD1</string>
+				<string>375DCFE0C333B6D87D5CC799DB99D2C9</string>
+				<string>16A7D74B2E9ABFA47FC9485A72DC6A1F</string>
+				<string>B87A881489087C285A2E6765CF66A290</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A3B76142C3A081A27A9C39D5F0429B4D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>78A91E67946CCE4D477869642CEF4595</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A70CDAD61F90AC503C7D04CC22DA2923</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>A803D7109FCBED221D9924CB71E211D8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C537CB1D86BDBADAFB0EC8D00E6AE76D</string>
+				<string>27AB6B0D37A2042965FF4267A402955D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>ADE66C7181FDB84B83427886AA87168C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AEBB0A96624E010E4940BBED6115CA5B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>QuartzCore.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>AF412436F061998ED7B072AC71CCDFB6</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>9980B6333C54DCF2568003376663DCB5</string>
+			<key>buildPhases</key>
+			<array>
+				<string>EFD0064F21D896C21A470AF18273160A</string>
+				<string>6178336B4656C15D7C2B30A45EFDE7C6</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>D51A73FBDA2EFD19D37FFEFA68D5B7B2</string>
+				<string>5A5C2F2537F9888BB89BFFFC2E1CDE72</string>
+				<string>579E7CC890E6EA03D8523F621589C6E9</string>
+				<string>057740844ACC45B986545FF3F850FFD5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-TriCore</string>
+			<key>productName</key>
+			<string>Pods-TriCore</string>
+			<key>productReference</key>
+			<string>532278F27139F2F4F5CA772EA1C7EEC9</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>B020D258CF80FC3E7AF10C29B88EB64F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B039775A7FC9E262447F6188896DED5A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E17FEB2369E40189A4E37D4251C0F465</string>
+				<string>94A8556D607D5B51DF85AB0BD589E73D</string>
+				<string>CA59812598D4B7DD5EF24CD19DDD5B64</string>
+				<string>12F54F6524E4A21DFC3FAC490F1F9583</string>
+				<string>86180DBF328A5BDC6D21ADF60EE22F51</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MZAppearance</string>
+			<key>path</key>
+			<string>MZAppearance</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B34EE241780934D1C1E13250EDCBE7DE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4FDDAA803334289FBF1E75A5C85BDA00</string>
+				<string>8CE64DC7237348C7CFB496D57550AE81</string>
+				<string>E0E9A844F6FC4167AD0F1C8282D23C3E</string>
+				<string>4A63C98015ADBF1E1486D234687328F4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/JGMethodSwizzler</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B87A881489087C285A2E6765CF66A290</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EA941017168655DEA29ADED19E7A5212</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B89C41380C7C9E5DFF3E959D07190215</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-TriCore-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BC0C441DDFAE60FCA7CEC909535817FD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MZTransition.h</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZTransition.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BCF433427205C855ECB7E611D7CBF8FB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JGMethodSwizzler.h</string>
+			<key>path</key>
+			<string>JGMethodSwizzler/JGMethodSwizzler.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BD49CF2F5870DC4C1E87DB877B4FA31C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>77A4AD5F4ED686492ADAFF84A866892C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BEEFEC9A9B50612D4A3A7ADEC19BF08F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TAOverlay-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C013AC0137B06499E5B26B79C178D20C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>05A68B72ABABB96B0B1F43C3B3B63166</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>C1B4A39E02200F900A39F58F5D025395</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationController.m</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZFormSheetPresentationController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C537CB1D86BDBADAFB0EC8D00E6AE76D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7798C917156996E3253B11D5BEF71947</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CA59812598D4B7DD5EF24CD19DDD5B64</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSInvocation+Copy.h</string>
+			<key>path</key>
+			<string>MZAppearance/NSInvocation+Copy.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CCA510CFBEA2D207524CDA0D73C3B561</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30A5DCD2DFD8A07FD1020CF149E80F6B</string>
+				<string>3FA1A5E41C6E6CA350E6666F3D2265E9</string>
+				<string>6DE111B9651C840F0C6352D22325D18C</string>
+				<string>532278F27139F2F4F5CA772EA1C7EEC9</string>
+				<string>7A904B5323F1BC687117494E36123197</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CCD9C37AD8D167B68FCB4CF7008C8FC8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E3AD8AACD960F7DF1DEE3160E4ED893E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CDCF231B68B1745633CE55EFFA32C5E5</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>EE90CC5F7EEB457B6629986C2EAA1160</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MZFormSheetPresentationController/MZFormSheetPresentationController-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>CF3FC1966AA72FBECAFB870FC2673B36</key>
+		<dict>
+			<key>fileRef</key>
+			<string>12F54F6524E4A21DFC3FAC490F1F9583</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>D172D83F702281EE42E11FE0D9B15CE0</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>6B48B22BAAFA2E8C6846E7F5A4033CFA</string>
+				<string>18B097F0A01D6C3217803F4D25BEA8D7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0700</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>CCA510CFBEA2D207524CDA0D73C3B561</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>E734E4916747628D91415234E98D3CED</string>
+				<string>17ABC679B0122FF9EED25977BD599ACB</string>
+				<string>11163BFC976A56A6F6C2684A369C6BA9</string>
+				<string>AF412436F061998ED7B072AC71CCDFB6</string>
+				<string>1512126BD78F6B7D346D1E0DAEECB9DC</string>
+			</array>
+		</dict>
+		<key>D51A73FBDA2EFD19D37FFEFA68D5B7B2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JGMethodSwizzler</string>
+			<key>target</key>
+			<string>E734E4916747628D91415234E98D3CED</string>
+			<key>targetProxy</key>
+			<string>6BABD77454832F1DE67E89238833CD98</string>
+		</dict>
+		<key>D7E940629639DB21E2C252E1004A871C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>17ABC679B0122FF9EED25977BD599ACB</string>
+			<key>remoteInfo</key>
+			<string>MZAppearance</string>
+		</dict>
+		<key>D8A111F87D62853255957762CDE8B086</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>00AD346135C707F93F3F45E2E6C03EAB</string>
+				<string>B039775A7FC9E262447F6188896DED5A</string>
+				<string>E2C1B2D317907BB8022BA47C468C0595</string>
+				<string>245D421598AE949EA56954F53736DBE8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D8C4CC538E040F77EF39E2CDA22B52FE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>TAOverlay.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DA50377EBA3A6BA7B645A8A0DDC07782</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F449DCA93C30A48983C31240BA3B5196</string>
+				<string>95851F9BA8407C19B18A9F6FD80E2883</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DC01B229C8E63169A960D26C68724BC9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MZBlurEffectAdapter.h</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZBlurEffectAdapter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DD3B2C983E6CDD21FD7F0090CEDEB233</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4726AC036D17CD6C5910090D5FD58829</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DDA2B9A233A9B75FBC40F7CD208E0654</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationControllerSegue.m</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/MZFormSheetPresentationControllerSegue.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E0C1D4766E86A795B40D38A3695068F3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-TriCore-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E0E9A844F6FC4167AD0F1C8282D23C3E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JGMethodSwizzler-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E17FEB2369E40189A4E37D4251C0F465</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MZAppearance.h</string>
+			<key>path</key>
+			<string>MZAppearance/MZAppearance.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E2104EFAEE196D1FD6D44C6B2540B534</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>MZAppearance-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E21D9EBF4A4FCCFE63375D20839E0010</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A4F53938E16EA79ECA3DA51A55E46DF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E22C9251C290A46E2457733DFB4B81D7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>75D65BFEB5EB05A78D14DE44982108DE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E270474546B93CE67E538C0380239D97</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.plug-in</string>
+			<key>name</key>
+			<string>TAOverlay.bundle</string>
+			<key>path</key>
+			<string>TAOverlay/TAOverlay.bundle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E2C1B2D317907BB8022BA47C468C0595</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>DC01B229C8E63169A960D26C68724BC9</string>
+				<string>78A91E67946CCE4D477869642CEF4595</string>
+				<string>5BAE511534152121A3153F16E5DF7160</string>
+				<string>C1B4A39E02200F900A39F58F5D025395</string>
+				<string>4726AC036D17CD6C5910090D5FD58829</string>
+				<string>62683920B9956EDDF76339C0F7F7BB39</string>
+				<string>249DACFDA03586B31C51386C4C3CCEDE</string>
+				<string>75D65BFEB5EB05A78D14DE44982108DE</string>
+				<string>DDA2B9A233A9B75FBC40F7CD208E0654</string>
+				<string>BC0C441DDFAE60FCA7CEC909535817FD</string>
+				<string>3579992797340BE5782C9BA5FB564705</string>
+				<string>EF6F32F8F419A3EEAF586DD9A147A9E3</string>
+				<string>EA941017168655DEA29ADED19E7A5212</string>
+				<string>4B245F27E8492035D4DDB9725848968F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MZFormSheetPresentationController</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E339B06B684C53B6621599F70B67A3E6</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>494ADF351246ADC4E2C248C2A3D87B55</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/TAOverlay/TAOverlay-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>E3AD8AACD960F7DF1DEE3160E4ED893E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-TriCore-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E4191AF1F0BC245F51AE68462E5482E7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-TriCore-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E42BE69296F82801D1585971FD05E6DB</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>20C06D5AA9D35373A00BB08F971E7567</string>
+				<string>52474524F196CF6EB114742CFAC60EE5</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>E734E4916747628D91415234E98D3CED</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>24AB823FAC8F9B4C56C8BA8B5001D3F8</string>
+			<key>buildPhases</key>
+			<array>
+				<string>DA50377EBA3A6BA7B645A8A0DDC07782</string>
+				<string>02210C3DD09FFD263701485250727E2B</string>
+				<string>F303AE2FB5D0A6865742E35FA0FB6DF2</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>JGMethodSwizzler</string>
+			<key>productName</key>
+			<string>JGMethodSwizzler</string>
+			<key>productReference</key>
+			<string>30A5DCD2DFD8A07FD1020CF149E80F6B</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>E7403DA54286F2689EE24D50824197D7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2D2802644E975E0F4464808FE37C4076</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>EA135FB8BACC97E38DCB13B7543212E6</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8CE64DC7237348C7CFB496D57550AE81</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/JGMethodSwizzler/JGMethodSwizzler-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>EA941017168655DEA29ADED19E7A5212</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIViewController+TargetViewController.m</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/UIViewController+TargetViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EE90CC5F7EEB457B6629986C2EAA1160</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EF6F32F8F419A3EEAF586DD9A147A9E3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIViewController+TargetViewController.h</string>
+			<key>path</key>
+			<string>MZFormSheetPresentationController/UIViewController+TargetViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EF7829548BC2C1DEE118E243176396AD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>494ADF351246ADC4E2C248C2A3D87B55</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/TAOverlay/TAOverlay-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>EFD0064F21D896C21A470AF18273160A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>CCD9C37AD8D167B68FCB4CF7008C8FC8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F303AE2FB5D0A6865742E35FA0FB6DF2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>7F2096EC68E32E480E83ED7C786D5676</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F449DCA93C30A48983C31240BA3B5196</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E0E9A844F6FC4167AD0F1C8282D23C3E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FB45FFD90572718D82AB9092B750F0CA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>

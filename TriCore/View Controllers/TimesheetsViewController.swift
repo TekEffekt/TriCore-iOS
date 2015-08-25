@@ -68,6 +68,11 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.rightArrow!.hidden = true
     }
     
+    override func viewDidDisappear(animated: Bool)
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     func setupHoursArray()
     {
         for section in 0..<projectList.count

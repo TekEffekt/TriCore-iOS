@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD515D25706D1D9861F0822F"
+               BlueprintIdentifier = "CA91ACE824DD37CDBCE0D19E"
                BuildableName = "libTAOverlay.a"
                BlueprintName = "TAOverlay"
                ReferencedContainer = "container:Pods.xcodeproj">
