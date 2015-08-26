@@ -24,6 +24,9 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     var keyboardHeight:CGFloat?
     var distanceMoved:CGFloat?
     
+    var entryAdded:Bool = false
+    var entryAddedAt:[Int]?
+    
     var hours:[[[Int?]]] = []
     
     // MARK: Initialization
@@ -97,6 +100,13 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
                 }) { (Bool) -> Void in
                     self.blackness.removeFromSuperview()
             }
+        }
+        
+        if self.entryAdded
+        {
+            self.entryAdded = false
+            
+            self.projectsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: entryAddedAt![1], inSection: entryAddedAt![0]), atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
         }
     }
 
@@ -388,8 +398,12 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             self.hours[atSection!][self.hours[atSection!].count-1].append(nil)
         }
         
+        let row = self.hours[atSection!].count-1
+        
+        self.entryAdded = true
+        self.entryAddedAt = [atSection!, row]
+        
         self.projectsTable.reloadData()
-        self.projectsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: self.hours[atSection!].count-1, inSection: atSection!), atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
     }
     
     func addEntryToProjectList(withEntry entry:TimesheetEntry) -> Int?
