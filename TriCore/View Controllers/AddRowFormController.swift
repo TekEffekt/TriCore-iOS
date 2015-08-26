@@ -18,4 +18,10 @@ class AddRowFormController: UIViewController, UITableViewDelegate
        let controller = self.childViewControllers.first as! AddRowTableViewController
         controller.timesheetController = self.timesheetController!
     }
+    
+    
+    @IBAction func closeButtonClosed(sender: AnyObject)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

@@ -972,7 +972,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Q4v-GZ-R3D" secondAttribute="trailing" constant="-20" id="q4X-zv-Ur4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Entry" id="7lQ-QO-jcj"/>
+                    <navigationItem key="navigationItem" title="Create Entry" id="7lQ-QO-jcj">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="Gfx-Fn-hgL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="closeButtonClosed:" destination="Go6-mq-Wod" id="n1a-X8-wTz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="container" destination="Q4v-GZ-R3D" id="Dqs-LJ-Csc"/>
                     </connections>

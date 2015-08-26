@@ -45,8 +45,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.projectsTable.dataSource = self
         self.searchBar.delegate = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
-        
         setupHoursArray()
     }
     
@@ -62,16 +60,16 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.rightArrow!.hidden = false
         
         self.tabBarController!.navigationItem.title = ""
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
     }
     
-    override func viewWillDisappear(animated: Bool)
-    {
-        self.leftArrow!.hidden = true
-        self.rightArrow!.hidden = true
-    }
     
     override func viewDidDisappear(animated: Bool)
     {
+        self.leftArrow!.hidden = true
+        self.rightArrow!.hidden = true
+        
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
@@ -107,6 +105,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             self.entryAdded = false
             
             self.projectsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: entryAddedAt![1], inSection: entryAddedAt![0]), atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+            
+            self.makeCellGlow()
         }
     }
 
@@ -132,6 +132,9 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 - 5,
             40, 40))
         
+        self.leftArrow!.addTarget(self, action: "leftTimesheetRequested", forControlEvents: UIControlEvents.TouchUpInside)
+        self.leftArrow!.addTarget(self, action: "rightTimesheetRequested", forControlEvents: UIControlEvents.TouchUpInside)
+
         var arrowImage = UIImage(named:"Right Arrow")
         arrowImage = arrowImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         
@@ -387,6 +390,29 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
     }
     
+    func leftTimesheetRequested()
+    {
+//        [UIView beginAnimations:@"Flip" context:nil];
+//        [UIView setAnimationDuration:1.0];
+//        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//        [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.base.view cache:YES];
+//        
+//        [UIView commitAnimations];
+        
+        UIView.beginAnimations("Flip", context: nil)
+        UIView.setAnimationDuration(1.0)
+        UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
+        UIView.setAnimationTransition(UIViewAnimationTransition.CurlDown, forView: self.view, cache: true)
+        
+        UIView.commitAnimations()
+    }
+    
+    func rightTimesheetRequested()
+    {
+        
+    }
+    
+    // MARK: Entry Handling
     func newEntryCreated(withEntry entry:TimesheetEntry)
     {
         let atSection = self.addEntryToProjectList(withEntry: entry)
@@ -439,6 +465,11 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         return nil
+    }
+    
+    func makeCellGlow()
+    {
+        
     }
     
     // MARK: Navigation
