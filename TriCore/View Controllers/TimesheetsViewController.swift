@@ -14,7 +14,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var searchBar: UISearchBar!
     let blackness:UIView = UIView()
     @IBOutlet weak var projectsTable: UITableView!
-    let projectList = GetProjectList.getProjectList()
+    let projectList:[[String:AnyObject]] = GetProjectList.getOrganizedProjectList()
     
     var leftArrow:UIButton?
     var rightArrow:UIButton?
@@ -43,7 +43,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.searchBar.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
-        
         
         setupHoursArray()
     }
@@ -78,7 +77,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         for section in 0..<projectList.count
         {
             self.hours.append([[Int?]]())
-            for row in 0..<projectList[section].count
+            for row in 0..<(projectList[section]["Entries"] as! [TimesheetEntry]).count
             {
                 self.hours[section].append([Int?]())
                 for i in 1...7
@@ -145,8 +144,13 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         let cell:ProjectTableViewCell = self.projectsTable.dequeueReusableCellWithIdentifier(cellId) as! ProjectTableViewCell
         
-        let text = projectList[indexPath.section][indexPath.row]
-        cell.projectTitleAndNumber.text = text
+        let dictionary = projectList[indexPath.section]
+        let entriesForSection = dictionary["Entries"] as! [TimesheetEntry]
+        let entry = entriesForSection[indexPath.row] as TimesheetEntry
+        
+        cell.projectTitleAndNumber.text = entry.projectName
+        cell.taskCodeName.text = entry.taskCode
+        cell.sprintCategoryName.text = entry.sprintCategory!
         cell.controller = self
         
         for textField in cell.textFields!
@@ -163,7 +167,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return projectList[section].count
+        return (projectList[section]["Entries"] as! [TimesheetEntry]).count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -173,10 +177,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        let projectName = self.projectList[section][0]
-        let projectFirstLetter = projectName[projectName.startIndex]
-        
-        return String(projectFirstLetter)
+        let letter = self.projectList[section]["Letter"] as! String
+        return letter
     }
     
     // MARK: TextField Methods
@@ -369,11 +371,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.view.subviews.last!.removeFromSuperview()
     }
     
-    func addRowToTimesheet()
-    {
-        
-    }
-    
     func givePublishedAnimation()
     {
         PublishedOverlay.showCompleted()
@@ -381,11 +378,24 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
     }
     
+    func newEntryCreated(withName projectName:String, andCode taskCode:String, andSprint sprintCat:String?)
+    {
+        
+    }
+    
     // MARK: Navigation
     
     func showAddRowForm()
     {
         self.performSegueWithIdentifier("showAddRowForm", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showAddForm"
+        {
+            let createController = segue.destinationViewController as! AddRowTableViewController
+            createController.timesheetController = self
+        }
     }
     
 }

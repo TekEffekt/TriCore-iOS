@@ -21,6 +21,8 @@ class AddRowTableViewController: UITableViewController
     var taskCodeSelected:Bool = false
     var sprintCategorySelected:Bool = false
     
+    var timesheetController:TimesheetsViewController?
+    
     // MARK: Initialization
     override func viewDidLoad() {
         self.tableView.separatorColor = UIColor.clearColor()
@@ -30,6 +32,9 @@ class AddRowTableViewController: UITableViewController
     // MARK: Interaction
     @IBAction func createButtonPressed(sender: AnyObject)
     {
+        self.timesheetController!.newEntryCreated(withName: self.projectNameLabel.text!, andCode: self.taskCodeLabel.text!,
+            andSprint: self.sprintCategorySelected ? self.sprintLabel.text!: nil)
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -54,7 +59,7 @@ class AddRowTableViewController: UITableViewController
     
     func checkFields()
     {
-        if projectNameSelected && taskCodeSelected && sprintCategorySelected
+        if projectNameSelected && taskCodeSelected
         {
             UIView.animateWithDuration(1.0, animations: { () -> Void in
                 self.createButton.alpha = 1.0
