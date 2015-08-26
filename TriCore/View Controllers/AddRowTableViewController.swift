@@ -32,8 +32,9 @@ class AddRowTableViewController: UITableViewController
     // MARK: Interaction
     @IBAction func createButtonPressed(sender: AnyObject)
     {
-        self.timesheetController!.newEntryCreated(withName: self.projectNameLabel.text!, andCode: self.taskCodeLabel.text!,
+        let entry = TimesheetEntry(withProjectName: self.projectNameLabel.text!, andTaskCode: self.taskCodeLabel.text!,
             andSprint: self.sprintCategorySelected ? self.sprintLabel.text!: nil)
+        self.timesheetController!.newEntryCreated(withEntry: entry)
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }

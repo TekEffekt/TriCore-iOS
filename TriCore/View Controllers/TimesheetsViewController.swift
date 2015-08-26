@@ -14,7 +14,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var searchBar: UISearchBar!
     let blackness:UIView = UIView()
     @IBOutlet weak var projectsTable: UITableView!
-    let projectList:[[String:AnyObject]] = GetProjectList.getOrganizedProjectList()
+    var projectList:[[String:AnyObject]] = GetProjectList.getOrganizedProjectList()
     
     var leftArrow:UIButton?
     var rightArrow:UIButton?
@@ -359,7 +359,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             let result = TimesheetPublisher.publishTimesheet(withHours: self.hours)
 
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-//                TAOverlay.hideOverlay()
                 self.givePublishedAnimation()
             })
         }
@@ -378,9 +377,54 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
     }
     
-    func newEntryCreated(withName projectName:String, andCode taskCode:String, andSprint sprintCat:String?)
+    func newEntryCreated(withEntry entry:TimesheetEntry)
     {
+        let atSection = self.addEntryToProjectList(withEntry: entry)
         
+        self.hours[atSection!].append([Int?]())
+        
+        for i in 1...7
+        {
+            self.hours[atSection!][self.hours[atSection!].count-1].append(nil)
+        }
+        
+        self.projectsTable.reloadData()
+        self.projectsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: self.hours[atSection!].count-1, inSection: atSection!), atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+    }
+    
+    func addEntryToProjectList(withEntry entry:TimesheetEntry) -> Int?
+    {
+        let firstLetter = GetProjectList.findFirstLetter(inString: entry.projectName)
+        let letterNum = GetProjectList.letterList.indexOf(firstLetter)
+        
+        print("First Letter \(firstLetter)")
+        
+        var index = -1
+        
+        for var i = 0; i < self.projectList.count; i++
+        {
+            let dict = self.projectList[i]
+            let letter = dict["Letter"] as! String
+            let otherNum = GetProjectList.letterList.indexOf(letter)
+            
+            if otherNum == letterNum
+            {
+                index = i
+                var entryArray = self.projectList[index]["Entries"] as! [TimesheetEntry]
+                entryArray.append(entry)
+                self.projectList[index]["Entries"] = entryArray
+                return index
+                
+            } else if letterNum < otherNum
+            {
+                index = i--
+                let newDictionary = ["Letter":firstLetter,"Entries":[entry]] 
+                self.projectList.insert(newDictionary as! [String : AnyObject], atIndex: index)
+                return index
+            }
+        }
+        
+        return nil
     }
     
     // MARK: Navigation
@@ -391,9 +435,10 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showAddForm"
+        if segue.identifier == "showAddRowForm"
         {
-            let createController = segue.destinationViewController as! AddRowTableViewController
+            let navController = segue.destinationViewController as! UINavigationController
+            let createController = navController.viewControllers.first as! AddRowFormController
             createController.timesheetController = self
         }
     }
