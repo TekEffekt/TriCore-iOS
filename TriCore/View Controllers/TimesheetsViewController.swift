@@ -24,6 +24,9 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     var entryAdded:Bool = false
     var entryAddedAt:[Int]?
     var navCont:UINavigationController?
+    var manager:TimesheetManager?
+    var publishedSheet:Bool = false
+    var overlay:PublishedOverlay?
     
     var hours:[[[Int?]]] = []
     
@@ -40,12 +43,26 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     override func viewWillAppear(animated: Bool)
     {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
+        if self.publishedSheet
+        {
+            self.overlay!.hidden = false
+            
+            self.view.addSubview(self.overlay!)
+            PublishedOverlay.showCompleted()
+        }
     }
     
     
     override func viewDidDisappear(animated: Bool)
     {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if self.publishedSheet
+        {
+            self.overlay!.removeFromSuperview()
+        }
     }
     
     func setupHoursArray()
@@ -345,10 +362,10 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: Publishing
     func publishTimesheet()
     {
-        let overlay:PublishedOverlay = PublishedOverlay()
-        overlay.frame = CGRectMake(self.view.frame.origin.x, self.searchBar.frame.origin.y-8, self.view.frame.width, self.searchBar.frame.height + self.projectsTable.frame.height + 16)
+        self.overlay = PublishedOverlay()
+        overlay!.frame = CGRectMake(self.view.frame.origin.x, self.searchBar.frame.origin.y-8, self.view.frame.width, self.searchBar.frame.height + self.projectsTable.frame.height + 16)
 
-        self.view.addSubview(overlay)
+        self.view.addSubview(overlay!)
 
         PublishedOverlay.showPublishing()
 
@@ -365,15 +382,16 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     func unPublishTimesheet()
     {
-        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
-        self.view.subviews.last!.removeFromSuperview()
+        self.overlay!.removeFromSuperview()
+        self.publishedSheet = false
     }
     
     func givePublishedAnimation()
     {
         PublishedOverlay.showCompleted()
         
-        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
+        self.manager!.publishedTimesheet()
+        self.publishedSheet = true
     }
     
     // MARK: Navigation

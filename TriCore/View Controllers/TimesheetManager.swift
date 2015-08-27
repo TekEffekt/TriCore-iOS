@@ -33,17 +33,18 @@ class TimesheetManager: UIViewController
         let timesheet2 = self.storyboard!.instantiateViewControllerWithIdentifier("Timesheet") as! TimesheetsViewController
         timesheet2.view.backgroundColor = UIColor.redColor()
         
-        for timesheet in self.timesheets
-        {
-            timesheet.navCont = self.navigationController
-//            timesheet.tabCont = self.tabBarController
-        }
         
         self.timesheets.append(timesheet1)
         self.timesheets.append(timesheet2)
         
+        for timesheet in self.timesheets
+        {
+            timesheet.navCont = self.navigationController
+            timesheet.manager = self
+        }
+        
         self.pager.add(self.timesheets)
-        self.pager.startPage = self.pager.viewControllers!.count - 1
+        self.pager.startPage = self.pager.pages.count - 1
         
         self.addChildViewController(self.pager)
         self.view.addSubview(self.pager.view)
@@ -131,6 +132,13 @@ class TimesheetManager: UIViewController
     {
         let currentSheet:TimesheetsViewController = self.pager.pages[self.pager.currentIndex] as! TimesheetsViewController
         currentSheet.unPublishTimesheet()
+        
+        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
+    }
+    
+    func publishedTimesheet()
+    {
+        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
     }
     
     func leftTimesheetRequested()
