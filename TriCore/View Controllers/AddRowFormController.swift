@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 8.0, *)
 class AddRowFormController: UIViewController, UITableViewDelegate
 {
     @IBOutlet weak var container: UIView!
@@ -17,6 +18,7 @@ class AddRowFormController: UIViewController, UITableViewDelegate
     {
        let controller = self.childViewControllers.first as! AddRowTableViewController
         controller.timesheetController = self.timesheetController!
+        controller.navigationCont = self.navigationController
     }
     
     

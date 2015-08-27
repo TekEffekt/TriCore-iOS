@@ -25,6 +25,8 @@
 		B6A0EE851B7B2E2100FE787F /* GetProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */; };
 		B6CD22991B843EBA002B0102 /* TimesheetPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */; };
 		B6E6CCCB1B8BD55500B2CABA /* AddRowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6CCCA1B8BD55500B2CABA /* AddRowTableViewController.swift */; };
+		B6F034751B8F4861007B2928 /* PagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F034741B8F4861007B2928 /* PagesController.swift */; };
+		B6F034771B8F6846007B2928 /* TimesheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F034761B8F6846007B2928 /* TimesheetManager.swift */; };
 		B6FE67F01B846A9F002E647B /* PublishedOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE67EF1B846A9F002E647B /* PublishedOverlay.swift */; };
 		B6FE67F41B892A1A002E647B /* AddRowFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE67F31B892A1A002E647B /* AddRowFormController.swift */; };
 		B6FE67F61B892A9C002E647B /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE67F51B892A9C002E647B /* PopupViewController.swift */; };
@@ -73,6 +75,8 @@
 		B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetProjectList.swift; path = Model/GetProjectList.swift; sourceTree = "<group>"; };
 		B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetPublisher.swift; path = Model/TimesheetPublisher.swift; sourceTree = "<group>"; };
 		B6E6CCCA1B8BD55500B2CABA /* AddRowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRowTableViewController.swift; path = "View Controllers/AddRowTableViewController.swift"; sourceTree = "<group>"; };
+		B6F034741B8F4861007B2928 /* PagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesController.swift; sourceTree = "<group>"; };
+		B6F034761B8F6846007B2928 /* TimesheetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetManager.swift; path = "View Controllers/TimesheetManager.swift"; sourceTree = "<group>"; };
 		B6FE67EF1B846A9F002E647B /* PublishedOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishedOverlay.swift; path = Views/PublishedOverlay.swift; sourceTree = "<group>"; };
 		B6FE67F31B892A1A002E647B /* AddRowFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRowFormController.swift; path = "View Controllers/AddRowFormController.swift"; sourceTree = "<group>"; };
 		B6FE67F51B892A9C002E647B /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopupViewController.swift; path = "View Controllers/PopupViewController.swift"; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		B61F72D81B76C66A00A34736 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B6F034761B8F6846007B2928 /* TimesheetManager.swift */,
 				B6FE67F51B892A9C002E647B /* PopupViewController.swift */,
 				B6E6CCCA1B8BD55500B2CABA /* AddRowTableViewController.swift */,
 				B6FE67F31B892A1A002E647B /* AddRowFormController.swift */,
@@ -199,6 +204,7 @@
 		B6A0EE811B7B0D0200FE787F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B6F034741B8F4861007B2928 /* PagesController.swift */,
 				B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */,
 				B6FE67EF1B846A9F002E647B /* PublishedOverlay.swift */,
 			);
@@ -383,7 +389,9 @@
 				B61F72DB1B76F48A00A34736 /* LoginVerification.swift in Sources */,
 				B6A0EE831B7B0D4C00FE787F /* ProjectTableViewCell.swift in Sources */,
 				B6A0EE851B7B2E2100FE787F /* GetProjectList.swift in Sources */,
+				B6F034771B8F6846007B2928 /* TimesheetManager.swift in Sources */,
 				B6FE67F01B846A9F002E647B /* PublishedOverlay.swift in Sources */,
+				B6F034751B8F4861007B2928 /* PagesController.swift in Sources */,
 				B6E6CCCB1B8BD55500B2CABA /* AddRowTableViewController.swift in Sources */,
 				B61F72D71B76C65C00A34736 /* LoginViewController.swift in Sources */,
 				B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */,
@@ -485,7 +493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -523,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -537,7 +545,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TriCore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uwp.TriCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,7 +561,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TriCore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uwp.TriCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";

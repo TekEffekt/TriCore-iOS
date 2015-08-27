@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 8.0, *)
 class ProjectTableViewCell: UITableViewCell {
     @IBOutlet weak var projectTitleAndNumber: UILabel!
     @IBOutlet weak var taskCodeName: UILabel!

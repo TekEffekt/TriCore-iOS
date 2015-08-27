@@ -8,16 +8,13 @@
 
 import UIKit
 
+@available(iOS 8.0, *)
 class TimesheetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UISearchBarDelegate
 {
     // MARK: Properties
     @IBOutlet weak var searchBar: UISearchBar!
-    let blackness:UIView = UIView()
     @IBOutlet weak var projectsTable: UITableView!
     var projectList:[[String:AnyObject]] = GetProjectList.getOrganizedProjectList()
-    
-    var leftArrow:UIButton?
-    var rightArrow:UIButton?
     
     var currentTextField:UITextField?
     var currentCell:ProjectTableViewCell?
@@ -26,21 +23,13 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     var entryAdded:Bool = false
     var entryAddedAt:[Int]?
+    var navCont:UINavigationController?
     
     var hours:[[[Int?]]] = []
     
     // MARK: Initialization
     override func viewDidLoad()
     {
-        setupTimeSheetChangerViews()
-        
-        self.blackness.frame = CGRectMake(0, 0, self.view.frame.width,
-            self.navigationController!.view.frame.height + self.view.frame.height)
-        self.blackness.backgroundColor = UIColor.blackColor()
-        self.navigationController!.view.addSubview(blackness)
-        
-        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
-        
         self.projectsTable.delegate = self
         self.projectsTable.dataSource = self
         self.searchBar.delegate = self
@@ -50,26 +39,12 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewWillAppear(animated: Bool)
     {
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
-        let plusButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "showAddRowForm")
-        
-        self.tabBarController!.navigationItem.leftBarButtonItem = publishButton
-        self.tabBarController!.navigationItem.rightBarButtonItem = plusButton
-        
-        self.leftArrow!.hidden = false
-        self.rightArrow!.hidden = false
-        
-        self.tabBarController!.navigationItem.title = ""
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
     }
     
     
     override func viewDidDisappear(animated: Bool)
     {
-        self.leftArrow!.hidden = true
-        self.rightArrow!.hidden = true
-        
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
@@ -91,15 +66,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidAppear(animated: Bool)
     {
-        if let superview = blackness.superview
-        {
-            UIView.animateWithDuration(1.0, animations: { () -> Void in
-                self.blackness.alpha = 0.0
-                }) { (Bool) -> Void in
-                    self.blackness.removeFromSuperview()
-            }
-        }
-        
         if self.entryAdded
         {
             self.entryAdded = false
@@ -108,45 +74,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             
             self.makeCellGlow()
         }
-    }
-
-    func setupTimeSheetChangerViews()
-    {
-        let navBarHeight = self.navigationController!.navigationBar.frame.height
-        
-        let timesheetDate:String = ""
-        let timesheetDateLabel:UILabel = UILabel(frame: CGRectMake(0, 0, 15, navBarHeight))
-        timesheetDateLabel.text = timesheetDate
-        timesheetDateLabel.textAlignment = NSTextAlignment.Center
-        timesheetDateLabel.textColor = UIColor.whiteColor()
-        timesheetDateLabel.font = timesheetDateLabel.font.fontWithSize(self.view.frame.width/16)
-        timesheetDateLabel.center = self.tabBarController!.navigationController!.navigationBar.center
-        
-        self.navigationController!.view.addSubview(timesheetDateLabel)
-        
-        self.leftArrow = UIButton(frame: CGRectMake(timesheetDateLabel.frame.origin.x - 40 - 5,
-            CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 - 5,
-            40, 40))
-
-        self.rightArrow = UIButton(frame: CGRectMake(CGRectGetMaxX(timesheetDateLabel.frame) + 5,
-            CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 - 5,
-            40, 40))
-        
-        self.leftArrow!.addTarget(self, action: "leftTimesheetRequested", forControlEvents: UIControlEvents.TouchUpInside)
-        self.leftArrow!.addTarget(self, action: "rightTimesheetRequested", forControlEvents: UIControlEvents.TouchUpInside)
-
-        var arrowImage = UIImage(named:"Right Arrow")
-        arrowImage = arrowImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        
-        self.leftArrow!.setBackgroundImage(arrowImage, forState: UIControlState.Normal)
-        self.leftArrow!.tintColor = UIColor.whiteColor()
-        self.rightArrow!.setBackgroundImage(arrowImage, forState: UIControlState.Normal)
-        self.rightArrow!.tintColor = UIColor.whiteColor()
-        self.leftArrow!.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
-        self.rightArrow!.enabled = false
-
-        self.navigationController!.view.addSubview(self.leftArrow!)
-        self.navigationController!.view.addSubview(self.rightArrow!)
     }
     
     // MARK: TableView Datasource
@@ -355,63 +282,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.currentTextField!.becomeFirstResponder()
     }
     
-    // MARK: Timesheet Handling
-    
-    func publishTimesheet()
-    {
-        let overlay:PublishedOverlay = PublishedOverlay()
-        overlay.frame = CGRectMake(self.view.frame.origin.x, self.searchBar.frame.origin.y-8, self.view.frame.width, self.searchBar.frame.height + self.projectsTable.frame.height + 16)
-        
-        self.view.addSubview(overlay)
-        
-        PublishedOverlay.showPublishing()
-        
-        let queue = NSOperationQueue()
-        
-        queue.addOperationWithBlock { () -> Void in
-            let result = TimesheetPublisher.publishTimesheet(withHours: self.hours)
-
-            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                self.givePublishedAnimation()
-            })
-        }
-    }
-    
-    func unPublishTimesheet()
-    {
-        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
-        self.view.subviews.last!.removeFromSuperview()
-    }
-    
-    func givePublishedAnimation()
-    {
-        PublishedOverlay.showCompleted()
-        
-        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
-    }
-    
-    func leftTimesheetRequested()
-    {
-//        [UIView beginAnimations:@"Flip" context:nil];
-//        [UIView setAnimationDuration:1.0];
-//        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//        [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.base.view cache:YES];
-//        
-//        [UIView commitAnimations];
-        
-        UIView.beginAnimations("Flip", context: nil)
-        UIView.setAnimationDuration(1.0)
-        UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
-        UIView.setAnimationTransition(UIViewAnimationTransition.CurlDown, forView: self.view, cache: true)
-        
-        UIView.commitAnimations()
-    }
-    
-    func rightTimesheetRequested()
-    {
-        
-    }
-    
     // MARK: Entry Handling
     func newEntryCreated(withEntry entry:TimesheetEntry)
     {
@@ -470,6 +340,40 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     func makeCellGlow()
     {
         
+    }
+    
+    // MARK: Publishing
+    func publishTimesheet()
+    {
+        let overlay:PublishedOverlay = PublishedOverlay()
+        overlay.frame = CGRectMake(self.view.frame.origin.x, self.searchBar.frame.origin.y-8, self.view.frame.width, self.searchBar.frame.height + self.projectsTable.frame.height + 16)
+
+        self.view.addSubview(overlay)
+
+        PublishedOverlay.showPublishing()
+
+        let queue = NSOperationQueue()
+
+        queue.addOperationWithBlock { () -> Void in
+            let result = TimesheetPublisher.publishTimesheet(withHours: self.hours)
+
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                self.givePublishedAnimation()
+            })
+        }
+    }
+    
+    func unPublishTimesheet()
+    {
+        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
+        self.view.subviews.last!.removeFromSuperview()
+    }
+    
+    func givePublishedAnimation()
+    {
+        PublishedOverlay.showCompleted()
+        
+        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
     }
     
     // MARK: Navigation

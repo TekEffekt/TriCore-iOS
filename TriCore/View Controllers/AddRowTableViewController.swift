@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 8.0, *)
 class AddRowTableViewController: UITableViewController
 {
     // MARK: Properties
@@ -22,9 +23,11 @@ class AddRowTableViewController: UITableViewController
     var sprintCategorySelected:Bool = false
     
     var timesheetController:TimesheetsViewController?
+    var navigationCont:UINavigationController?
     
     // MARK: Initialization
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }

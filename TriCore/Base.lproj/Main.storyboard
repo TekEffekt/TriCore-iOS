@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3gM-AH-vKs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3a0-ax-pf2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
@@ -519,10 +519,30 @@
             </objects>
             <point key="canvasLocation" x="2685" y="665"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="cF8-em-YOU">
+            <objects>
+                <viewController id="KEw-lK-4c3" customClass="TimesheetManager" customModule="TriCore" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EIE-aC-PnE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ybb-a7-6fp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dYS-J9-P9A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="Timesheet Icon" id="2HF-84-Mei"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j61-5Z-rx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2207" y="-195"/>
+        </scene>
         <!--Time Sheets-->
         <scene sceneID="mmj-bW-65X">
             <objects>
-                <viewController id="MeQ-bD-MIg" customClass="TimesheetsViewController" customModule="TriCore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Timesheet" id="MeQ-bD-MIg" customClass="TimesheetsViewController" customModule="TriCore" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6eH-ak-JgJ"/>
                         <viewControllerLayoutGuide type="bottom" id="eIw-Dz-S19"/>
@@ -1054,8 +1074,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="MeQ-bD-MIg" kind="relationship" relationship="viewControllers" id="DpN-kI-aZ3"/>
-                        <segue destination="uKb-g5-1nz" kind="relationship" relationship="viewControllers" id="NJm-Gw-UJB"/>
+                        <segue destination="KEw-lK-4c3" kind="relationship" relationship="viewControllers" id="3Ey-3F-9vw"/>
+                        <segue destination="uKb-g5-1nz" kind="relationship" relationship="viewControllers" id="WLb-ZF-Fzx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZY-it-6jN" userLabel="First Responder" sceneMemberID="firstResponder"/>

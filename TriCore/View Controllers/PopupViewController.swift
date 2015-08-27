@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 8.0, *)
 class PopupViewController: UITableViewController, UISearchResultsUpdating
 {
     // MARK: Properties
