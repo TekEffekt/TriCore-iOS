@@ -24,7 +24,7 @@ class TimesheetEntry
             self.sprintCategory = sprintCategory
         } else
         {
-            self.sprintCategory = nil
+            self.sprintCategory = ""
         }
     }
     
