@@ -58,13 +58,17 @@ class TimesheetManager: UIViewController
         self.pager.goTo((self.pager.pages.count - 1))
         
         self.pager.enableSwipe = false
-        self.pager.view.backgroundColor = UIColor.redColor()
         self.pager.view.frame = self.containerRect!
         
         self.view.addSubview(self.pager.view)
         
         self.addChildViewController(self.pager)
-//        self.tabBarController!.tabBar.alpha = 0.5
+        
+        let statusBar = UIToolbar(frame: CGRectMake(0, -20, self.view.frame.width , 20))
+        
+        statusBar.backgroundColor = self.navBar.barTintColor
+        statusBar.barTintColor = self.navBar.barTintColor
+        self.navBar.addSubview(statusBar)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -77,7 +81,7 @@ class TimesheetManager: UIViewController
     
     override func viewDidAppear(animated: Bool)
     {
-        if let superview = blackness.superview
+        if let _ = blackness.superview
         {
             UIView.animateWithDuration(1.0, animations: { () -> Void in
                 self.blackness.alpha = 0.0
@@ -94,25 +98,10 @@ class TimesheetManager: UIViewController
     
     func setupTimeSheetChangerViews()
     {
-        let navBarHeight = self.navBar.frame.height
+        self.leftArrow = UIButton(frame: CGRectMake(CGRectGetMidX(self.view.frame) - 51, 3, 40, 40))
         
-        let timesheetDate:String = ""
-        let timesheetDateLabel:UILabel = UILabel(frame: CGRectMake(0, 0, 15, navBarHeight))
-        timesheetDateLabel.text = timesheetDate
-        timesheetDateLabel.textAlignment = NSTextAlignment.Center
-        timesheetDateLabel.textColor = UIColor.whiteColor()
-        timesheetDateLabel.font = timesheetDateLabel.font.fontWithSize(self.view.frame.width/16)
-        timesheetDateLabel.center = self.navBar.center
-        
-        self.navBar.addSubview(timesheetDateLabel)
-        
-        self.leftArrow = UIButton(frame: CGRectMake(timesheetDateLabel.frame.origin.x - 40 - 5,
-            CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 + 12,
-            40, 40))
-        
-        self.rightArrow = UIButton(frame: CGRectMake(CGRectGetMaxX(timesheetDateLabel.frame) + 5,
-            CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 + 12,
-            40, 40))
+        self.rightArrow = UIButton(frame: CGRectMake(CGRectGetMidX(self.view.frame) + 11, 3, 40, 40))
+
         
         self.leftArrow!.addTarget(self, action: "leftTimesheetRequested", forControlEvents: UIControlEvents.TouchUpInside)
         self.rightArrow!.addTarget(self, action: "rightTimesheetRequested", forControlEvents: UIControlEvents.TouchUpInside)
@@ -127,13 +116,18 @@ class TimesheetManager: UIViewController
         self.leftArrow!.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
 //        self.rightArrow!.enabled = false
         
-        self.view.addSubview(self.leftArrow!)
-        self.view.addSubview(self.rightArrow!)
+        self.navBar.addSubview(self.leftArrow!)
+        self.navBar.addSubview(self.rightArrow!)
     }
     
     // MARK: Timesheet Handling
     
     @IBAction func publishTimesheet(sender: AnyObject)
+    {
+        self.publishTimesheet()
+    }
+    
+    func publishTimesheet()
     {
         let currentSheet:TimesheetsViewController = self.pager.pages[self.pager.currentIndex] as! TimesheetsViewController
         currentSheet.publishTimesheet()
@@ -175,10 +169,12 @@ class TimesheetManager: UIViewController
         let currentTimesheet = self.pager.pages[self.pager.currentIndex] as! TimesheetsViewController
         if currentTimesheet.publishedSheet == true
         {
-            self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
+            self.publishButton.title = "Un-Publish"
+            self.publishButton.action =  "unPublishTimesheet"
         } else
         {
-            self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
+            self.publishButton.title = "Publish"
+            self.publishButton.action =  "publishTimesheet"
         }
     }
     
