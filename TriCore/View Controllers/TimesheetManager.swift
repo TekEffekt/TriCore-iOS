@@ -196,7 +196,8 @@ class TimesheetManager: UIViewController
     
     func showAddRowForm()
     {
-        self.timesheetController!.showAddRowForm()
+        let currentTimesheet = self.pager.pages[self.pager.currentIndex] as! TimesheetsViewController
+        currentTimesheet.showAddRowForm()
     }
     
 }
