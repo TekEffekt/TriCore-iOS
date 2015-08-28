@@ -11,19 +11,27 @@ import UIKit
 @available(iOS 8.0, *)
 class TimesheetManager: UIViewController
 {
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var publishButton: UIBarButtonItem!
+    @IBOutlet weak var navBar: UINavigationBar!
     let pager:PagesController = PagesController()
     var leftArrow:UIButton?
     var rightArrow:UIButton?
     let blackness:UIView = UIView()
     var timesheetController:TimesheetsViewController?
     var timesheets:[TimesheetsViewController] = [TimesheetsViewController]()
+    var containerRect:CGRect?
+    var containerView:UIView?
+    
+    func statusBarHeight() -> CGFloat {
+        let statusBarSize = UIApplication.sharedApplication().statusBarFrame.size
+        return Swift.min(statusBarSize.width, statusBarSize.height)
+    }
     
     override func viewDidLoad()
     {
+        self.navigationController!.navigationBarHidden = true
         self.pager.startPage = 2
-
-        
-        setupTimeSheetChangerViews()
         
         self.blackness.frame = CGRectMake(0, 0, self.view.frame.width,
             self.navigationController!.view.frame.height + self.view.frame.height)
@@ -44,30 +52,26 @@ class TimesheetManager: UIViewController
             timesheet.manager = self
         }
         
+        self.containerRect = CGRectMake(0, self.navigationController!.navigationBar.frame.height + statusBarHeight(), self.view.frame.width, self.view.frame.height - self.navigationController!.navigationBar.frame.height - self.tabBarController!.tabBar.frame.height - statusBarHeight())
+        
         self.pager.add(self.timesheets)
         self.pager.goTo((self.pager.pages.count - 1))
         
         self.pager.enableSwipe = false
         self.pager.view.backgroundColor = UIColor.redColor()
+        self.pager.view.frame = self.containerRect!
         
         self.view.addSubview(self.pager.view)
-
+        
         self.addChildViewController(self.pager)
-        self.checkArrows()
+//        self.tabBarController!.tabBar.alpha = 0.5
     }
     
     override func viewWillAppear(animated: Bool)
     {
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
-        let plusButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "showAddRowForm")
+        setupTimeSheetChangerViews()
         
-        self.tabBarController!.navigationItem.leftBarButtonItem = publishButton
-        self.tabBarController!.navigationItem.rightBarButtonItem = plusButton
-        
-        self.tabBarController!.navigationItem.title = ""
-        
-        self.leftArrow!.hidden = false
-        self.rightArrow!.hidden = false
+        self.checkArrows()
     }
     
     
@@ -82,6 +86,7 @@ class TimesheetManager: UIViewController
             }
         }
     }
+    
     override func viewWillDisappear(animated: Bool) {
         self.leftArrow!.hidden = true
         self.rightArrow!.hidden = true
@@ -89,7 +94,7 @@ class TimesheetManager: UIViewController
     
     func setupTimeSheetChangerViews()
     {
-        let navBarHeight = self.navigationController!.navigationBar.frame.height
+        let navBarHeight = self.navBar.frame.height
         
         let timesheetDate:String = ""
         let timesheetDateLabel:UILabel = UILabel(frame: CGRectMake(0, 0, 15, navBarHeight))
@@ -97,16 +102,16 @@ class TimesheetManager: UIViewController
         timesheetDateLabel.textAlignment = NSTextAlignment.Center
         timesheetDateLabel.textColor = UIColor.whiteColor()
         timesheetDateLabel.font = timesheetDateLabel.font.fontWithSize(self.view.frame.width/16)
-        timesheetDateLabel.center = self.tabBarController!.navigationController!.navigationBar.center
+        timesheetDateLabel.center = self.navBar.center
         
-        self.navigationController!.view.addSubview(timesheetDateLabel)
+        self.navBar.addSubview(timesheetDateLabel)
         
         self.leftArrow = UIButton(frame: CGRectMake(timesheetDateLabel.frame.origin.x - 40 - 5,
-            CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 - 5,
+            CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 + 12,
             40, 40))
         
         self.rightArrow = UIButton(frame: CGRectMake(CGRectGetMaxX(timesheetDateLabel.frame) + 5,
-            CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 - 5,
+            CGRectGetMidY(timesheetDateLabel.frame) - navBarHeight/4 + 12,
             40, 40))
         
         self.leftArrow!.addTarget(self, action: "leftTimesheetRequested", forControlEvents: UIControlEvents.TouchUpInside)
@@ -122,13 +127,13 @@ class TimesheetManager: UIViewController
         self.leftArrow!.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
 //        self.rightArrow!.enabled = false
         
-        self.navigationController!.view.addSubview(self.leftArrow!)
-        self.navigationController!.view.addSubview(self.rightArrow!)
+        self.view.addSubview(self.leftArrow!)
+        self.view.addSubview(self.rightArrow!)
     }
     
     // MARK: Timesheet Handling
     
-    func publishTimesheet()
+    @IBAction func publishTimesheet(sender: AnyObject)
     {
         let currentSheet:TimesheetsViewController = self.pager.pages[self.pager.currentIndex] as! TimesheetsViewController
         currentSheet.publishTimesheet()
@@ -139,18 +144,20 @@ class TimesheetManager: UIViewController
         let currentSheet:TimesheetsViewController = self.pager.pages[self.pager.currentIndex] as! TimesheetsViewController
         currentSheet.unPublishTimesheet()
         
-        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
+        self.publishButton.title = "Publish"
+        self.publishButton.action =  "publishTimesheet"
     }
     
     func publishedTimesheet()
     {
-        self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
+        self.publishButton.title = "Un-Publish"
+        self.publishButton.action =  "unPublishTimesheet"
     }
     
     func leftTimesheetRequested()
     {
         self.pager.previous()
-        
+                
         self.checkPublishedButtons()
         self.checkArrows()
     }
@@ -193,8 +200,7 @@ class TimesheetManager: UIViewController
     }
     
     // MARK: Navigation
-    
-    func showAddRowForm()
+    @IBAction func showAddRowForm(sender: AnyObject)
     {
         let currentTimesheet = self.pager.pages[self.pager.currentIndex] as! TimesheetsViewController
         currentTimesheet.showAddRowForm()

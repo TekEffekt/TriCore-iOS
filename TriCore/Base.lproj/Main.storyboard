@@ -530,10 +530,42 @@
                     <view key="view" contentMode="scaleToFill" id="dYS-J9-P9A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-Kn-U3f">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="barTintColor" red="0.3803921569" green="0.66274509800000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem id="HiX-ck-gEa">
+                                        <barButtonItem key="leftBarButtonItem" title="Publish" id="5aX-Gt-YhX">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="publishTimesheet:" destination="KEw-lK-4c3" id="VMC-vw-2gb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="flJ-tM-02q">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="showAddRowForm:" destination="KEw-lK-4c3" id="wAP-zF-80i"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fWg-Kn-U3f" firstAttribute="leading" secondItem="dYS-J9-P9A" secondAttribute="leadingMargin" constant="-20" id="D6Z-5V-kD5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fWg-Kn-U3f" secondAttribute="trailing" constant="-20" id="Lnt-Es-hzK"/>
+                            <constraint firstItem="fWg-Kn-U3f" firstAttribute="top" secondItem="EIE-aC-PnE" secondAttribute="bottom" id="fzC-ms-dG9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="Timesheet Icon" id="2HF-84-Mei"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="addButton" destination="flJ-tM-02q" id="GKD-Xo-he0"/>
+                        <outlet property="navBar" destination="fWg-Kn-U3f" id="CvK-xr-Han"/>
+                        <outlet property="publishButton" destination="5aX-Gt-YhX" id="z5O-wv-QBS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j61-5Z-rx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -552,7 +584,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="134" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="jmR-9V-NR3">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.83529411760000005" green="0.094117647060000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -800,29 +832,13 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QeB-Lv-dXk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="BsM-N1-Gmt"/>
-                                    <constraint firstAttribute="width" secondItem="QeB-Lv-dXk" secondAttribute="height" multiplier="5:1" id="XCy-Y3-KoR"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="XCy-Y3-KoR"/>
-                                    </mask>
-                                </variation>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.7803921568627451" green="0.78431372549019607" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="jmR-9V-NR3" secondAttribute="trailing" constant="-20" id="46Z-Fc-LTt"/>
-                            <constraint firstItem="jmR-9V-NR3" firstAttribute="leading" secondItem="kTa-WB-exE" secondAttribute="leadingMargin" constant="-20" id="H3q-Uu-ysa"/>
-                            <constraint firstItem="QeB-Lv-dXk" firstAttribute="top" secondItem="kTa-WB-exE" secondAttribute="topMargin" id="K7w-fZ-0Rp"/>
-                            <constraint firstItem="jmR-9V-NR3" firstAttribute="top" secondItem="QeB-Lv-dXk" secondAttribute="bottom" id="N1t-rX-iXK"/>
-                            <constraint firstItem="eIw-Dz-S19" firstAttribute="top" secondItem="jmR-9V-NR3" secondAttribute="bottom" id="QnL-qS-3o0"/>
-                            <constraint firstItem="QeB-Lv-dXk" firstAttribute="leading" secondItem="kTa-WB-exE" secondAttribute="leadingMargin" constant="-20" id="X3l-Me-yQJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QeB-Lv-dXk" secondAttribute="trailing" constant="-20" id="llo-vd-Pkh"/>
+                            <constraint firstItem="jmR-9V-NR3" firstAttribute="top" secondItem="kTa-WB-exE" secondAttribute="topMargin" id="Dgy-B1-ZGi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jmR-9V-NR3" secondAttribute="trailing" constant="-20" id="c3J-Zo-p8C"/>
+                            <constraint firstItem="jmR-9V-NR3" firstAttribute="leading" secondItem="kTa-WB-exE" secondAttribute="leadingMargin" constant="-20" id="hiW-a5-SEr"/>
+                            <constraint firstItem="eIw-Dz-S19" firstAttribute="top" secondItem="jmR-9V-NR3" secondAttribute="bottom" id="obR-w3-YQU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Time Sheets" image="Timesheet Icon" selectedImage="Timesheet Icon" id="xSt-dw-HFC"/>
@@ -834,7 +850,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRa-Dw-RPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2685" y="20"/>
+            <point key="canvasLocation" x="2663" y="20"/>
         </scene>
         <!--Add Row Table View Controller-->
         <scene sceneID="hT0-AZ-xRh">
@@ -1050,7 +1066,7 @@
         <!--Navigation Controller-->
         <scene sceneID="RQ9-2B-BGw">
             <objects>
-                <navigationController id="3a0-ax-pf2" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="3a0-ax-pf2" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GzG-dk-gcK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1134,7 +1150,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEQ-pY-JWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3069" y="25"/>
+            <point key="canvasLocation" x="3016" y="20"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RWt-SK-hv7">
