@@ -9,10 +9,9 @@
 import UIKit
 
 @available(iOS 8.0, *)
-class TimesheetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UISearchBarDelegate
+class TimesheetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate
 {
     // MARK: Properties
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var projectsTable: UITableView!
     var projectList:[[String:AnyObject]] = GetProjectList.getOrganizedProjectList()
     
@@ -35,20 +34,19 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     {
         self.projectsTable.delegate = self
         self.projectsTable.dataSource = self
-        self.searchBar.delegate = self
         
         setupHoursArray()
+        
+        print("Loaded")
     }
     
     override func viewWillAppear(animated: Bool)
     {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldPressed:", name: UIKeyboardWillShowNotification, object: nil)
+        
         if self.publishedSheet
         {
-            self.overlay!.hidden = false
-            
             self.view.addSubview(self.overlay!)
-            PublishedOverlay.showCompleted()
         }
     }
     
@@ -58,7 +56,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(animated: Bool)
+    {
         if self.publishedSheet
         {
             self.overlay!.removeFromSuperview()
@@ -90,6 +89,12 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             self.projectsTable.scrollToRowAtIndexPath(NSIndexPath(forRow: entryAddedAt![1], inSection: entryAddedAt![0]), atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
             
             self.makeCellGlow()
+        }
+        
+        if self.publishedSheet
+        {
+            self.view.addSubview(self.overlay!)
+            PublishedOverlay.showCompleted()
         }
     }
     
@@ -324,8 +329,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         let firstLetter = GetProjectList.findFirstLetter(inString: entry.projectName)
         let letterNum = GetProjectList.letterList.indexOf(firstLetter)
         
-        print("First Letter \(firstLetter)")
-        
         var index = -1
         
         for var i = 0; i < self.projectList.count; i++
@@ -363,7 +366,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     func publishTimesheet()
     {
         self.overlay = PublishedOverlay()
-        overlay!.frame = CGRectMake(self.view.frame.origin.x, self.searchBar.frame.origin.y-8, self.view.frame.width, self.searchBar.frame.height + self.projectsTable.frame.height + 16)
+        overlay!.frame = CGRectMake(self.view.frame.origin.x, self.projectsTable.frame.origin.y, self.view.frame.width, self.projectsTable.frame.height)
 
         self.view.addSubview(overlay!)
 

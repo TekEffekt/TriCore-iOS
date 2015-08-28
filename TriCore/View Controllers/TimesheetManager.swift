@@ -20,6 +20,9 @@ class TimesheetManager: UIViewController
     
     override func viewDidLoad()
     {
+        self.pager.startPage = 2
+
+        
         setupTimeSheetChangerViews()
         
         self.blackness.frame = CGRectMake(0, 0, self.view.frame.width,
@@ -31,11 +34,9 @@ class TimesheetManager: UIViewController
         
         let timesheet1 = self.storyboard!.instantiateViewControllerWithIdentifier("Timesheet") as! TimesheetsViewController
         let timesheet2 = self.storyboard!.instantiateViewControllerWithIdentifier("Timesheet") as! TimesheetsViewController
-        timesheet2.view.backgroundColor = UIColor.redColor()
+        let timesheet3 = self.storyboard!.instantiateViewControllerWithIdentifier("Timesheet") as! TimesheetsViewController
         
-        
-        self.timesheets.append(timesheet1)
-        self.timesheets.append(timesheet2)
+        self.timesheets = [timesheet1, timesheet2, timesheet3]
         
         for timesheet in self.timesheets
         {
@@ -44,10 +45,15 @@ class TimesheetManager: UIViewController
         }
         
         self.pager.add(self.timesheets)
-        self.pager.startPage = self.pager.pages.count - 1
+        self.pager.goTo((self.pager.pages.count - 1))
         
-        self.addChildViewController(self.pager)
+        self.pager.enableSwipe = false
+        self.pager.view.backgroundColor = UIColor.redColor()
+        
         self.view.addSubview(self.pager.view)
+
+        self.addChildViewController(self.pager)
+        self.checkArrows()
     }
     
     override func viewWillAppear(animated: Bool)
@@ -144,11 +150,46 @@ class TimesheetManager: UIViewController
     func leftTimesheetRequested()
     {
         self.pager.previous()
+        
+        self.checkPublishedButtons()
+        self.checkArrows()
     }
     
     func rightTimesheetRequested()
     {
         self.pager.next()
+        
+        self.checkPublishedButtons()
+        self.checkArrows()
+    }
+    
+    func checkPublishedButtons()
+    {
+        let currentTimesheet = self.pager.pages[self.pager.currentIndex] as! TimesheetsViewController
+        if currentTimesheet.publishedSheet == true
+        {
+            self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Un-Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "unPublishTimesheet")
+        } else
+        {
+            self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.Plain, target: self, action: "publishTimesheet")
+        }
+    }
+    
+    func checkArrows()
+    {
+        if self.pager.currentIndex == 0
+        {
+            self.leftArrow!.enabled = false
+            self.rightArrow!.enabled = true
+        } else if self.pager.currentIndex == (self.pager.pages.count - 1)
+        {
+            self.rightArrow!.enabled = false
+            self.leftArrow!.enabled = true
+        } else
+        {
+            self.leftArrow!.enabled = true
+            self.rightArrow!.enabled = true
+        }
     }
     
     // MARK: Navigation

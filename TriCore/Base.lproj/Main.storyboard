@@ -537,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j61-5Z-rx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2207" y="-195"/>
+            <point key="canvasLocation" x="2207" y="-214"/>
         </scene>
         <!--Time Sheets-->
         <scene sceneID="mmj-bW-65X">
@@ -551,12 +551,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Entries" translatesAutoresizingMaskIntoConstraints="NO" id="yxc-I3-SEh">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="134" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="jmR-9V-NR3">
-                                <rect key="frame" x="0.0" y="108" width="320" height="323"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.83529411760000005" green="0.094117647060000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -804,29 +800,41 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QeB-Lv-dXk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="BsM-N1-Gmt"/>
+                                    <constraint firstAttribute="width" secondItem="QeB-Lv-dXk" secondAttribute="height" multiplier="5:1" id="XCy-Y3-KoR"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XCy-Y3-KoR"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.7803921568627451" green="0.78431372549019607" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eIw-Dz-S19" firstAttribute="top" secondItem="jmR-9V-NR3" secondAttribute="bottom" id="EGt-cl-zCk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jmR-9V-NR3" secondAttribute="trailing" constant="-20" id="Nrw-sG-hhJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yxc-I3-SEh" secondAttribute="trailing" constant="-20" id="bpo-tY-6rk"/>
-                            <constraint firstItem="jmR-9V-NR3" firstAttribute="leading" secondItem="kTa-WB-exE" secondAttribute="leadingMargin" constant="-20" id="dei-cv-Lbg"/>
-                            <constraint firstItem="jmR-9V-NR3" firstAttribute="top" secondItem="yxc-I3-SEh" secondAttribute="bottom" id="gNB-aZ-0Jg"/>
-                            <constraint firstItem="yxc-I3-SEh" firstAttribute="leading" secondItem="kTa-WB-exE" secondAttribute="leadingMargin" constant="-20" id="lVO-3Q-dxJ"/>
-                            <constraint firstItem="yxc-I3-SEh" firstAttribute="top" secondItem="6eH-ak-JgJ" secondAttribute="bottom" id="sTR-ff-JmE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jmR-9V-NR3" secondAttribute="trailing" constant="-20" id="46Z-Fc-LTt"/>
+                            <constraint firstItem="jmR-9V-NR3" firstAttribute="leading" secondItem="kTa-WB-exE" secondAttribute="leadingMargin" constant="-20" id="H3q-Uu-ysa"/>
+                            <constraint firstItem="QeB-Lv-dXk" firstAttribute="top" secondItem="kTa-WB-exE" secondAttribute="topMargin" id="K7w-fZ-0Rp"/>
+                            <constraint firstItem="jmR-9V-NR3" firstAttribute="top" secondItem="QeB-Lv-dXk" secondAttribute="bottom" id="N1t-rX-iXK"/>
+                            <constraint firstItem="eIw-Dz-S19" firstAttribute="top" secondItem="jmR-9V-NR3" secondAttribute="bottom" id="QnL-qS-3o0"/>
+                            <constraint firstItem="QeB-Lv-dXk" firstAttribute="leading" secondItem="kTa-WB-exE" secondAttribute="leadingMargin" constant="-20" id="X3l-Me-yQJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QeB-Lv-dXk" secondAttribute="trailing" constant="-20" id="llo-vd-Pkh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Time Sheets" image="Timesheet Icon" selectedImage="Timesheet Icon" id="xSt-dw-HFC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="projectsTable" destination="jmR-9V-NR3" id="NyN-LI-Esi"/>
-                        <outlet property="searchBar" destination="yxc-I3-SEh" id="DCH-Xg-NpX"/>
                         <segue destination="Y9g-Gh-Sc5" kind="presentation" identifier="showAddRowForm" id="B3G-tr-Fvr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRa-Dw-RPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2685" y="25"/>
+            <point key="canvasLocation" x="2685" y="20"/>
         </scene>
         <!--Add Row Table View Controller-->
         <scene sceneID="hT0-AZ-xRh">
