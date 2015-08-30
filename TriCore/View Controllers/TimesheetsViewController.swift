@@ -9,7 +9,7 @@
 import UIKit
 
 @available(iOS 8.0, *)
-class TimesheetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate
+class TimesheetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UISearchResultsUpdating
 {
     // MARK: Properties
     @IBOutlet weak var projectsTable: UITableView!
@@ -29,6 +29,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     var hours:[[[Int?]]] = []
     
+    var searchCont:UISearchController = UISearchController(searchResultsController: nil)
+    
     // MARK: Initialization
     override func viewDidLoad()
     {
@@ -37,7 +39,10 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         setupHoursArray()
         
-        print("Loaded")
+        self.definesPresentationContext = true
+        self.searchCont.searchResultsUpdater = self
+        self.searchCont.searchBar.sizeToFit()
+        self.searchCont.dimsBackgroundDuringPresentation = false
     }
     
     override func viewWillAppear(animated: Bool)
@@ -49,7 +54,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             self.view.addSubview(self.overlay!)
         }
     }
-    
     
     override func viewDidDisappear(animated: Bool)
     {
@@ -96,6 +100,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             self.view.addSubview(self.overlay!)
             PublishedOverlay.showCompleted()
         }
+        
+        self.projectsTable.tableHeaderView = self.searchCont.searchBar
     }
     
     // MARK: TableView Datasource
@@ -150,28 +156,48 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         if let userInfo = userInfo
         {
-            let keyboardRect = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue
-            self.keyboardHeight = self.view.frame.height - keyboardRect.height
-            
-            let rectOfCellInTableView = self.projectsTable.rectForRowAtIndexPath(self.currentCell!.indexPath!)
-            let rectOfCellInSuperview = self.projectsTable.convertRect(rectOfCellInTableView, toView: self.projectsTable.superview)
-            
-            if rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height > self.keyboardHeight
+            if self.searchCont.searchBar.isFirstResponder() == false
             {
-                if self.distanceMoved > 0
+                let keyboardRect = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue
+                self.keyboardHeight = self.view.frame.height - keyboardRect.height
+                print("Keyboard Height \(self.keyboardHeight)")
+                
+                let rectOfCellInTableView = self.projectsTable.rectForRowAtIndexPath(self.currentCell!.indexPath!)
+                let rectOfCellInSuperview = self.projectsTable.convertRect(rectOfCellInTableView, toView: self.projectsTable.superview)
+                print("Cell Rect \(rectOfCellInSuperview)")
+                print("Overall Y \(rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height)")
+                let topOfTabBar = self.tabBarController!.tabBar.frame.origin.y
+                let bottomOfCell = rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height
+                let distanceBetween = topOfTabBar - bottomOfCell
+                print("Distance between \(distanceBetween)")
+                
+//                drawLineAt(y: self.keyboardHeight!)
+//                drawLineAt(y: rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height)
+                
+                if rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height > self.keyboardHeight
                 {
-                    self.animateTextField(distance: self.distanceMoved!, andUp: false)
-                    let rectOfCellInTableView = self.projectsTable.rectForRowAtIndexPath(self.currentCell!.indexPath!)
-                    let rectOfCellInSuperview = self.projectsTable.convertRect(rectOfCellInTableView, toView: self.projectsTable.superview)
-                    self.distanceMoved = (rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height) - self.keyboardHeight!
-                    self.animateTextField(distance: self.distanceMoved!, andUp: true)
-                } else
-                {
-                    self.distanceMoved = (rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height) - self.keyboardHeight!
-                    self.animateTextField(distance: self.distanceMoved!, andUp: true)
+                    if self.distanceMoved > 0
+                    {
+                        self.animateTextField(distance: self.distanceMoved!, andUp: false)
+                        let rectOfCellInTableView = self.projectsTable.rectForRowAtIndexPath(self.currentCell!.indexPath!)
+                        let rectOfCellInSuperview = self.projectsTable.convertRect(rectOfCellInTableView, toView: self.projectsTable.superview)
+                        self.distanceMoved = (bottomOfCell - self.keyboardHeight! - self.searchCont.searchBar.frame.height - 5)
+                        self.animateTextField(distance: self.distanceMoved!, andUp: true)
+                    } else
+                    {
+                        self.distanceMoved = (bottomOfCell - self.keyboardHeight! - self.searchCont.searchBar.frame.height - 5)
+                        self.animateTextField(distance: self.distanceMoved!, andUp: true)
+                    }
                 }
             }
         }
+    }
+    
+    func drawLineAt(y y:CGFloat)
+    {
+        let line = UIView(frame: CGRectMake(0, y, self.view.frame.width, 2))
+        line.backgroundColor = UIColor.redColor()
+        self.view.addSubview(line)
     }
     
     func textFieldDidBeginEditing(textField: UITextField)
@@ -411,6 +437,13 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             let createController = navController.viewControllers.first as! AddRowFormController
             createController.timesheetController = self
         }
+    }
+    
+    // MARK: Searching
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        
     }
     
 }

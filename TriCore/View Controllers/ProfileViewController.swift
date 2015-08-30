@@ -32,6 +32,7 @@ class ProfileViewController: UIViewController
     // MARK: Initialization
     override func viewWillAppear(animated: Bool)
     {
+        self.navigationController!.navigationBarHidden = false
         self.tabBarController!.navigationItem.leftBarButtonItem = nil
         self.tabBarController!.navigationItem.rightBarButtonItem = nil
         

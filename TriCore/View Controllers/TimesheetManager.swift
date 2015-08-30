@@ -30,7 +30,6 @@ class TimesheetManager: UIViewController
     
     override func viewDidLoad()
     {
-        self.navigationController!.navigationBarHidden = true
         self.pager.startPage = 2
         
         self.blackness.frame = CGRectMake(0, 0, self.view.frame.width,
@@ -76,6 +75,7 @@ class TimesheetManager: UIViewController
         setupTimeSheetChangerViews()
         
         self.checkArrows()
+        self.navigationController!.navigationBarHidden = true
     }
     
     
