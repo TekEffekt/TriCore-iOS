@@ -10,7 +10,7 @@ import Foundation
 
 class TimesheetPublisher
 {
-    static func publishTimesheet(withHours hours:[[[Int?]]]) -> Bool
+    static func publishTimesheet(withHours hours:[[[Int?]]]?) -> Bool
     {
         NSThread.sleepForTimeInterval(3.0)
         

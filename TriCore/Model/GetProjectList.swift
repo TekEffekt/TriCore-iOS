@@ -58,6 +58,23 @@ class GetProjectList
         return shreddedList
     }
     
+    static func getUnorganizedProjectList(withOrganizedList organizedList:[[String:AnyObject]]) -> [TimesheetEntry]
+    {
+        var unorganizedList = [TimesheetEntry]()
+        
+        for dictionary in organizedList
+        {
+            let entries = dictionary["Entries"] as! [TimesheetEntry]
+            
+            for entry:TimesheetEntry in entries
+            {
+                unorganizedList.append(entry)
+            }
+        }
+        
+        return unorganizedList
+    }
+    
     static func findFirstLetter(inString string:String) -> String
     {
         for char in string.characters

@@ -8,11 +8,12 @@
 
 import UIKit
 
-class TimesheetEntry
+class TimesheetEntry:NSObject
 {
     let projectName:String
     let taskCode:String
     let sprintCategory:String?
+    var hours:[Int?] = []
     
     init(withProjectName name:String, andTaskCode taskCode:String, andSprint sprintCategory:String?)
     {
@@ -25,6 +26,11 @@ class TimesheetEntry
         } else
         {
             self.sprintCategory = ""
+        }
+        
+        for _ in 1...7
+        {
+            hours.append(nil)
         }
     }
     

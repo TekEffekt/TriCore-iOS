@@ -14,6 +14,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: Properties
     @IBOutlet weak var projectsTable: UITableView!
     var projectList:[[String:AnyObject]] = GetProjectList.getOrganizedProjectList()
+    var unorganizedList:[TimesheetEntry] = []
+    var filteredList:[TimesheetEntry] = [TimesheetEntry]()
     
     var currentTextField:UITextField?
     var currentCell:ProjectTableViewCell?
@@ -27,8 +29,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     var publishedSheet:Bool = false
     var overlay:PublishedOverlay?
     
-    var hours:[[[Int?]]] = []
-    
     var searchCont:UISearchController = UISearchController(searchResultsController: nil)
     
     // MARK: Initialization
@@ -37,12 +37,12 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         self.projectsTable.delegate = self
         self.projectsTable.dataSource = self
         
-        setupHoursArray()
-        
         self.definesPresentationContext = true
         self.searchCont.searchResultsUpdater = self
         self.searchCont.searchBar.sizeToFit()
         self.searchCont.dimsBackgroundDuringPresentation = false
+        
+        self.unorganizedList = GetProjectList.getUnorganizedProjectList(withOrganizedList: projectList)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -65,22 +65,6 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         if self.publishedSheet
         {
             self.overlay!.removeFromSuperview()
-        }
-    }
-    
-    func setupHoursArray()
-    {
-        for section in 0..<projectList.count
-        {
-            self.hours.append([[Int?]]())
-            for row in 0..<(projectList[section]["Entries"] as! [TimesheetEntry]).count
-            {
-                self.hours[section].append([Int?]())
-                for i in 1...7
-                {
-                    self.hours[section][row].append(nil)
-                }
-            }
         }
     }
     
@@ -112,9 +96,17 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         let cell:ProjectTableViewCell = self.projectsTable.dequeueReusableCellWithIdentifier(cellId) as! ProjectTableViewCell
         
-        let dictionary = projectList[indexPath.section]
-        let entriesForSection = dictionary["Entries"] as! [TimesheetEntry]
-        let entry = entriesForSection[indexPath.row] as TimesheetEntry
+        var entry:TimesheetEntry
+        
+        if self.searchCont.active
+        {
+            entry = self.filteredList[indexPath.row]
+        } else
+        {
+            let dictionary = projectList[indexPath.section]
+            let entriesForSection = dictionary["Entries"] as! [TimesheetEntry]
+            entry = entriesForSection[indexPath.row] as TimesheetEntry
+        }
         
         cell.projectTitleAndNumber.text = entry.projectName
         cell.taskCodeName.text = entry.taskCode
@@ -128,25 +120,45 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
         cell.indexPath = indexPath
         
-        cell.setupWithHours(hours: self.hours[indexPath.section][indexPath.row])
+        cell.setupWithHours(hours: entry.hours)
+        
+        print(cell)
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return (projectList[section]["Entries"] as! [TimesheetEntry]).count
+        if self.searchCont.active
+        {
+            return self.filteredList.count
+        } else
+        {
+            return (projectList[section]["Entries"] as! [TimesheetEntry]).count
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return projectList.count
+        if self.searchCont.active
+        {
+            return 1
+        } else
+        {
+            return projectList.count
+        }
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        let letter = self.projectList[section]["Letter"] as! String
-        return letter
+        if self.searchCont.active
+        {
+            return nil
+        } else
+        {
+            let letter = self.projectList[section]["Letter"] as! String
+            return letter
+        }
     }
     
     // MARK: TextField Methods
@@ -160,16 +172,12 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             {
                 let keyboardRect = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue
                 self.keyboardHeight = self.view.frame.height - keyboardRect.height
-                print("Keyboard Height \(self.keyboardHeight)")
                 
                 let rectOfCellInTableView = self.projectsTable.rectForRowAtIndexPath(self.currentCell!.indexPath!)
                 let rectOfCellInSuperview = self.projectsTable.convertRect(rectOfCellInTableView, toView: self.projectsTable.superview)
-                print("Cell Rect \(rectOfCellInSuperview)")
-                print("Overall Y \(rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height)")
                 let topOfTabBar = self.tabBarController!.tabBar.frame.origin.y
                 let bottomOfCell = rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height
                 let distanceBetween = topOfTabBar - bottomOfCell
-                print("Distance between \(distanceBetween)")
                 
 //                drawLineAt(y: self.keyboardHeight!)
 //                drawLineAt(y: rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height)
@@ -285,7 +293,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
         
-        self.hours[self.currentCell!.indexPath!.section][self.currentCell!.indexPath!.row][currentTextFieldIndex] = intValue!
+        (self.projectList[currentCell!.indexPath!.section]["Entries"] as! [TimesheetEntry])[currentCell!.indexPath!.row].hours[currentTextFieldIndex] = intValue
     }
     
     func hitRightButton()
@@ -335,14 +343,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     {
         let atSection = self.addEntryToProjectList(withEntry: entry)
         
-        self.hours[atSection!].append([Int?]())
-        
-        for i in 1...7
-        {
-            self.hours[atSection!][self.hours[atSection!].count-1].append(nil)
-        }
-        
-        let row = self.hours[atSection!].count-1
+        let row = (self.projectList[atSection!]["Entries"] as! [TimesheetEntry]).count - 1
         
         self.entryAdded = true
         self.entryAddedAt = [atSection!, row]
@@ -401,7 +402,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         let queue = NSOperationQueue()
 
         queue.addOperationWithBlock { () -> Void in
-            let result = TimesheetPublisher.publishTimesheet(withHours: self.hours)
+            let result = TimesheetPublisher.publishTimesheet(withHours: nil)
 
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 self.givePublishedAnimation()
@@ -443,7 +444,53 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
+        self.filteredList.removeAll(keepCapacity: false)
         
+        let searchText = self.searchCont.searchBar.text
+        let strippedText = searchText!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as NSString
+        
+        var searchItems = [String]()
+        
+        if strippedText.length > 0
+        {
+            searchItems = strippedText.componentsSeparatedByString(" ")
+        }
+        
+        var andMatchPredicates = [NSCompoundPredicate]()
+        
+        for searchItem in searchItems
+        {
+            var searchPredicates = [NSPredicate]()
+            
+            var lhs = NSExpression(forKeyPath: "projectName")
+            var rhs = NSExpression(forConstantValue: searchItem)
+            var predicate:NSPredicate = NSComparisonPredicate(leftExpression: lhs, rightExpression: rhs, modifier:NSComparisonPredicateModifier.DirectPredicateModifier, type: NSPredicateOperatorType.ContainsPredicateOperatorType, options: NSComparisonPredicateOptions.CaseInsensitivePredicateOption)
+            
+            searchPredicates.append(predicate)
+            
+            lhs = NSExpression(forKeyPath: "taskCode")
+            rhs = NSExpression(forConstantValue: searchItem)
+            predicate = NSComparisonPredicate(leftExpression: lhs, rightExpression: rhs, modifier:NSComparisonPredicateModifier.DirectPredicateModifier, type: NSPredicateOperatorType.ContainsPredicateOperatorType, options: NSComparisonPredicateOptions.CaseInsensitivePredicateOption)
+            
+            searchPredicates.append(predicate)
+            
+            lhs = NSExpression(forKeyPath: "sprintCategory")
+            rhs = NSExpression(forConstantValue: searchItem)
+            predicate = NSComparisonPredicate(leftExpression: lhs, rightExpression: rhs, modifier:NSComparisonPredicateModifier.DirectPredicateModifier, type: NSPredicateOperatorType.ContainsPredicateOperatorType, options: NSComparisonPredicateOptions.CaseInsensitivePredicateOption)
+            
+            searchPredicates.append(predicate)
+            
+            let orMatchPredicates = NSCompoundPredicate(orPredicateWithSubpredicates: searchPredicates)
+            
+            andMatchPredicates.append(orMatchPredicates)
+        }
+        
+        let finalCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: andMatchPredicates)
+        
+        let list:[TimesheetEntry] = (self.unorganizedList as NSArray).filteredArrayUsingPredicate(finalCompoundPredicate) as! [TimesheetEntry]
+        
+        self.filteredList = list
+        self.projectsTable.reloadData()
     }
     
 }
