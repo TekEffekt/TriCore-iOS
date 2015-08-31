@@ -75,6 +75,7 @@ class PopupViewController: UITableViewController, UISearchResultsUpdating
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        self.tableView.tableHeaderView = self.searchController.searchBar
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
         if self.searchController.active

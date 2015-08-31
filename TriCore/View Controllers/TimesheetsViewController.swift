@@ -381,6 +381,8 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
         
+        self.unorganizedList = GetProjectList.getUnorganizedProjectList(withOrganizedList: self.projectList)
+        
         return nil
     }
     
