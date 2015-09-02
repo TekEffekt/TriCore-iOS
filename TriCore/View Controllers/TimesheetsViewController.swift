@@ -285,6 +285,14 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             textField.font = UIFont.boldSystemFontOfSize(20)
         }
         
+        if Int(textField.text! + string) > 24
+        {
+            let alert = UIAlertController(title: "Warning!", message: "There are not more than 24 hours in a day!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false
+        }
+        
         if newLength <= 2
         {
             self.logNewHours(withText: textField.text! + string)
