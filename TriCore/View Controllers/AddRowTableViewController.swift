@@ -37,6 +37,7 @@ class AddRowTableViewController: UITableViewController
     {
         let entry = TimesheetEntry(withProjectName: self.projectNameLabel.text!, andTaskCode: self.taskCodeLabel.text!,
             andSprint: self.sprintCategorySelected ? self.sprintLabel.text!: nil)
+        print(entry)
         self.timesheetController!.newEntryCreated(withEntry: entry)
         
         self.dismissViewControllerAnimated(true, completion: nil)

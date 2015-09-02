@@ -122,9 +122,25 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         
         cell.setupWithHours(hours: entry.hours)
         
-        print(cell)
-        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if self.searchCont.active == false
+        {
+            var array = (self.projectList[indexPath.section]["Entries"] as![TimesheetEntry])
+            array.removeAtIndex(indexPath.row)
+            self.projectList[indexPath.section]["Entries"] = array
+            self.projectsTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            if (self.projectList[indexPath.section]["Entries"] as! [TimesheetEntry]).count == 0
+            {
+                self.projectList.removeAtIndex(indexPath.section)
+                self.projectsTable.deleteSections(NSIndexSet(index: indexPath.section), withRowAnimation: UITableViewRowAnimation.Left)
+            }
+            
+            print(self.projectList)
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -343,47 +359,73 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     {
         let atSection = self.addEntryToProjectList(withEntry: entry)
         
-        let row = (self.projectList[atSection!]["Entries"] as! [TimesheetEntry]).count - 1
+        var row:Int
+        
+        if let _ = self.projectList[atSection]["Entries"] as? [TimesheetEntry]
+        {
+            row = (self.projectList[atSection]["Entries"] as! [TimesheetEntry]).count - 1
+        } else
+        {
+            row = 0
+        }
         
         self.entryAdded = true
-        self.entryAddedAt = [atSection!, row]
+        self.entryAddedAt = [atSection, row]
         
         self.projectsTable.reloadData()
     }
     
-    func addEntryToProjectList(withEntry entry:TimesheetEntry) -> Int?
+    func addEntryToProjectList(withEntry entry:TimesheetEntry) -> Int
     {
         let firstLetter = GetProjectList.findFirstLetter(inString: entry.projectName)
         let letterNum = GetProjectList.letterList.indexOf(firstLetter)
         
         var index = -1
         
-        for var i = 0; i < self.projectList.count; i++
+        if self.projectList.count < 1
         {
-            let dict = self.projectList[i]
-            let letter = dict["Letter"] as! String
-            let otherNum = GetProjectList.letterList.indexOf(letter)
-            
-            if otherNum == letterNum
+            let letter = GetProjectList.findFirstLetter(inString: entry.projectName)
+            let newDictionary = ["Letter":letter,"Entries":[entry]]
+            self.projectList.append(newDictionary as! [String : AnyObject])
+            print("SHould append \(self.projectList)")
+        } else
+        {
+            for var i = 0; i < self.projectList.count; i++
             {
-                index = i
-                var entryArray = self.projectList[index]["Entries"] as! [TimesheetEntry]
-                entryArray.append(entry)
-                self.projectList[index]["Entries"] = entryArray
-                return index
+                let dict = self.projectList[i]
+                let letter = dict["Letter"] as! String
                 
-            } else if letterNum < otherNum
-            {
-                index = i--
-                let newDictionary = ["Letter":firstLetter,"Entries":[entry]] 
-                self.projectList.insert(newDictionary as! [String : AnyObject], atIndex: index)
-                return index
+                let otherNum = GetProjectList.letterList.indexOf(letter)
+                index = i
+                
+                if otherNum == letterNum
+                {
+                    var entryArray = self.projectList[index]["Entries"] as! [TimesheetEntry]
+                    entryArray.append(entry)
+                    self.projectList[index]["Entries"] = entryArray
+                    print("This")
+                    return index
+                    
+                } else if letterNum < otherNum
+                {
+                    print("Or this")
+                    index = i--
+                    let newDictionary = ["Letter":firstLetter,"Entries":[entry]]
+                    self.projectList.insert(newDictionary as! [String : AnyObject], atIndex: index)
+                    return index
+                } else if index == self.projectList.count - 1
+                {
+                    index++
+                    let newDictionary = ["Letter":firstLetter,"Entries":[entry]]
+                    self.projectList.insert(newDictionary as! [String : AnyObject], atIndex: index)
+                    return index
+                }
             }
         }
         
         self.unorganizedList = GetProjectList.getUnorganizedProjectList(withOrganizedList: self.projectList)
         
-        return nil
+        return 0
     }
     
     func makeCellGlow()
