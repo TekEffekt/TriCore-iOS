@@ -66,10 +66,8 @@ class AddRowTableViewController: UITableViewController
     {
         if projectNameSelected && taskCodeSelected
         {
-            UIView.animateWithDuration(1.0, animations: { () -> Void in
-                self.createButton.alpha = 1.0
-                self.createButton.enabled = true
-            })
+            self.createButton.enabled = true
+            self.createButton.alpha = 1.0
         } else
         {
             self.createButton.alpha = 0.5
