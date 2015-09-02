@@ -198,7 +198,10 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
 //                drawLineAt(y: self.keyboardHeight!)
 //                drawLineAt(y: rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height)
                 
-                if rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height > self.keyboardHeight
+                print("Bottom of cell Y: \(rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height - self.searchCont.searchBar.frame.height)")
+                print("Keyboard Height: \(self.keyboardHeight)")
+                
+                if rectOfCellInSuperview.origin.y + rectOfCellInSuperview.height - self.searchCont.searchBar.frame.height > self.keyboardHeight
                 {
                     if self.distanceMoved > 0
                     {
