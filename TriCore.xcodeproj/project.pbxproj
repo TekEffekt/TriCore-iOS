@@ -20,6 +20,7 @@
 		B64E28B91B79994E0052B3C1 /* TimesheetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28B81B79994E0052B3C1 /* TimesheetsViewController.swift */; };
 		B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28BA1B7999660052B3C1 /* ProfileViewController.swift */; };
 		B64E28BD1B79AE8A0052B3C1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */; };
+		B68429241BA2B114006FF879 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68429231BA2B114006FF879 /* CardView.swift */; };
 		B68C51BD1B8D0D4700F27948 /* TimesheetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C51BC1B8D0D4700F27948 /* TimesheetEntry.swift */; };
 		B6A0EE831B7B0D4C00FE787F /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */; };
 		B6A0EE851B7B2E2100FE787F /* GetProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */; };
@@ -70,6 +71,7 @@
 		B64E28B81B79994E0052B3C1 /* TimesheetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetsViewController.swift; path = "View Controllers/TimesheetsViewController.swift"; sourceTree = "<group>"; };
 		B64E28BA1B7999660052B3C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "View Controllers/ProfileViewController.swift"; sourceTree = "<group>"; };
 		B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = "View Controllers/TabBarViewController.swift"; sourceTree = "<group>"; };
+		B68429231BA2B114006FF879 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B68C51BC1B8D0D4700F27948 /* TimesheetEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetEntry.swift; path = Model/TimesheetEntry.swift; sourceTree = "<group>"; };
 		B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTableViewCell.swift; path = Views/ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetProjectList.swift; path = Model/GetProjectList.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		B6A0EE811B7B0D0200FE787F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B68429231BA2B114006FF879 /* CardView.swift */,
 				B6F034741B8F4861007B2928 /* PagesController.swift */,
 				B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */,
 				B6FE67EF1B846A9F002E647B /* PublishedOverlay.swift */,
@@ -396,6 +399,7 @@
 				B61F72D71B76C65C00A34736 /* LoginViewController.swift in Sources */,
 				B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */,
 				B6FE67F41B892A1A002E647B /* AddRowFormController.swift in Sources */,
+				B68429241BA2B114006FF879 /* CardView.swift in Sources */,
 				B61F72A91B76BF8500A34736 /* AppDelegate.swift in Sources */,
 				B68C51BD1B8D0D4700F27948 /* TimesheetEntry.swift in Sources */,
 				B64E28BD1B79AE8A0052B3C1 /* TabBarViewController.swift in Sources */,

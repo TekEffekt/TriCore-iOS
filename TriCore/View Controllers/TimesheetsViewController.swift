@@ -177,6 +177,29 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if(cell.contentView.subviews.count != 18)
+        {
+            let scale = UIScreen.mainScreen().scale
+            let horizontalOffset:CGFloat = scale == 3 ? 5: 8
+            
+            cell.contentView.backgroundColor = UIColor.clearColor()
+            var whiteRoundedView : UIView = UIView(frame: CGRectMake(horizontalOffset, 5, self.view.frame.size.width - 10, 134))
+            whiteRoundedView.backgroundColor = UIColor(red:0.98, green:0.97, blue:0.98, alpha:1.0)
+            whiteRoundedView.layer.masksToBounds = false
+            whiteRoundedView.layer.cornerRadius = 2.0
+            whiteRoundedView.layer.shadowOffset = CGSizeMake(-1.2, 1.2)
+            whiteRoundedView.layer.shadowOpacity = 0.5
+//            whiteRoundedView.center.x = cell.contentView.center.x
+            cell.contentView.addSubview(whiteRoundedView)
+//            cell.contentView.frame = whiteRoundedView.frame
+            cell.contentView.sendSubviewToBack(whiteRoundedView)
+            
+            print("New shadow!")
+        }
+    }
+    
     // MARK: TextField Methods
     func textFieldPressed(sender:NSNotification)
     {
