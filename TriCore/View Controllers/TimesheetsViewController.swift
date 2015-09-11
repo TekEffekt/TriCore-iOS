@@ -191,9 +191,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
             whiteRoundedView.layer.cornerRadius = 2.0
             whiteRoundedView.layer.shadowOffset = CGSizeMake(-1.2, 1.2)
             whiteRoundedView.layer.shadowOpacity = 0.5
-//            whiteRoundedView.center.x = cell.contentView.center.x
             cell.contentView.addSubview(whiteRoundedView)
-//            cell.contentView.frame = whiteRoundedView.frame
             cell.contentView.sendSubviewToBack(whiteRoundedView)
             
             print("New shadow!")
