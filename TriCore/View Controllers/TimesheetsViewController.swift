@@ -198,6 +198,11 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        (view as! UITableViewHeaderFooterView).backgroundView!.backgroundColor = UIColor.clearColor()
+    }
+    
     // MARK: TextField Methods
     func textFieldPressed(sender:NSNotification)
     {
