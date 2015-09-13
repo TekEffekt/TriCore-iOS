@@ -200,7 +200,7 @@ class TimesheetsViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
-        (view as! UITableViewHeaderFooterView).backgroundView!.backgroundColor = UIColor.clearColor()
+        (view as! UITableViewHeaderFooterView).backgroundView!.backgroundColor = UIColor.whiteColor()
     }
     
     // MARK: TextField Methods
