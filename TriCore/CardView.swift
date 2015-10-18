@@ -34,7 +34,7 @@ class CardView: UIView {
 
         layer.masksToBounds = false
         layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowOffset = CGSize(width: 0, height: 3);
+        layer.shadowOffset = CGSize(width: 0, height: 0.5);
         layer.shadowOpacity = 0.5
         layer.shadowPath = shadowPath.CGPath
     }

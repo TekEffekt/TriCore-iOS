@@ -12,15 +12,19 @@ class Constants
 {
     static let weekNameStrings = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
     
-    static let organizedProjectNames =
-    [["C", ["5028-00-Coca Cola Refreshments - Twinsburg - CIP Chemical Pump Modifications",
-        "6899-00-Coca Cola Refreshments - Indianapolis - Blender Sugar Tracking",
-        "6931-00-Coca Cola Refreshments - Brampton - Control System Training", "7015-00-Coca Cola Refreshments - Phoenix - Sucrose Addition",
-         "7021-00-Coca Cola Refreshments - Cincinnati - Sucrose Addition"]],
-    ["G", ["7020-00-Gehl Foods, Inc - Historian Notifications"]],
-    ["K", ["6985-00-Kroger - Crossroad Farms Dairy - Sanitizer Dosing"]],
-    ["P", ["6973-00-Portion Pac - Jacksonville - Kitchen Batching System"]],
-    ["S", ["6932-00-Sunny Delight Beverages Co. - Littleton - System Training", "6948-00-Sunny Delight Beverages Co. - Littleton - Plant Specific Automation Training"]]   ]
+//    static let organizedProjectNames =
+//    [["C", ["5028-00-Coca Cola Refreshments - Twinsburg - CIP Chemical Pump Modifications",
+//        "6899-00-Coca Cola Refreshments - Indianapolis - Blender Sugar Tracking",
+//        "6931-00-Coca Cola Refreshments - Brampton - Control System Training", "7015-00-Coca Cola Refreshments - Phoenix - Sucrose Addition",
+//         "7021-00-Coca Cola Refreshments - Cincinnati - Sucrose Addition"]],
+//    ["G", ["7020-00-Gehl Foods, Inc - Historian Notifications"]],
+//    ["K", ["6985-00-Kroger - Crossroad Farms Dairy - Sanitizer Dosing"]],
+//    ["P", ["6973-00-Portion Pac - Jacksonville - Kitchen Batching System"]],
+//    ["S", ["6932-00-Sunny Delight Beverages Co. - Littleton - System Training", "6948-00-Sunny Delight Beverages Co. - Littleton - Plant Specific Automation Training"]]   ]
+    
+    static let organizedProjectNames = [["I", ["2048-00-Ice-Cold Beaver - Racine - Chemical Pump Modifications", "2048-01-Ice-Cold Beaver - Racine - Control System Training"]],
+        ["P",["5021-00-Purple Meerkat -  Chicago - Sucrose Addition","5021-01-Purple Meerkat -  Chicago - Sanitizer Dosing"]]
+    ]
     
     static let organizedTaskCodeNames = [
         ["A", ["ADMN:Administration", "ADMN:Purchasing", "ADMN:Shipping", "ADMN:HR/Payroll", "ADMN:Accounts Receivable", "ADMN:Travel Arrangements",

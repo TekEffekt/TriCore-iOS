@@ -18,8 +18,8 @@ class TimesheetManager: UIViewController
     var leftArrow:UIButton?
     var rightArrow:UIButton?
     let blackness:UIView = UIView()
-    var timesheetController:TimesheetsViewController?
-    var timesheets:[TimesheetsViewController] = [TimesheetsViewController]()
+    var timesheetController:TimesheetViewController?
+    var timesheets:[TimesheetViewController] = [TimesheetViewController]()
     var containerRect:CGRect?
     var containerView:UIView?
     
@@ -39,9 +39,9 @@ class TimesheetManager: UIViewController
         
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         
-        let timesheet1 = self.storyboard!.instantiateViewControllerWithIdentifier("Timesheet") as! TimesheetsViewController
-        let timesheet2 = self.storyboard!.instantiateViewControllerWithIdentifier("Timesheet") as! TimesheetsViewController
-        let timesheet3 = self.storyboard!.instantiateViewControllerWithIdentifier("Timesheet") as! TimesheetsViewController
+        let timesheet1 = self.storyboard!.instantiateViewControllerWithIdentifier("TimesheetVIewController") as! TimesheetViewController
+        let timesheet2 = self.storyboard!.instantiateViewControllerWithIdentifier("TimesheetVIewController") as! TimesheetViewController
+        let timesheet3 = self.storyboard!.instantiateViewControllerWithIdentifier("TimesheetVIewController") as! TimesheetViewController
         
         self.timesheets = [timesheet1, timesheet2, timesheet3]
         
