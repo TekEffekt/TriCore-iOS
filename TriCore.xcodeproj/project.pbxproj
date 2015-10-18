@@ -24,7 +24,6 @@
 		B68C51BD1B8D0D4700F27948 /* TimesheetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C51BC1B8D0D4700F27948 /* TimesheetEntry.swift */; };
 		B6A0EE831B7B0D4C00FE787F /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */; };
 		B6A0EE851B7B2E2100FE787F /* GetProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */; };
-		B6C047A41BD3118700D9C6D1 /* TimesheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C047A31BD3118700D9C6D1 /* TimesheetViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B6CD22991B843EBA002B0102 /* TimesheetPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */; };
 		B6E6CCCB1B8BD55500B2CABA /* AddRowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6CCCA1B8BD55500B2CABA /* AddRowTableViewController.swift */; };
 		B6F034751B8F4861007B2928 /* PagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F034741B8F4861007B2928 /* PagesController.swift */; };
@@ -76,7 +75,6 @@
 		B68C51BC1B8D0D4700F27948 /* TimesheetEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetEntry.swift; path = Model/TimesheetEntry.swift; sourceTree = "<group>"; };
 		B6A0EE821B7B0D4C00FE787F /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTableViewCell.swift; path = Views/ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetProjectList.swift; path = Model/GetProjectList.swift; sourceTree = "<group>"; };
-		B6C047A31BD3118700D9C6D1 /* TimesheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetViewController.swift; path = "View Controllers/TimesheetViewController.swift"; sourceTree = "<group>"; };
 		B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesheetPublisher.swift; path = Model/TimesheetPublisher.swift; sourceTree = "<group>"; };
 		B6E6CCCA1B8BD55500B2CABA /* AddRowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRowTableViewController.swift; path = "View Controllers/AddRowTableViewController.swift"; sourceTree = "<group>"; };
 		B6F034741B8F4861007B2928 /* PagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesController.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				B6FE67F31B892A1A002E647B /* AddRowFormController.swift */,
 				B64E28BC1B79AE8A0052B3C1 /* TabBarViewController.swift */,
 				B61F72D61B76C65C00A34736 /* LoginViewController.swift */,
-				B6C047A31BD3118700D9C6D1 /* TimesheetViewController.swift */,
 				B64E28B81B79994E0052B3C1 /* TimesheetsViewController.swift */,
 				B64E28BA1B7999660052B3C1 /* ProfileViewController.swift */,
 			);
@@ -401,7 +398,6 @@
 				B6F034751B8F4861007B2928 /* PagesController.swift in Sources */,
 				B6E6CCCB1B8BD55500B2CABA /* AddRowTableViewController.swift in Sources */,
 				B61F72D71B76C65C00A34736 /* LoginViewController.swift in Sources */,
-				B6C047A41BD3118700D9C6D1 /* TimesheetViewController.swift in Sources */,
 				B64E28BB1B7999660052B3C1 /* ProfileViewController.swift in Sources */,
 				B6FE67F41B892A1A002E647B /* AddRowFormController.swift in Sources */,
 				B68429241BA2B114006FF879 /* CardView.swift in Sources */,

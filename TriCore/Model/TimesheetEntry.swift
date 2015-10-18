@@ -5,6 +5,7 @@
 //  Created by Kyle Zawacki on 8/25/15.
 //  Copyright © 2015 University Of Wisconsin Parkside. All rights reserved.
 //
+//  This is the model object that represents each entry in the timesheet
 
 import UIKit
 
