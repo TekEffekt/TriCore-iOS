@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4EB4310F976CF39C8C4E25E4 /* libPods-TriCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A2A4D7DED6A0018385F202 /* libPods-TriCore.a */; };
 		B61F72A91B76BF8500A34736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F72A81B76BF8500A34736 /* AppDelegate.swift */; };
 		B61F72AE1B76BF8500A34736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61F72AC1B76BF8500A34736 /* Main.storyboard */; };
 		B61F72B01B76BF8500A34736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61F72AF1B76BF8500A34736 /* Assets.xcassets */; };
@@ -31,6 +30,8 @@
 		B6FE67F01B846A9F002E647B /* PublishedOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE67EF1B846A9F002E647B /* PublishedOverlay.swift */; };
 		B6FE67F41B892A1A002E647B /* AddRowFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE67F31B892A1A002E647B /* AddRowFormController.swift */; };
 		B6FE67F61B892A9C002E647B /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE67F51B892A9C002E647B /* PopupViewController.swift */; };
+		D569054CC5938A3B64AB07A5 /* Pods_TriCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4969829C22050A48340E0FEC /* Pods_TriCore.framework */; };
+		FA8C1F3C1D2C4A4B0090AAB8 /* Realm in Resources */ = {isa = PBXBuildFile; fileRef = FA8C1F3B1D2C4A4B0090AAB8 /* Realm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15A2A4D7DED6A0018385F202 /* libPods-TriCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriCore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39E4AB5C972562D5D2421B26 /* Pods-TriCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriCore/Pods-TriCore.release.xcconfig"; sourceTree = "<group>"; };
+		4969829C22050A48340E0FEC /* Pods_TriCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61F72A51B76BF8500A34736 /* TriCore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriCore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61F72A81B76BF8500A34736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B61F72AD1B76BF8500A34736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,8 +84,8 @@
 		B6FE67EF1B846A9F002E647B /* PublishedOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishedOverlay.swift; path = Views/PublishedOverlay.swift; sourceTree = "<group>"; };
 		B6FE67F31B892A1A002E647B /* AddRowFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRowFormController.swift; path = "View Controllers/AddRowFormController.swift"; sourceTree = "<group>"; };
 		B6FE67F51B892A9C002E647B /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopupViewController.swift; path = "View Controllers/PopupViewController.swift"; sourceTree = "<group>"; };
-		E6BD49AD79CDD84A6A3145E9 /* Pods-TriCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriCore/Pods-TriCore.release.xcconfig"; sourceTree = "<group>"; };
-		F807D3D5B948EC5712AA0391 /* Pods-TriCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriCore/Pods-TriCore.debug.xcconfig"; sourceTree = "<group>"; };
+		E787BA3241823DCA227AB5B3 /* Pods-TriCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriCore/Pods-TriCore.debug.xcconfig"; sourceTree = "<group>"; };
+		FA8C1F3B1D2C4A4B0090AAB8 /* Realm */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Realm; path = Model/Realm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EB4310F976CF39C8C4E25E4 /* libPods-TriCore.a in Frameworks */,
+				D569054CC5938A3B64AB07A5 /* Pods_TriCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,10 +114,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F2AB20A2C30AF6C9C12C14F /* Frameworks */ = {
+		6F47A8DB3ED887F8076C0F9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				15A2A4D7DED6A0018385F202 /* libPods-TriCore.a */,
+				4969829C22050A48340E0FEC /* Pods_TriCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,8 +129,8 @@
 				B61F72BC1B76BF8500A34736 /* TriCoreTests */,
 				B61F72C71B76BF8600A34736 /* TriCoreUITests */,
 				B61F72A61B76BF8500A34736 /* Products */,
-				F5A67AAF49A6180D2E9F3D44 /* Pods */,
-				5F2AB20A2C30AF6C9C12C14F /* Frameworks */,
+				B62421C73AE2C765E40CA16E /* Pods */,
+				6F47A8DB3ED887F8076C0F9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +196,7 @@
 		B61F72D91B76E21100A34736 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA8C1F3B1D2C4A4B0090AAB8 /* Realm */,
 				B6234D1B1B816713007AD90B /* Constants.swift */,
 				B6A0EE841B7B2E2100FE787F /* GetProjectList.swift */,
 				B68C51BC1B8D0D4700F27948 /* TimesheetEntry.swift */,
@@ -201,6 +204,15 @@
 				B6CD22981B843EBA002B0102 /* TimesheetPublisher.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		B62421C73AE2C765E40CA16E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E787BA3241823DCA227AB5B3 /* Pods-TriCore.debug.xcconfig */,
+				39E4AB5C972562D5D2421B26 /* Pods-TriCore.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B6A0EE811B7B0D0200FE787F /* Views */ = {
@@ -214,15 +226,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		F5A67AAF49A6180D2E9F3D44 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F807D3D5B948EC5712AA0391 /* Pods-TriCore.debug.xcconfig */,
-				E6BD49AD79CDD84A6A3145E9 /* Pods-TriCore.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,11 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B61F72CD1B76BF8600A34736 /* Build configuration list for PBXNativeTarget "TriCore" */;
 			buildPhases = (
-				1EF96F5CA35CF409D5967E3E /* Check Pods Manifest.lock */,
+				3520029BA8B3D8D3DCEF48F3 /* [CP] Check Pods Manifest.lock */,
 				B61F72A11B76BF8500A34736 /* Sources */,
 				B61F72A21B76BF8500A34736 /* Frameworks */,
 				B61F72A31B76BF8500A34736 /* Resources */,
-				1E773802FE682BBC6CAFA21E /* Copy Pods Resources */,
+				6B204ED81C8ACCACD57BA7E4 /* [CP] Embed Pods Frameworks */,
+				3DF016CB8180EC99DF07D6E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,6 +336,7 @@
 			files = (
 				B61F72B31B76BF8500A34736 /* LaunchScreen.storyboard in Resources */,
 				B61F72B01B76BF8500A34736 /* Assets.xcassets in Resources */,
+				FA8C1F3C1D2C4A4B0090AAB8 /* Realm in Resources */,
 				B61F72AE1B76BF8500A34736 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,14 +358,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E773802FE682BBC6CAFA21E /* Copy Pods Resources */ = {
+		3520029BA8B3D8D3DCEF48F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3DF016CB8180EC99DF07D6E0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,19 +388,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriCore/Pods-TriCore-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1EF96F5CA35CF409D5967E3E /* Check Pods Manifest.lock */ = {
+		6B204ED81C8ACCACD57BA7E4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TriCore/Pods-TriCore-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -545,14 +565,14 @@
 		};
 		B61F72CE1B76BF8600A34736 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F807D3D5B948EC5712AA0391 /* Pods-TriCore.debug.xcconfig */;
+			baseConfigurationReference = E787BA3241823DCA227AB5B3 /* Pods-TriCore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TriCore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uwp.TriCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -564,14 +584,14 @@
 		};
 		B61F72CF1B76BF8600A34736 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6BD49AD79CDD84A6A3145E9 /* Pods-TriCore.release.xcconfig */;
+			baseConfigurationReference = 39E4AB5C972562D5D2421B26 /* Pods-TriCore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TriCore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uwp.TriCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";

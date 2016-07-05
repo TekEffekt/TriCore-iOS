@@ -1,6 +1,0 @@
-#include "JGMethodSwizzler.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/JGMethodSwizzler" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/JGMethodSwizzler" "${PODS_ROOT}/Headers/Public/MZAppearance" "${PODS_ROOT}/Headers/Public/MZFormSheetPresentationController" "${PODS_ROOT}/Headers/Public/TAOverlay"
-OTHER_LDFLAGS = ${JGMETHODSWIZZLER_OTHER_LDFLAGS}
-PODS_ROOT = ${SRCROOT}
-SKIP_INSTALL = YES

@@ -1,5 +1,10 @@
+EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/JGMethodSwizzler" "$PODS_CONFIGURATION_BUILD_DIR/MZAppearance" "$PODS_CONFIGURATION_BUILD_DIR/MZFormSheetPresentationController" "$PODS_CONFIGURATION_BUILD_DIR/Realm" "$PODS_CONFIGURATION_BUILD_DIR/RealmSwift" "$PODS_CONFIGURATION_BUILD_DIR/TAOverlay"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/JGMethodSwizzler" "${PODS_ROOT}/Headers/Public/MZAppearance" "${PODS_ROOT}/Headers/Public/MZFormSheetPresentationController" "${PODS_ROOT}/Headers/Public/TAOverlay"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/JGMethodSwizzler" -isystem "${PODS_ROOT}/Headers/Public/MZAppearance" -isystem "${PODS_ROOT}/Headers/Public/MZFormSheetPresentationController" -isystem "${PODS_ROOT}/Headers/Public/TAOverlay"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"JGMethodSwizzler" -l"MZAppearance" -l"MZFormSheetPresentationController" -l"TAOverlay" -framework "Foundation" -framework "QuartzCore"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/JGMethodSwizzler/JGMethodSwizzler.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/MZAppearance/MZAppearance.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/MZFormSheetPresentationController/MZFormSheetPresentationController.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Realm/Realm.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/RealmSwift/RealmSwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/TAOverlay/TAOverlay.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "JGMethodSwizzler" -framework "MZAppearance" -framework "MZFormSheetPresentationController" -framework "Realm" -framework "RealmSwift" -framework "TAOverlay"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods
