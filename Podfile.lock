@@ -1,7 +1,7 @@
 PODS:
   - JGMethodSwizzler (2.0.1)
-  - MZAppearance (1.1.5)
-  - MZFormSheetPresentationController (1.1.2):
+  - MZAppearance (1.1.6)
+  - MZFormSheetPresentationController (1.1.3):
     - JGMethodSwizzler
     - MZAppearance
   - Realm (1.0.1):
@@ -18,12 +18,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   JGMethodSwizzler: e0ea5c1c6c55304ec4ef3f54e441400c6735c899
-  MZAppearance: 6e9dc64e42074c0a19812a327f590746c3283bab
-  MZFormSheetPresentationController: 2e848d89c0741aef554d0ae6b138be5dc25a479f
+  MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
+  MZFormSheetPresentationController: 420a502aa04c038c0a9ceeb89b34e99cadab40ff
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
   TAOverlay: 940e37fdb45fbc9acfc73bf1089668367e3b1be6
 
-PODFILE CHECKSUM: e453b19dacdb56426c234048b72594a3d1362955
-
-COCOAPODS: 1.0.1
+COCOAPODS: 0.39.0

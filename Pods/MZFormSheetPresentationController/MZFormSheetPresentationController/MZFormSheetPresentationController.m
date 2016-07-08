@@ -41,7 +41,6 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
 @property (nonatomic, assign, getter=isKeyboardVisible) BOOL keyboardVisible;
 @property (nonatomic, strong) NSValue *screenFrameWhenKeyboardVisible;
 @property (nonatomic, strong) UIVisualEffectView *blurBackgroundView;
-@property (nonatomic, strong) MZFormSheetPresentationControllerAnimator *animator;
 @property (nonatomic, strong) MZBlurEffectAdapter *blurEffectAdapter;
 @end
 
@@ -118,6 +117,12 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
     [self setupFormSheetViewControllerFrame];
 }
 
+- (void)setPortraitTopInset:(CGFloat)portraitTopInset
+{
+    _portraitTopInset = portraitTopInset;
+    [self setupFormSheetViewControllerFrame];
+}
+
 - (void)setBackgroundColor:(UIColor * __nullable)backgroundColor {
     _backgroundColor = backgroundColor;
     self.view.backgroundColor = _backgroundColor;
@@ -179,11 +184,18 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
     }
 }
 
+- (id <MZFormSheetPresentationControllerAnimatorProtocol>)animatorForPresentationController {
+    if (!_animatorForPresentationController) {
+        _animatorForPresentationController = [[MZFormSheetPresentationControllerAnimator alloc] init];
+    }
+    return _animatorForPresentationController;
+}
+
 #pragma mark - View Life cycle
 
 - (instancetype)initWithContentViewController:(UIViewController *)viewController {
     if (self = [self init]) {
-
+    
         NSParameterAssert(viewController);
         self.contentViewController = viewController;
         self.modalPresentationStyle = UIModalPresentationOverFullScreen;
@@ -217,7 +229,9 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self handleEntryTransitionAnimated:animated];
+    if (!self.presentedViewController) {
+        [self handleEntryTransitionAnimated:animated];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -231,15 +245,17 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self handleOutTransitionAnimated:animated];
+    if (!self.presentedViewController) {
+        [self handleOutTransitionAnimated:animated];
+    }
 }
 
 #pragma mark - Swizzle
 
 - (void)turnOnTransparentTouch {
     __weak typeof(self) weakSelf = self;
-    if (self.animator.transitionContextContainerView) {
-        [self.animator.transitionContextContainerView swizzleMethod:@selector(pointInside:withEvent:) withReplacement:JGMethodReplacementProviderBlock {
+    if (self.animatorForPresentationController.transitionContextContainerView) {
+        [self.animatorForPresentationController.transitionContextContainerView swizzleMethod:@selector(pointInside:withEvent:) withReplacement:JGMethodReplacementProviderBlock {
             return JGMethodReplacement(BOOL, UIView *, CGPoint point, UIEvent *event) {
                 if (!CGRectContainsPoint(weakSelf.contentViewController.view.frame, point)){
                     return NO;
@@ -251,8 +267,8 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
 }
 
 - (void)turnOffTransparentTouch {
-    if (self.animator.transitionContextContainerView) {
-        [self.animator.transitionContextContainerView deswizzleMethod:@selector(pointInside:withEvent:)];
+    if (self.animatorForPresentationController.transitionContextContainerView) {
+        [self.animatorForPresentationController.transitionContextContainerView deswizzleMethod:@selector(pointInside:withEvent:)];
     }
 }
 
@@ -523,11 +539,15 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
 #pragma mark - Rotation
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+    
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+         [self setupFormSheetViewControllerFrame];
+         [self.contentViewController viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+         
+     } completion:nil];
+
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-
-    [self setupFormSheetViewControllerFrame];
-
-    [self.contentViewController viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
@@ -545,14 +565,13 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
 #pragma mark - <UIViewControllerTransitioningDelegate>
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    self.animator = [[MZFormSheetPresentationControllerAnimator alloc] init];
-    self.animator.presenting = YES;
-    return self.animator;
+    self.animatorForPresentationController.presenting = YES;
+    return self.animatorForPresentationController;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    self.animator.presenting = NO;
-    return self.animator;
+    self.animatorForPresentationController.presenting = NO;
+    return self.animatorForPresentationController;
 }
 
 @end

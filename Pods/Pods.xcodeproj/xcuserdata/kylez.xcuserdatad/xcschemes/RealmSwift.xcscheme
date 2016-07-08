@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B28182BFFCCD312EB332C97FEDFCB846'
-               BlueprintName = 'MZFormSheetPresentationController'
+               BlueprintIdentifier = 'C1C524FB032D084428ECF1A6'
+               BlueprintName = 'RealmSwift'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'MZFormSheetPresentationController.framework'>
+               BuildableName = 'RealmSwift.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

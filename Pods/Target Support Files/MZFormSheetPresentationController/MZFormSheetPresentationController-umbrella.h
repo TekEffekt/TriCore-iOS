@@ -4,6 +4,7 @@
 #import "MZFormSheetPresentationController Swift Example-Bridging-Header.h"
 #import "MZFormSheetPresentationController.h"
 #import "MZFormSheetPresentationControllerAnimator.h"
+#import "MZFormSheetPresentationControllerAnimatorProtocol.h"
 #import "MZFormSheetPresentationControllerSegue.h"
 #import "MZTransition.h"
 #import "UIViewController+TargetViewController.h"

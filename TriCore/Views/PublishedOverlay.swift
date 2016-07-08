@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TAOverlay
 
 class PublishedOverlay: UIView
 {
