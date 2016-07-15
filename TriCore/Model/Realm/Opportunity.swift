@@ -9,15 +9,15 @@
 import Foundation
 import RealmSwift
 
-class Opportunity: Object{
-    dynamic var opportunityName = ""
-    dynamic var opportunityId = 0
+class Opportunity: Object {
+    dynamic var name = ""
+    dynamic var id = 0
     
-    override static func primaryKey() -> Int{
-        return opportunityId
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
-    func incrementID() -> Int {
+    static func incrementID() -> Int {
         let realm = try! Realm()
         let nextLocation: NSArray = Array(realm.objects(Opportunity).sorted("id"))
         let last = nextLocation.lastObject

@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 
 class SprintCategory: Object{
-    dynamic var sprintCategoryName = ""
-    dynamic var sprintCategoryId = 0
+    dynamic var name = ""
+    dynamic var id = 0
     
-    override func primaryKey() -> Int {
-        return sprintCategoryId
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
-    func incrementID() -> Int {
+    static func incrementID() -> Int {
         let realm = try! Realm()
         let nextLocation: NSArray = Array(realm.objects(SprintCategory).sorted("id"))
         let last = nextLocation.lastObject

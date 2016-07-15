@@ -33,10 +33,73 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
+        print("Hello")
+        
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        print("Hello")
+        
+        let opportunityNames = ["Cats", "Realm", "Cleaning"]
+        
+        for opportunity in opportunityNames {
+            RealmPopulator.addOpportunity(withOppName: opportunity)
+            print("Added opportunity: \(opportunity)")
+        }
+        
+        let categories = ["Books", "Movies", "Music"]
+        
+        for category in categories {
+            RealmPopulator.addSprintCategory(withSprintName: category)
+            print("Added opportunity: \(category)")
+        }
+        
+        let taskcodes = ["one", "two", "three"]
+        
+        for code in taskcodes {
+            RealmPopulator.addTaskcode(withTaskcodeName: code)
+            print("Added taskcode \(code)")
+        }
+        
+        let names = RealmQuery.fetchOpportunities(1)
+        let firstName = names.first!.name
+        print("The first opportunity is : \(firstName)")
+        
+        let cat = RealmQuery.fetchSpringCategories(2).first!.name
+        print("The second sprint category is \(cat)")
+        
+        let codes = RealmQuery.fetchTaskcodes(3).first!.name
+        print("The third task code is \(codes)")
+
+//        // Adding a timesheet
+//        RealmPopulator.addTimeSheet()
+//        let opp = Opportunity()
+//        opp.name = "Project"
+//        
+//        print("Made opportunity: \(opp.name)")
+//        
+//        let sprintCat = SprintCategory()
+//        sprintCat.name = "Sprint"
+//        print("Made Sprint Category: \(sprintCat.name)")
+//        
+//        let code = Taskcode()
+//        code.name = "Whatever"
+//        print("Made Task Code: \(code.name)")
+//        
+//        RealmPopulator.addTimeSheet()
+//        
+//        let timesheet = RealmQuery.fetchTimesheets(1)
+//        if let firstTimesheet = timesheet.first {
+//            RealmPopulator.addTimesheetDetailEntry(withOpportunity: opp, withSprintCategory: sprintCat, withTaskCode: code, withTimesheet: firstTimesheet)
+//            print("Successfully added TimeSheetDetailEntry!!!")
+//        }
+        
+        
+        
+        
     }
 
     func applicationWillTerminate(application: UIApplication) {

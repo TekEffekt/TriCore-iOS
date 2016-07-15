@@ -11,14 +11,14 @@ import RealmSwift
 
 class Timesheet: Object{
     
-    dynamic var entry = List<TimesheetDetailEntry>
-    dynamic var timesheetId = 0
+    var entries = List<TimesheetDetailEntry>()
+    dynamic var id = 0
     
-    override static func primaryKey() -> Int {
-        return timesheetId
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
-    func incrementID() -> Int {
+    static func incrementID() -> Int {
         let realm = try! Realm()
         let nextLocation: NSArray = Array(realm.objects(Timesheet).sorted("id"))
         let last = nextLocation.lastObject
@@ -30,4 +30,6 @@ class Timesheet: Object{
             return 1
         }
     }
+    
+    
 }

@@ -1,0 +1,38 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/alex/Documents/TriCore-iOS/build/Debug-iphonesimulator/JGMethodSwizzler.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "JGMethodSwizzler-Swift.h",
+          'external-contents': "/Users/alex/Documents/TriCore-iOS/build/Debug-iphonesimulator/JGMethodSwizzler.framework/Headers/JGMethodSwizzler-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "JGMethodSwizzler-umbrella.h",
+          'external-contents': "/Users/alex/Documents/TriCore-iOS/Pods/Target Support Files/JGMethodSwizzler/JGMethodSwizzler-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "JGMethodSwizzler.h",
+          'external-contents': "/Users/alex/Documents/TriCore-iOS/Pods/JGMethodSwizzler/JGMethodSwizzler/JGMethodSwizzler.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/alex/Documents/TriCore-iOS/build/Debug-iphonesimulator/JGMethodSwizzler.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/alex/Documents/TriCore-iOS/build/Pods.build/Debug-iphonesimulator/JGMethodSwizzler.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

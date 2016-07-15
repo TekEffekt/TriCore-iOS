@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 
 class Taskcode: Object{
-    dynamic var taskcodeName = ""
-    dynamic var taskcodeId = 0
+    dynamic var name = ""
+    dynamic var id = 0
     
-    override func primaryKey() -> Int {
-        return taskcodeId
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
-    func incrementID() -> Int {
+    static func incrementID() -> Int {
         let realm = try! Realm()
         let nextLocation: NSArray = Array(realm.objects(Taskcode).sorted("id"))
         let last = nextLocation.lastObject
